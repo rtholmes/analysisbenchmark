@@ -4,8 +4,10 @@ import java.util.Collection;
 import java.util.Vector;
 
 public class ClassElement extends AnnotatableElement {
-	public ClassElement(String id) {
+	public ClassElement(String id, boolean isInterface, boolean isClass) {
 		_id = id;
+		_isInterface = isInterface;
+		_isClass = isClass;
 	}
 
 	String _id;

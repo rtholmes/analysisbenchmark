@@ -68,12 +68,38 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 		@SuppressWarnings("unchecked")
 		List<Element> classes = doc.getRootElement().getChildren(CLASS);
 		for (Element classElement : classes) {
-			String id = classElement.getAttributeValue(ID);
-			ClassElement ce = new ClassElement(id);
+			ClassElement ce = parseClassElement(classElement);
+
 			modelClasses.add(ce);
 		}
 
 		return modelClasses;
+	}
+
+	private ClassElement parseClassElement(Element classElement) {
+		String id = null;
+		boolean isInterface = false;
+		boolean isClass = false;
+
+		if (hasAttribute(classElement, ID)) {
+			id = classElement.getAttributeValue(ID);
+		} else {
+			throw new RuntimeException("ID must be set");
+		}
+
+		if (hasAttribute(classElement, IS_INTERFACE))
+			isInterface = Boolean.parseBoolean(classElement.getAttributeValue(IS_INTERFACE));
+
+		if (hasAttribute(classElement, IS_CLASS))
+			isClass = Boolean.parseBoolean(classElement.getAttributeValue(IS_CLASS));
+
+		ClassElement ce = new ClassElement(id, isInterface, isClass);
+		
+		return ce;
+	}
+
+	private boolean hasAttribute(Element classElement, String attrName) {
+		return classElement.getAttribute(attrName) != null;
 	}
 
 	private Document readDocument(String fName) {
