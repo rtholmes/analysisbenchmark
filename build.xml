@@ -21,7 +21,11 @@
 
 	<path id="dependencyfinder">
 		<pathelement location="${dependencyfinder.home}/classes" />
+		<pathelement location="${lib}/DependencyFinder_dev.jar" />
+		<!--
+		should be in /lib/DependencyFinder_dev.jar now
 		<pathelement location="${dependencyfinder.home}/lib/DependencyFinder.jar" />
+		-->
 		<pathelement location="${dependencyfinder.home}/lib/jakarta-oro.jar" />
 		<pathelement location="${dependencyfinder.home}/lib/log4j.jar" />
 	</path>
