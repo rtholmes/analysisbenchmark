@@ -1,0 +1,150 @@
+<project name="SimpleAnalysisBenchmark" default="dist" basedir=".">
+	<description>
+        Benchmark program for testing static analyses. Adapted from Martin Robillard's JayFXBenchmark.
+    </description>
+	<!-- set global properties for this build -->
+	<property name="src" location="src" />
+	<property name="src.test" location="test" />
+	<property name="build" location="build" />
+	<property name="build.test" location="buildTests" />
+	<property name="dist" location="dist" />
+	<property name="lib" location="lib" />
+	<property name="report.staticAnalysis" location="reportStatic" />
+	<property name="report.dynamicAnalysis" location="reportDynamic" />
+	<property name="report.test" location="reportTest" />
+
+	<property name="jiprof.home" value="${lib}/jip-src-1.2" />
+
+	<!-- Start Dependency Finder Properties -->
+	<property name="dependencyfinder.home" value="${lib}/DependencyFinder-1.2.1-beta4" />
+
+
+	<path id="dependencyfinder">
+		<pathelement location="${dependencyfinder.home}/classes" />
+		<pathelement location="${dependencyfinder.home}/lib/DependencyFinder.jar" />
+		<pathelement location="${dependencyfinder.home}/lib/jakarta-oro.jar" />
+		<pathelement location="${dependencyfinder.home}/lib/log4j.jar" />
+	</path>
+	<!-- End Dependency Finder Properties -->
+
+	<path id="classpath">
+		<!-- create classpath -->
+		<fileset dir="${lib}">
+			<include name="*.jar" />
+		</fileset>
+		<pathelement path="${build}" />
+	</path>
+
+	<path id="classpath.test">
+		<!-- create test classpath -->
+		<path refid="classpath" />
+		<pathelement path="${build.test}" />
+	</path>
+
+	<target name="init">
+		<!-- Create the time stamp -->
+		<tstamp />
+		<!-- Create the build directory structure used by compile -->
+		<mkdir dir="${build}" />
+		<mkdir dir="${build.test}" />
+		<mkdir dir="${report.staticAnalysis}" />
+		<mkdir dir="${report.dynamicAnalysis}" />
+		<mkdir dir="${report.test}" />
+	</target>
+
+	<target name="clean" description="clean up">
+		<!-- Delete the ${build} and ${dist} directory trees -->
+		<delete dir="${build}" />
+		<delete dir="${build.test}" />
+		<delete dir="${dist}" />
+		<delete dir="${report.staticAnalysis}" />
+		<delete dir="${report.dynamicAnalysis}" />
+		<delete dir="${report.test}" />
+	</target>
+
+
+	<target name="compile" depends="init" description="compile the source">
+		<!-- Compile the java code from ${src} into ${build} -->
+		<javac srcdir="${src}" destdir="${build}" includeantruntime="false" classpathref="classpath" />
+	</target>
+
+	<target name="compile-test" depends="compile" description="compile the tests">
+		<javac srcdir="${src.test}" destdir="${build.test}" includeantruntime="false" classpathref="classpath" />
+	</target>
+
+
+	<target name="dist" depends="compile" description="generate the distribution">
+		<!-- Create the distribution directory -->
+		<mkdir dir="${dist}/lib" />
+
+		<!-- Put everything in ${build} into the AnalysisBenchmark-${DSTAMP}.jar file -->
+		<jar jarfile="${dist}/lib/AnalysisBenchamark-${DSTAMP}.jar" basedir="${build}" />
+	</target>
+
+	<target name="test" depends="compile-test" description="perform tests">
+		<junit printsummary="yes" haltonfailure="no" fork="yes" forkmode="once">
+			<!--<jvmarg value="-Djava.compiler=NONE"/>-->
+
+			<classpath refid="classpath.test" />
+
+			<formatter type="plain" />
+
+			<batchtest todir="${report.test}">
+				<fileset dir="${src.test}">
+					<include name="**/*.java" />
+				</fileset>
+			</batchtest>
+		</junit>
+	</target>
+
+	<target name="dynamic" depends="compile-test" description="perform tests">
+		<junit printsummary="yes" haltonfailure="no" fork="yes" forkmode="once">
+			<!--<jvmarg value="-Djava.compiler=NONE"/>-->
+
+			<!-- all we need to profile -->
+
+			<jvmarg value="-javaagent:${jiprof.home}/profile/profile.jar" />
+			<jvmarg value="-Dprofile.properties=${jiprof.home}/profile/jiprof.properties" />
+			<!--<jvmarg value="-Dprofile.properties=${jiprof.home}/profile/ant.profile.properties"/>-->
+
+			<classpath refid="classpath.test" />
+
+			<formatter type="plain" />
+
+			<batchtest todir="${report.test}">
+				<fileset dir="${src.test}">
+					<include name="**/*.java" />
+				</fileset>
+			</batchtest>
+		</junit>
+	</target>
+
+	<!-- Start DependencyFinder -->
+	<taskdef resource="dependencyfindertasks.properties">
+		<classpath refid="dependencyfinder" />
+	</taskdef>
+
+	<target name="static" depends="compile" description="perform static analyses">
+
+		<dependencyextractor destfile="${report.staticAnalysis}/static-${DSTAMP}_${TSTAMP}.xml" xml="yes" minimize="yes">
+			<path>
+				<!-- <pathelement location="."/> -->
+				<pathelement location="${build}" />
+			</path>
+		</dependencyextractor>
+
+		<xslt style="${dependencyfinder.home}/etc/DependencyGraphToHTML.xsl" in="${report.staticAnalysis}/static-${DSTAMP}_${TSTAMP}.xml" out="${report.staticAnalysis}/static-${DSTAMP}_${TSTAMP}.html" />
+
+		<!-- copy the style sheet -->
+		<copy file="${dependencyfinder.home}/etc/dependency.style.css" tofile="${report.staticAnalysis}/dependency.style.css" overwrite="no" />
+
+		<!-- make a copy of the latest extraction for easier reference -->
+		<copy file="${report.staticAnalysis}/static-${DSTAMP}_${TSTAMP}.xml" tofile="${report.staticAnalysis}/static_latest.xml" />
+		<copy file="${report.staticAnalysis}/static-${DSTAMP}_${TSTAMP}.html" tofile="${report.staticAnalysis}/static_latest.html" />
+
+	</target>
+	<!-- End DependencyFinder -->
+
+
+
+</project>
