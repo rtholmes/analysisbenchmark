@@ -1,0 +1,6 @@
+bin/
+build/
+reportStatic/
+reportDyanmic/
+reportTest/
+
