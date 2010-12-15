@@ -11,9 +11,11 @@ import ca.uwaterloo.cs.se.bench.model.ClassElement;
 import ca.uwaterloo.cs.se.bench.model.io.XMLReaderDependencyFinder;
 
 /**
+ * Synthetic test; essentially makes sure the eval code is working separate from the suite that will actually test the
+ * model.
  * 
  * @author rtholmes
- *
+ * 
  */
 public class SyntheticModelTest {
 
@@ -32,6 +34,5 @@ public class SyntheticModelTest {
 
 		Assert.assertNotNull(model);
 	}
-	
-	
+
 }
