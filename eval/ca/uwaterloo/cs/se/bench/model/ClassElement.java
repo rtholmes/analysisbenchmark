@@ -22,4 +22,14 @@ public class ClassElement extends AnnotatableElement {
 	boolean _isInterface = false;
 	boolean _isAbstract = false;
 	boolean _isClass = true;
+
+	public void setMethods(Collection<MethodElement> methods) {
+		_methods = methods;
+	}
+
+	public void setFields(Collection<FieldElement> fields) {
+		_fields = fields;
+	}
+
+
 }

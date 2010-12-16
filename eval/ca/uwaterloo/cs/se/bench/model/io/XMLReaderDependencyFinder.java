@@ -16,7 +16,12 @@ import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
 
+import ca.uwaterloo.cs.se.bench.model.AnnotationElement;
 import ca.uwaterloo.cs.se.bench.model.ClassElement;
+import ca.uwaterloo.cs.se.bench.model.FieldElement;
+import ca.uwaterloo.cs.se.bench.model.MethodElement;
+import ca.uwaterloo.cs.se.bench.model.MethodParamElement;
+import ca.uwaterloo.cs.se.bench.model.MethodReturnElement;
 
 public class XMLReaderDependencyFinder implements XMLSchema {
 	private Logger _log = Logger.getLogger(getClass());
@@ -26,7 +31,8 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 	public static final String LOG_PATTERN_VERBOSE = "%5p %d (%F:%L) - %m%n";
 
 	/**
-	 * This logger pattern is much faster as it does not have to compute class/line numbers on the fly.
+	 * This logger pattern is much faster as it does not have to compute
+	 * class/line numbers on the fly.
 	 */
 	public static final String LOG_PATTERN_FAST = "%5p - %m%n";
 
@@ -35,8 +41,8 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 	}
 
 	/**
-	 * The default Logger level will be INFO using this method. If you want a different level use one of the methods
-	 * that takes a level parameter.
+	 * The default Logger level will be INFO using this method. If you want a
+	 * different level use one of the methods that takes a level parameter.
 	 * 
 	 * @param verbose
 	 *            true for the verbose pattern; false for the fast pattern.
@@ -47,7 +53,8 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 
 		BasicConfigurator.configure();
 
-		// This is bad form but BasicConfigurator only adds one appender so it works out just fine
+		// This is bad form but BasicConfigurator only adds one appender so it
+		// works out just fine
 		ConsoleAppender ca = (ConsoleAppender) Logger.getRootLogger().getAllAppenders().nextElement();
 
 		if (ca != null)
@@ -76,6 +83,7 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 		return modelClasses;
 	}
 
+	@SuppressWarnings("unchecked")
 	private ClassElement parseClassElement(Element classElement) {
 		String id = null;
 		boolean isInterface = false;
@@ -94,8 +102,130 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 			isClass = Boolean.parseBoolean(classElement.getAttributeValue(IS_CLASS));
 
 		ClassElement ce = new ClassElement(id, isInterface, isClass);
-		
+
+		if (classElement.getChild(FIELDS) != null) {
+			Collection<FieldElement> fields = parseFields(classElement.getChild(FIELDS).getChildren());
+			ce.setFields(fields);
+		}
+
+		if (classElement.getChild(METHODS) != null) {
+			Collection<MethodElement> methods = parseMethods(classElement.getChild(METHODS).getChildren());
+			ce.setMethods(methods);
+		}
+
+		if (classElement.getChild(ANNOTATIONS) != null) {
+			Collection<AnnotationElement> annotations = parseAnnotations(classElement.getChild(ANNOTATIONS).getChildren());
+
+			ce.setAnnotaions(annotations);
+		}
+
 		return ce;
+	}
+
+	private Collection<AnnotationElement> parseAnnotations(List<Element> annotationElements) {
+		Collection<AnnotationElement> annotations = new Vector<AnnotationElement>();
+		if (annotationElements == null) {
+			return annotations;
+		}
+
+		for (Element annotationElement: annotationElements){
+			String type = annotationElement.getAttributeValue(TYPE);
+			AnnotationElement ae = new AnnotationElement(type);
+			annotations.add(ae);
+		}
+		
+		return annotations;
+	}
+
+	private Vector<FieldElement> parseFields(List<Element> fieldElements) {
+		Vector<FieldElement> fields = new Vector<FieldElement>();
+
+		if (fieldElements == null) {
+			return fields;
+		}
+
+		for (Element fieldElement : fieldElements) {
+			String id = fieldElement.getAttributeValue(ID);
+			String type = fieldElement.getAttributeValue(TYPE);
+
+			FieldElement fe = new FieldElement(id, type);
+			fields.add(fe);
+		}
+
+		return fields;
+	}
+
+	@SuppressWarnings("unchecked")
+	private Vector<MethodElement> parseMethods(List<Element> methodElements) {
+		Vector<MethodElement> methods = new Vector<MethodElement>();
+		if (methodElements == null) {
+			return methods;
+		}
+
+		for (Element methodElement : methodElements) {
+			String id = methodElement.getAttributeValue(ID);
+			MethodElement me = new MethodElement(id);
+
+			if (methodElement.getChild(PARAMS) != null) {
+				List<MethodParamElement> params = parseParams(methodElement.getChild(PARAMS).getChildren());
+				me.setParams(params);
+			}
+
+			if (methodElement.getChild(RETURN) != null) {
+				MethodReturnElement mre = parseReturnType(methodElement.getChild(RETURN));
+				me.setReturn(mre);
+			} else {
+				throw new RuntimeException("fill me in");
+			}
+
+			if (methodElement.getChild(CALLS) != null) {
+				Collection<String> params = parseCalls(methodElement.getChild(CALLS).getChildren());
+				me.setCalls(params);
+			}
+		}
+
+		return methods;
+	}
+
+	private Collection<String> parseCalls(List<Element> callElements) {
+		Collection<String> calls = new Vector<String>();
+		if (callElements == null) {
+			return calls;
+		}
+
+		for (Element callElement : callElements) {
+			String id = callElement.getAttributeValue(ID);
+			calls.add(id);
+		}
+
+		return calls;
+	}
+
+	private MethodReturnElement parseReturnType(Element returnElement) {
+
+		String type = returnElement.getAttributeValue(TYPE);
+
+		MethodReturnElement mre = new MethodReturnElement(type);
+
+		return mre;
+	}
+
+	private Vector<MethodParamElement> parseParams(List<Element> paramElements) {
+		Vector<MethodParamElement> params = new Vector<MethodParamElement>();
+		if (paramElements == null) {
+			return params;
+		}
+
+		for (Element paramElement : paramElements) {
+			String id = paramElement.getAttributeValue(ID);
+			String type = paramElement.getAttributeValue(TYPE);
+			int order = Integer.parseInt(paramElement.getAttributeValue(ORDER));
+
+			MethodParamElement mpe = new MethodParamElement(id, type, order);
+			params.add(mpe);
+		}
+
+		return params;
 	}
 
 	private boolean hasAttribute(Element classElement, String attrName) {
