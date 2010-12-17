@@ -1,32 +1,43 @@
 <dependency_uw>
-	<ce pkg="ca.uwaterloo.cs.se.bench.simple" id="ca.uwaterloo.cs.se.bench.simple.SimpleClass"
-		isInt="false" isAbs="false" isClass="true">
-		<me id="a1()">
-			<params />
-			<return />
-			<calls>
-				<call id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.a2()" />
-			</calls>
-		</me>
-		<me id="a2()">
-			<params />
-			<return />
-			<calls />
-		</me>
-		<me id="f1()">
-			<params />
-			<return />
-			<calls>
-				<call
-					id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection;)" />
-			</calls>
-		</me>
-		<me id="f2()">
-			<params>
-				<param id="collection" type="java.util.Collection" order="0" />
-			</params>
-			<return />
-			<calls />
-		</me>
-	</ce>
+	<declarations>
+		<classes>
+			<ce pkg="ca.uwaterloo.cs.se.bench.simple" id="ca.uwaterloo.cs.se.bench.simple.SimpleClass"
+				isInt="false" isAbs="false" isClass="true" />
+		</classes>
+		<contains>
+			<ce id="ca.uwaterloo.cs.se.bench.simple.SimpleClass">
+				<me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.a1()" />
+				<me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.a2()" />
+				<me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.b1()" />
+				<me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.b2()">
+					<return id="java.util.Vector" />
+				</me>
+				<me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f1()" />
+				<me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2()">
+					<params>
+						<param id="java.util.Collection" order="0" />
+					</params>
+				</me>
+			</ce>
+			<ce id="java.util.Collection"</ce>
+			<ce id="java.util.Vector"</ce>
+		</contains>
+	</declarations>
+	<relationships>
+		<calls>
+			<!-- <call s="" t="" /> -->
+			<call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.a1()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.a2()" />
+			<call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.b1()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.b2()" />
+			<call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.b2()" t="java.util.Vector.Vector()" />
+			<call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f1()"
+				t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection;)" />
+		</calls>
+		<references>
+			<!-- <ref s="" t="" /> -->
+		</references>
+		<inheritance>
+			<!-- <inherits p="" c="" /> -->
+		</inheritance>
+	</relationships>
+
 </dependency_uw>

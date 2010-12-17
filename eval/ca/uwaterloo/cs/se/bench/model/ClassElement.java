@@ -31,5 +31,8 @@ public class ClassElement extends AnnotatableElement {
 		_fields = fields;
 	}
 
+	public String getId() {
+		return _id;
+	}
 
 }

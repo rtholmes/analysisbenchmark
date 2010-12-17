@@ -8,6 +8,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import ca.uwaterloo.cs.se.bench.model.ClassElement;
+import ca.uwaterloo.cs.se.bench.model.Model;
 import ca.uwaterloo.cs.se.bench.model.io.XMLReaderDependencyFinder;
 
 /**
@@ -30,7 +31,7 @@ public class SyntheticModelTest {
 	public void parseSytheticModel() {
 
 		XMLReaderDependencyFinder xmlrdf = new XMLReaderDependencyFinder(fName);
-		Collection<ClassElement> model = xmlrdf.parseModel();
+		Model model = xmlrdf.parseModel();
 
 		Assert.assertNotNull(model);
 	}

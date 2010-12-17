@@ -22,11 +22,14 @@ import ca.uwaterloo.cs.se.bench.model.FieldElement;
 import ca.uwaterloo.cs.se.bench.model.MethodElement;
 import ca.uwaterloo.cs.se.bench.model.MethodParamElement;
 import ca.uwaterloo.cs.se.bench.model.MethodReturnElement;
+import ca.uwaterloo.cs.se.bench.model.Model;
 
 public class XMLReaderDependencyFinder implements XMLSchema {
 	private Logger _log = Logger.getLogger(getClass());
 
 	private String _fName;
+
+	private Model _model;
 
 	public static final String LOG_PATTERN_VERBOSE = "%5p %d (%F:%L) - %m%n";
 
@@ -66,25 +69,63 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 		Logger.getRootLogger().setLevel(Level.INFO);
 	}
 
-	public Collection<ClassElement> parseModel() {
+	@SuppressWarnings("unused")
+	public Model parseModel() {
+		_model = new Model();
+
 		Document doc = readDocument(_fName);
+		Element rootElement = doc.getRootElement();
 
-		Collection<ClassElement> modelClasses = new Vector<ClassElement>();
-
-		// do the parsing
-		@SuppressWarnings("unchecked")
-		List<Element> classes = doc.getRootElement().getChildren(CLASS);
-		for (Element classElement : classes) {
-			ClassElement ce = parseClassElement(classElement);
-
-			modelClasses.add(ce);
+		// declarations (e.g., classes)
+		Element declarationsElement = rootElement.getChild(DECLARATIONS);
+		
+		List<Element> classDeclarationElements = declarationsElement.getChild(CLASSES).getChildren();
+		for (Element classElement : classDeclarationElements) {
+			parseClassElement(classElement);
 		}
 
-		return modelClasses;
+		// contains (e.g., methods and fields)
+		List<Element> containsDeclarationElements = declarationsElement.getChild(CONTAINS).getChildren();
+		for (Element classElement : classDeclarationElements) {
+			parseClassContainsElement(classElement);
+		}
+
+		// relationships (e.g., calls, references, intherits)
+		Element relationshipsElement = rootElement.getChild(RELATIONSHIPS);
+		
+		List<Element> callElements = relationshipsElement.getChild(CALLS).getChildren();
+		for (Element callElement : callElements){
+			// parse call
+		}
+		
+		List<Element> referenceElements = relationshipsElement.getChild(REFERENCES).getChildren();
+		for (Element refElement : referenceElements){
+			// parse ref
+		}
+		
+		List<Element> inheritsElements = relationshipsElement.getChild(INHERITS).getChildren();
+		for (Element inheritElement : inheritsElements){
+			// parse inh
+		}
+		
+		return _model;
 	}
 
 	@SuppressWarnings("unchecked")
-	private ClassElement parseClassElement(Element classElement) {
+	private void parseClassContainsElement(Element classContainsElement) {
+		String id = classContainsElement.getAttributeValue(ID);
+		ClassElement ce = _model.getClass(id);
+
+		List<Element> methodElements = classContainsElement.getChildren(METHOD);
+		Vector<MethodElement> methods = parseMethods(methodElements);
+		ce.setMethods(methods);
+
+		List<Element> fieldElements = classContainsElement.getChildren(FIELD);
+		Vector<FieldElement> fields = parseFields(fieldElements);
+		ce.setFields(fields);
+	}
+
+	private void parseClassElement(Element classElement) {
 		String id = null;
 		boolean isInterface = false;
 		boolean isClass = false;
@@ -101,25 +142,12 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 		if (hasAttribute(classElement, IS_CLASS))
 			isClass = Boolean.parseBoolean(classElement.getAttributeValue(IS_CLASS));
 
-		ClassElement ce = new ClassElement(id, isInterface, isClass);
-
-		if (classElement.getChild(FIELDS) != null) {
-			Collection<FieldElement> fields = parseFields(classElement.getChild(FIELDS).getChildren());
-			ce.setFields(fields);
+		if (!_model.hasClass(id)) {
+			ClassElement ce = new ClassElement(id, isInterface, isClass);
+			_model.addClass(ce);
+		} else {
+			throw new RuntimeException();
 		}
-
-		if (classElement.getChild(METHODS) != null) {
-			Collection<MethodElement> methods = parseMethods(classElement.getChild(METHODS).getChildren());
-			ce.setMethods(methods);
-		}
-
-		if (classElement.getChild(ANNOTATIONS) != null) {
-			Collection<AnnotationElement> annotations = parseAnnotations(classElement.getChild(ANNOTATIONS).getChildren());
-
-			ce.setAnnotaions(annotations);
-		}
-
-		return ce;
 	}
 
 	private Collection<AnnotationElement> parseAnnotations(List<Element> annotationElements) {
@@ -128,12 +156,12 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 			return annotations;
 		}
 
-		for (Element annotationElement: annotationElements){
+		for (Element annotationElement : annotationElements) {
 			String type = annotationElement.getAttributeValue(TYPE);
 			AnnotationElement ae = new AnnotationElement(type);
 			annotations.add(ae);
 		}
-		
+
 		return annotations;
 	}
 
