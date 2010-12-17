@@ -2,13 +2,13 @@ package ca.uwaterloo.cs.se.bench.model;
 
 import java.util.Vector;
 
-public class MethodReturnElement {
+public class TypeReferenceElement {
 
-	public MethodReturnElement(String type) {
+	public TypeReferenceElement(ClassElement type) {
 		_type = type;
 	}
 
-	String _type;
+	ClassElement _type;
 	// ClassElement _type;
 
 	// TODO: generic returns

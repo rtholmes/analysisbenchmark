@@ -3,6 +3,9 @@
 		<classes>
 			<ce pkg="ca.uwaterloo.cs.se.bench.simple" id="ca.uwaterloo.cs.se.bench.simple.SimpleClass"
 				isInt="false" isAbs="false" isClass="true" />
+			<ce id="java.util.Collection" />
+			<ce id="java.util.Vector" />
+			<ce id="V" />
 		</classes>
 		<contains>
 			<ce id="ca.uwaterloo.cs.se.bench.simple.SimpleClass">
@@ -13,14 +16,15 @@
 					<return id="java.util.Vector" />
 				</me>
 				<me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f1()" />
-				<me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2()">
+				<me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection;)">
 					<params>
 						<param id="java.util.Collection" order="0" />
 					</params>
 				</me>
 			</ce>
-			<ce id="java.util.Collection"</ce>
-			<ce id="java.util.Vector"</ce>
+			<ce id="java.util.Vector">
+				<me id="java.util.Vector.Vector()" />
+			</ce>
 		</contains>
 	</declarations>
 	<relationships>
@@ -35,9 +39,9 @@
 		<references>
 			<!-- <ref s="" t="" /> -->
 		</references>
-		<inheritance>
-			<!-- <inherits p="" c="" /> -->
-		</inheritance>
+		<inherits>
+			<!-- <inh p="" c="" /> -->
+		</inherits>
 	</relationships>
 
 </dependency_uw>

@@ -12,8 +12,8 @@ public class MethodElement extends AnnotatableElement {
 	String _id;
 
 	List<MethodParamElement> _params = new Vector<MethodParamElement>();
-	// Collection<MethodElement> _methods = new Vector<MethodElement>();
-	Collection<String> _calls = new Vector<String>();
+	Collection<MethodElement> _callTargets = new Vector<MethodElement>();
+
 	MethodReturnElement _return;
 
 	public void setParams(List<MethodParamElement> params) {
@@ -24,7 +24,11 @@ public class MethodElement extends AnnotatableElement {
 		_return = mre;
 	}
 
-	public void setCalls(Collection<String> calls) {
-		_calls = calls;
+	public String getId() {
+		return _id;
+	}
+
+	public void addCallTarget(MethodElement target) {
+		_callTargets.add(target);
 	}
 }

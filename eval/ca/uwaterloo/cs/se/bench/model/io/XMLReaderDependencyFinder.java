@@ -41,6 +41,9 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 
 	public XMLReaderDependencyFinder(String fName) {
 		_fName = fName;
+		if (!new File(_fName).exists()) {
+			throw new RuntimeException();
+		}
 	}
 
 	/**
@@ -69,7 +72,7 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 		Logger.getRootLogger().setLevel(Level.INFO);
 	}
 
-	@SuppressWarnings("unused")
+	@SuppressWarnings("unchecked")
 	public Model parseModel() {
 		_model = new Model();
 
@@ -78,7 +81,7 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 
 		// declarations (e.g., classes)
 		Element declarationsElement = rootElement.getChild(DECLARATIONS);
-		
+
 		List<Element> classDeclarationElements = declarationsElement.getChild(CLASSES).getChildren();
 		for (Element classElement : classDeclarationElements) {
 			parseClassElement(classElement);
@@ -86,28 +89,38 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 
 		// contains (e.g., methods and fields)
 		List<Element> containsDeclarationElements = declarationsElement.getChild(CONTAINS).getChildren();
-		for (Element classElement : classDeclarationElements) {
+		for (Element classElement : containsDeclarationElements) {
 			parseClassContainsElement(classElement);
 		}
 
 		// relationships (e.g., calls, references, intherits)
 		Element relationshipsElement = rootElement.getChild(RELATIONSHIPS);
-		
-		List<Element> callElements = relationshipsElement.getChild(CALLS).getChildren();
-		for (Element callElement : callElements){
-			// parse call
+		if (relationshipsElement == null) {
+			throw new RuntimeException("XML should contain a " + RELATIONSHIPS + " element.");
 		}
-		
-		List<Element> referenceElements = relationshipsElement.getChild(REFERENCES).getChildren();
-		for (Element refElement : referenceElements){
-			// parse ref
+
+		if (relationshipsElement.getChild(CALLS) != null) {
+			List<Element> callElements = relationshipsElement.getChild(CALLS).getChildren();
+			for (Element callElement : callElements) {
+				// parse call
+				parseCall(callElement);
+			}
 		}
-		
-		List<Element> inheritsElements = relationshipsElement.getChild(INHERITS).getChildren();
-		for (Element inheritElement : inheritsElements){
-			// parse inh
+
+		if (relationshipsElement.getChild(REFERENCES) != null) {
+			List<Element> referenceElements = relationshipsElement.getChild(REFERENCES).getChildren();
+			for (Element refElement : referenceElements) {
+				// parse ref
+			}
 		}
-		
+
+		if (relationshipsElement.getChild(INHERITS) != null) {
+			List<Element> inheritsElements = relationshipsElement.getChild(INHERITS).getChildren();
+			for (Element inheritElement : inheritsElements) {
+				// parse inh
+			}
+		}
+
 		return _model;
 	}
 
@@ -144,7 +157,7 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 
 		if (!_model.hasClass(id)) {
 			ClassElement ce = new ClassElement(id, isInterface, isClass);
-			_model.addClass(ce);
+			_model.addElement(ce);
 		} else {
 			throw new RuntimeException();
 		}
@@ -186,13 +199,16 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 	@SuppressWarnings("unchecked")
 	private Vector<MethodElement> parseMethods(List<Element> methodElements) {
 		Vector<MethodElement> methods = new Vector<MethodElement>();
+
 		if (methodElements == null) {
 			return methods;
 		}
 
 		for (Element methodElement : methodElements) {
+
 			String id = methodElement.getAttributeValue(ID);
 			MethodElement me = new MethodElement(id);
+			_model.addElement(me);
 
 			if (methodElement.getChild(PARAMS) != null) {
 				List<MethodParamElement> params = parseParams(methodElement.getChild(PARAMS).getChildren());
@@ -203,53 +219,47 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 				MethodReturnElement mre = parseReturnType(methodElement.getChild(RETURN));
 				me.setReturn(mre);
 			} else {
-				throw new RuntimeException("fill me in");
-			}
-
-			if (methodElement.getChild(CALLS) != null) {
-				Collection<String> params = parseCalls(methodElement.getChild(CALLS).getChildren());
-				me.setCalls(params);
+				me.setReturn(new MethodReturnElement(_model.getClass("V")));
 			}
 		}
 
 		return methods;
 	}
 
-	private Collection<String> parseCalls(List<Element> callElements) {
-		Collection<String> calls = new Vector<String>();
-		if (callElements == null) {
-			return calls;
-		}
+	private void parseCall(Element callElement) {
 
-		for (Element callElement : callElements) {
-			String id = callElement.getAttributeValue(ID);
-			calls.add(id);
-		}
+		String sourceID = callElement.getAttributeValue(SOURCE);
+		String targetID = callElement.getAttributeValue(TARGET);
 
-		return calls;
+		MethodElement source = _model.getMethod(sourceID);
+		MethodElement target = _model.getMethod(targetID);
+
+		source.addCallTarget(target);
 	}
 
 	private MethodReturnElement parseReturnType(Element returnElement) {
 
-		String type = returnElement.getAttributeValue(TYPE);
+		String typeID = returnElement.getAttributeValue(ID);
+		ClassElement ce = _model.getClass(typeID);
 
-		MethodReturnElement mre = new MethodReturnElement(type);
+		MethodReturnElement mre = new MethodReturnElement(ce);
 
 		return mre;
 	}
 
 	private Vector<MethodParamElement> parseParams(List<Element> paramElements) {
 		Vector<MethodParamElement> params = new Vector<MethodParamElement>();
+
 		if (paramElements == null) {
 			return params;
 		}
 
 		for (Element paramElement : paramElements) {
-			String id = paramElement.getAttributeValue(ID);
-			String type = paramElement.getAttributeValue(TYPE);
+			String typeId = paramElement.getAttributeValue(ID);
+			ClassElement ce = _model.getClass(typeId);
 			int order = Integer.parseInt(paramElement.getAttributeValue(ORDER));
 
-			MethodParamElement mpe = new MethodParamElement(id, type, order);
+			MethodParamElement mpe = new MethodParamElement(ce, order);
 			params.add(mpe);
 		}
 

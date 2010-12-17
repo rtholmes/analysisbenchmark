@@ -1,10 +1,10 @@
 package ca.uwaterloo.cs.se.bench.model.io;
 
 public interface XMLSchema {
-	public static final String DECLARATIONS= "declarations";
-	public static final String RELATIONSHIPS= "relationships";
-	
-	public static final String CONTAINS= "contains";
+	public static final String DECLARATIONS = "declarations";
+	public static final String RELATIONSHIPS = "relationships";
+
+	public static final String CONTAINS = "contains";
 	public static final String CLASSES = "classes";
 	public static final String CLASS = "ce";
 	public static final String ID = "id";
@@ -27,6 +27,9 @@ public interface XMLSchema {
 	public static final String ANNOTATIONS = "annotations";
 	public static final String ANNOTATION = "annotation";
 	public static final String PARENTS = "parents";
-	public static final String PARENT = "parent";
 	public static final String ORDER = "order";
+	public static final String SOURCE = "s";
+	public static final String TARGET = "t";
+	public static final String PARENT = "p";
+	public static final String CHILD = "c";
 }
