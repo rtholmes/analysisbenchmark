@@ -102,7 +102,6 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 		if (relationshipsElement.getChild(CALLS) != null) {
 			List<Element> callElements = relationshipsElement.getChild(CALLS).getChildren();
 			for (Element callElement : callElements) {
-				// parse call
 				parseCall(callElement);
 			}
 		}
@@ -110,14 +109,14 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 		if (relationshipsElement.getChild(REFERENCES) != null) {
 			List<Element> referenceElements = relationshipsElement.getChild(REFERENCES).getChildren();
 			for (Element refElement : referenceElements) {
-				// parse ref
+				parseReference(refElement);
 			}
 		}
 
 		if (relationshipsElement.getChild(INHERITS) != null) {
 			List<Element> inheritsElements = relationshipsElement.getChild(INHERITS).getChildren();
 			for (Element inheritElement : inheritsElements) {
-				// parse inh
+				parseInheritance(inheritElement);
 			}
 		}
 
@@ -142,6 +141,7 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 		String id = null;
 		boolean isInterface = false;
 		boolean isClass = false;
+		boolean isAbstract = false;
 
 		if (hasAttribute(classElement, ID)) {
 			id = classElement.getAttributeValue(ID);
@@ -155,28 +155,33 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 		if (hasAttribute(classElement, IS_CLASS))
 			isClass = Boolean.parseBoolean(classElement.getAttributeValue(IS_CLASS));
 
+		if (hasAttribute(classElement, IS_ABSTRACT))
+			isAbstract = Boolean.parseBoolean(classElement.getAttributeValue(IS_ABSTRACT));
+
 		if (!_model.hasClass(id)) {
-			ClassElement ce = new ClassElement(id, isInterface, isClass);
+			ClassElement ce = new ClassElement(id, isInterface, isClass, isAbstract);
 			_model.addElement(ce);
 		} else {
 			throw new RuntimeException();
 		}
 	}
 
-	private Collection<AnnotationElement> parseAnnotations(List<Element> annotationElements) {
-		Collection<AnnotationElement> annotations = new Vector<AnnotationElement>();
-		if (annotationElements == null) {
-			return annotations;
-		}
-
-		for (Element annotationElement : annotationElements) {
-			String type = annotationElement.getAttributeValue(TYPE);
-			AnnotationElement ae = new AnnotationElement(type);
-			annotations.add(ae);
-		}
-
-		return annotations;
-	}
+	// private Collection<AnnotationElement> parseAnnotations(List<Element>
+	// annotationElements) {
+	// Collection<AnnotationElement> annotations = new
+	// Vector<AnnotationElement>();
+	// if (annotationElements == null) {
+	// return annotations;
+	// }
+	//
+	// for (Element annotationElement : annotationElements) {
+	// String type = annotationElement.getAttributeValue(TYPE);
+	// AnnotationElement ae = new AnnotationElement(type);
+	// annotations.add(ae);
+	// }
+	//
+	// return annotations;
+	// }
 
 	private Vector<FieldElement> parseFields(List<Element> fieldElements) {
 		Vector<FieldElement> fields = new Vector<FieldElement>();
@@ -187,9 +192,10 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 
 		for (Element fieldElement : fieldElements) {
 			String id = fieldElement.getAttributeValue(ID);
-			String type = fieldElement.getAttributeValue(TYPE);
+			String typeId = fieldElement.getAttributeValue(TYPE);
+			ClassElement ce = _model.getClass(typeId);
 
-			FieldElement fe = new FieldElement(id, type);
+			FieldElement fe = new FieldElement(id, ce);
 			fields.add(fe);
 		}
 
@@ -235,6 +241,28 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 		MethodElement target = _model.getMethod(targetID);
 
 		source.addCallTarget(target);
+	}
+
+	private void parseReference(Element refElement) {
+
+		String sourceID = refElement.getAttributeValue(SOURCE);
+		String targetID = refElement.getAttributeValue(TARGET);
+
+		MethodElement source = _model.getMethod(sourceID);
+		FieldElement target = _model.getField(targetID);
+
+		source.addRefTarget(target);
+	}
+
+	private void parseInheritance(Element inhElement) {
+
+		String childId = inhElement.getAttributeValue(CHILD);
+		String parentId = inhElement.getAttributeValue(PARENT);
+
+		ClassElement child = _model.getClass(childId);
+		ClassElement parent = _model.getClass(parentId);
+
+		child.addParent(parent);
 	}
 
 	private MethodReturnElement parseReturnType(Element returnElement) {

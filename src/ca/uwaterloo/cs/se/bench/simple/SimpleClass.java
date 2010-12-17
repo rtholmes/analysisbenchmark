@@ -5,6 +5,8 @@ import java.util.Vector;
 
 public class SimpleClass {
 
+	private String fieldA;
+
 	public void a1() {
 		a2();
 	}
@@ -116,5 +118,9 @@ public class SimpleClass {
 
 	private boolean m2(String s, int i) {
 		return true;
+	}
+
+	public void n0() {
+		String f = fieldA;
 	}
 }

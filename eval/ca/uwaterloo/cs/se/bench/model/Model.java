@@ -8,6 +8,8 @@ public class Model {
 	Map<String, ClassElement> _classes = new Hashtable<String, ClassElement>();
 	Map<String, MethodElement> _methods = new Hashtable<String, MethodElement>();
 
+	Map<String, FieldElement> _fields = new Hashtable<String, FieldElement>();
+
 	public boolean hasClass(String id) {
 		return _classes.containsKey(id);
 	}
@@ -16,9 +18,13 @@ public class Model {
 		return _methods.containsKey(id);
 	}
 
+	public boolean hasField(String id) {
+		return _fields.containsKey(id);
+	}
+
 	public ClassElement getClass(String id) {
 		if (!hasClass(id)) {
-			throw new RuntimeException("Unknown: "+id);
+			throw new RuntimeException("Unknown: " + id);
 		}
 		return _classes.get(id);
 	}
@@ -37,10 +43,25 @@ public class Model {
 		_methods.put(me.getId(), me);
 	}
 
+	public void addElement(FieldElement fe) {
+		if (hasField(fe.getId())) {
+			throw new RuntimeException();
+		}
+		_fields.put(fe.getId(), fe);
+	}
+
 	public MethodElement getMethod(String id) {
 		if (!hasMethod(id)) {
-			throw new RuntimeException("Unknown: "+id);
+			throw new RuntimeException("Unknown: " + id);
 		}
-		return _methods.get(id);	}
+		return _methods.get(id);
+	}
+
+	public FieldElement getField(String id) {
+		if (!hasField(id)) {
+			throw new RuntimeException("Unknown: " + id);
+		}
+		return _fields.get(id);
+	}
 
 }

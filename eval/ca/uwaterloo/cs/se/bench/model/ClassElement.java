@@ -4,18 +4,17 @@ import java.util.Collection;
 import java.util.Vector;
 
 public class ClassElement extends AnnotatableElement {
-	public ClassElement(String id, boolean isInterface, boolean isClass) {
+	public ClassElement(String id, boolean isInterface, boolean isClass, boolean isAbstract) {
 		_id = id;
 		_isInterface = isInterface;
 		_isClass = isClass;
+		_isAbstract = isAbstract;
 	}
 
 	String _id;
 	String _package;
 
-	Collection<ClassElement> _extends = new Vector<ClassElement>();
-	Collection<ClassElement> _implements = new Vector<ClassElement>();
-
+	Collection<ClassElement> _parents = new Vector<ClassElement>();
 	Collection<FieldElement> _fields = new Vector<FieldElement>();
 	Collection<MethodElement> _methods = new Vector<MethodElement>();
 
@@ -33,6 +32,34 @@ public class ClassElement extends AnnotatableElement {
 
 	public String getId() {
 		return _id;
+	}
+
+	public void addParent(ClassElement parent) {
+		_parents.add(parent);
+	}
+
+	public boolean isInterface() {
+		return _isInterface;
+	}
+
+	public boolean isClass() {
+		return _isClass;
+	}
+
+	public boolean isAbstract() {
+		return _isAbstract;
+	}
+
+	public Collection<ClassElement> getParents() {
+		return _parents;
+	}
+
+	public Collection<FieldElement> getFields() {
+		return _fields;
+	}
+
+	public Collection<MethodElement> getMethods() {
+		return _methods;
 	}
 
 }

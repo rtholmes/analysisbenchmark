@@ -1,10 +1,17 @@
 <dependency_uw>
 	<declarations>
 		<classes>
-			<ce pkg="ca.uwaterloo.cs.se.bench.simple" id="ca.uwaterloo.cs.se.bench.simple.SimpleClass"
-				isInt="false" isAbs="false" isClass="true" />
+			<ce pkg="ca.uwaterloo.cs.se.bench.simple" id="ca.uwaterloo.cs.se.bench.simple.SimpleClass" isInt="false" isAbs="false"
+				isClass="true" />
+			<ce pkg="ca.uwaterloo.cs.se.bench.simple" id="ca.uwaterloo.cs.se.bench.simple.InhInterface" isInt="true" isAbs="false"
+				isClass="false" />
+			<ce pkg="ca.uwaterloo.cs.se.bench.simple" id="ca.uwaterloo.cs.se.bench.simple.InhAbstractClass" isInt="false" isAbs="true"
+				isClass="false" />
+			<ce pkg="ca.uwaterloo.cs.se.bench.simple" id="ca.uwaterloo.cs.se.bench.simple.InhClassA" isInt="false" isAbs="false"
+				isClass="true" />
 			<ce id="java.util.Collection" />
 			<ce id="java.util.Vector" />
+			<ce id="java.lang.String" />
 			<ce id="V" />
 		</classes>
 		<contains>
@@ -21,6 +28,7 @@
 						<param id="java.util.Collection" order="0" />
 					</params>
 				</me>
+				<fe id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.fieldA" type="java.lang.String" />
 			</ce>
 			<ce id="java.util.Vector">
 				<me id="java.util.Vector.Vector()" />
@@ -33,14 +41,15 @@
 			<call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.a1()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.a2()" />
 			<call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.b1()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.b2()" />
 			<call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.b2()" t="java.util.Vector.Vector()" />
-			<call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f1()"
-				t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection;)" />
+			<call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f1()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection;)" />
 		</calls>
 		<references>
 			<!-- <ref s="" t="" /> -->
 		</references>
 		<inherits>
 			<!-- <inh p="" c="" /> -->
+			<inh p="ca.uwaterloo.cs.se.bench.simple.InhInterface" c="ca.uwaterloo.cs.se.bench.simple.InhAbstractClass" />
+			<inh p="ca.uwaterloo.cs.se.bench.simple.InhAbstractClass" c="ca.uwaterloo.cs.se.bench.simple.InhClassA" />
 		</inherits>
 	</relationships>
 

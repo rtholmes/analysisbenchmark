@@ -3,15 +3,14 @@ package ca.uwaterloo.cs.se.bench.model;
 import java.util.Vector;
 
 public class FieldElement extends AnnotatableElement {
-	public FieldElement(String id, String type) {
+	public FieldElement(String id, ClassElement type) {
 		_id = id;
 		_type = type;
 	}
 
 	String _id; // field name
 
-	// ClassElement _type;
-	String _type;
+	ClassElement _type;
 
 	// TODO: field generics
 	Vector<ClassElement> _generics = new Vector<ClassElement>();
@@ -21,5 +20,9 @@ public class FieldElement extends AnnotatableElement {
 
 	// TODO: field multidimensional ararys
 	int _arrayDimensions = -1;
+
+	public String getId() {
+		return _id;
+	}
 
 }
