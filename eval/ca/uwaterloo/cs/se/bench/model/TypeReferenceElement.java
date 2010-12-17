@@ -19,4 +19,15 @@ public class TypeReferenceElement {
 
 	// TODO: multidimensional array returns
 	int _arrayDimensions = -1;
+
+	public boolean equals(Object o) {
+		if (o != null && o instanceof TypeReferenceElement) {
+			return ((TypeReferenceElement) o).getType().equals(getType());
+		}
+		return false;
+	}
+
+	public ClassElement getType() {
+		return _type;
+	}
 }

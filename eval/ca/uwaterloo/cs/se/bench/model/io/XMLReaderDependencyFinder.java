@@ -2,7 +2,6 @@ package ca.uwaterloo.cs.se.bench.model.io;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Collection;
 import java.util.List;
 import java.util.Vector;
 
@@ -16,7 +15,6 @@ import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
 
-import ca.uwaterloo.cs.se.bench.model.AnnotationElement;
 import ca.uwaterloo.cs.se.bench.model.ClassElement;
 import ca.uwaterloo.cs.se.bench.model.FieldElement;
 import ca.uwaterloo.cs.se.bench.model.MethodElement;
@@ -142,6 +140,7 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 		boolean isInterface = false;
 		boolean isClass = false;
 		boolean isAbstract = false;
+		boolean isExternal = false;
 
 		if (hasAttribute(classElement, ID)) {
 			id = classElement.getAttributeValue(ID);
@@ -158,8 +157,11 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 		if (hasAttribute(classElement, IS_ABSTRACT))
 			isAbstract = Boolean.parseBoolean(classElement.getAttributeValue(IS_ABSTRACT));
 
+		if (hasAttribute(classElement, IS_EXTERNAL))
+			isExternal = Boolean.parseBoolean(classElement.getAttributeValue(IS_EXTERNAL));
+
 		if (!_model.hasClass(id)) {
-			ClassElement ce = new ClassElement(id, isInterface, isClass, isAbstract);
+			ClassElement ce = new ClassElement(id, isExternal, isInterface, isClass, isAbstract);
 			_model.addElement(ce);
 		} else {
 			throw new RuntimeException();
@@ -197,6 +199,7 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 
 			FieldElement fe = new FieldElement(id, ce);
 			fields.add(fe);
+			_model.addField(fe);
 		}
 
 		return fields;
@@ -214,6 +217,7 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 
 			String id = methodElement.getAttributeValue(ID);
 			MethodElement me = new MethodElement(id);
+			methods.add(me);
 			_model.addElement(me);
 
 			if (methodElement.getChild(PARAMS) != null) {

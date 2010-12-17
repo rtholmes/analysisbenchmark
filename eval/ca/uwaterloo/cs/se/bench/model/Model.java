@@ -64,4 +64,11 @@ public class Model {
 		return _fields.get(id);
 	}
 
+	public void addField(FieldElement fe) {
+		if (hasField(fe.getId())) {
+			throw new RuntimeException();
+		}
+		_fields.put(fe.getId(), fe);
+	}
+
 }

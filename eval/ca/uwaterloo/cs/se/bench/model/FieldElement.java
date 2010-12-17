@@ -25,4 +25,7 @@ public class FieldElement extends AnnotatableElement {
 		return _id;
 	}
 
+	public ClassElement getType() {
+		return _type;
+	}
 }

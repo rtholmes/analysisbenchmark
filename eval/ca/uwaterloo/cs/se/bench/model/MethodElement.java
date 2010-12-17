@@ -36,4 +36,24 @@ public class MethodElement extends AnnotatableElement {
 	public void addRefTarget(FieldElement field) {
 		_references.add(field);
 	}
+
+	public String toString() {
+		return getId();
+	}
+
+	public Collection<MethodElement> getCalls() {
+		return _calls;
+	}
+
+	public MethodReturnElement getReturnElement() {
+		return _return;
+	}
+
+	public Collection<FieldElement> getReferences() {
+		return _references;
+	}
+
+	public List<MethodParamElement> getParameters() {
+		return _params;
+	}
 }

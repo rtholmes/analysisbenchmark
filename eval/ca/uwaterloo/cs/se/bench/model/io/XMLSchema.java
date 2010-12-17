@@ -11,6 +11,7 @@ public interface XMLSchema {
 	public static final String IS_INTERFACE = "isInt";
 	public static final String IS_CLASS = "isClass";
 	public static final String IS_ABSTRACT = "isAbs";
+	public static final String IS_EXTERNAL= "isExt";
 	public static final String PARAMS = "params";
 	public static final String PARAM = "param";
 	public static final String RETURN = "return";

@@ -9,10 +9,10 @@
 				isClass="false" />
 			<ce pkg="ca.uwaterloo.cs.se.bench.simple" id="ca.uwaterloo.cs.se.bench.simple.InhClassA" isInt="false" isAbs="false"
 				isClass="true" />
-			<ce id="java.util.Collection" />
-			<ce id="java.util.Vector" />
-			<ce id="java.lang.String" />
-			<ce id="V" />
+			<ce id="java.util.Collection" isExt="true"/>
+			<ce id="java.util.Vector" isExt="true"/>
+			<ce id="java.lang.String" isExt="true"/>
+			<ce id="V" isExt="true"/>
 		</classes>
 		<contains>
 			<ce id="ca.uwaterloo.cs.se.bench.simple.SimpleClass">
@@ -28,6 +28,7 @@
 						<param id="java.util.Collection" order="0" />
 					</params>
 				</me>
+				<me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.n0()" />
 				<fe id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.fieldA" type="java.lang.String" />
 			</ce>
 			<ce id="java.util.Vector">
@@ -45,6 +46,7 @@
 		</calls>
 		<references>
 			<!-- <ref s="" t="" /> -->
+			 <ref s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.n0()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.fieldA" />
 		</references>
 		<inherits>
 			<!-- <inh p="" c="" /> -->
