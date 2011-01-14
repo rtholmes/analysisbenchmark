@@ -12,6 +12,17 @@ public class ClassElement extends AnnotatableElement {
 		_isAbstract = isAbstract;
 	}
 
+	/**
+	 * If a class is external we don't have additional attributes for it.
+	 * 
+	 * @param id
+	 * @param isExternal
+	 */
+	public ClassElement(String id, boolean isExternal) {
+		_id = id;
+		_isExternal = isExternal;
+	}
+
 	String _id;
 	String _package;
 
