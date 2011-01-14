@@ -41,6 +41,7 @@
 			<include name="*.jar" />
 		</fileset>
 		<pathelement path="${build}" />
+		<pathelement path="${build.eval}" />
 	</path>
 
 	<path id="classpath.test">
@@ -77,10 +78,8 @@
 		<!-- Compile the java code from ${src} into ${build} -->
 		<javac srcdir="${src}" destdir="${build}" includeantruntime="false" classpathref="classpath" />
 		<javac srcdir="${eval}" destdir="${build.eval}" includeantruntime="false" classpathref="classpath" />
-	</target>
-
-	<target name="compile-test" depends="compile" description="compile the tests">
 		<javac srcdir="${src.test}" destdir="${build.test}" includeantruntime="false" classpathref="classpath" />
+		<javac srcdir="${eval.test}" destdir="${eval.test}" includeantruntime="false" classpathref="classpath" />
 	</target>
 
 
@@ -92,7 +91,7 @@
 		<jar jarfile="${dist}/lib/AnalysisBenchamark-${DSTAMP}.jar" basedir="${build}" />
 	</target>
 
-	<target name="test" depends="compile-test" description="perform tests">
+	<target name="test" depends="compile" description="perform tests">
 		<junit printsummary="yes" haltonfailure="no" fork="yes" forkmode="once">
 			<!--<jvmarg value="-Djava.compiler=NONE"/>-->
 
@@ -108,7 +107,7 @@
 		</junit>
 	</target>
 
-	<target name="dynamic" depends="compile-test" description="perform tests">
+	<target name="dynamic" depends="compile" description="perform tests">
 		<junit printsummary="yes" haltonfailure="no" fork="yes" forkmode="once">
 			<!--<jvmarg value="-Djava.compiler=NONE"/>-->
 
