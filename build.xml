@@ -5,7 +5,10 @@
 	<!-- set global properties for this build -->
 	<property name="src" location="src" />
 	<property name="src.test" location="test" />
+	<property name="eval" location="eval" />
+	<property name="eval.test" location="evalTest" />
 	<property name="build" location="build" />
+	<property name="build.eval" location="buildEval" />
 	<property name="build.test" location="buildTests" />
 	<property name="dist" location="dist" />
 	<property name="lib" location="lib" />
@@ -21,6 +24,7 @@
 
 	<path id="dependencyfinder">
 		<pathelement location="${dependencyfinder.home}/classes" />
+		<pathelement path="${build.eval}" />
 		<pathelement location="${lib}/DependencyFinder_dev.jar" />
 		<!--
 		should be in /lib/DependencyFinder_dev.jar now
@@ -51,6 +55,7 @@
 		<!-- Create the build directory structure used by compile -->
 		<mkdir dir="${build}" />
 		<mkdir dir="${build.test}" />
+		<mkdir dir="${build.eval}" />
 		<mkdir dir="${report.staticAnalysis}" />
 		<mkdir dir="${report.dynamicAnalysis}" />
 		<mkdir dir="${report.test}" />
@@ -60,6 +65,7 @@
 		<!-- Delete the ${build} and ${dist} directory trees -->
 		<delete dir="${build}" />
 		<delete dir="${build.test}" />
+		<delete dir="${build.eval}" />
 		<delete dir="${dist}" />
 		<delete dir="${report.staticAnalysis}" />
 		<delete dir="${report.dynamicAnalysis}" />
@@ -70,6 +76,7 @@
 	<target name="compile" depends="init" description="compile the source">
 		<!-- Compile the java code from ${src} into ${build} -->
 		<javac srcdir="${src}" destdir="${build}" includeantruntime="false" classpathref="classpath" />
+		<javac srcdir="${eval}" destdir="${build.eval}" includeantruntime="false" classpathref="classpath" />
 	</target>
 
 	<target name="compile-test" depends="compile" description="compile the tests">
