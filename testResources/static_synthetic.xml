@@ -1,32 +1,58 @@
 <dependency_uw>
-	<ce pkg="ca.uwaterloo.cs.se.bench.simple" id="ca.uwaterloo.cs.se.bench.simple.SimpleClass"
-		isInt="false" isAbs="false" isClass="true">
-		<me id="a1()">
-			<params />
-			<return />
-			<calls>
-				<call id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.a2()" />
-			</calls>
-		</me>
-		<me id="a2()">
-			<params />
-			<return />
-			<calls />
-		</me>
-		<me id="f1()">
-			<params />
-			<return />
-			<calls>
-				<call
-					id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection;)" />
-			</calls>
-		</me>
-		<me id="f2()">
-			<params>
-				<param id="collection" type="java.util.Collection" order="0" />
-			</params>
-			<return />
-			<calls />
-		</me>
-	</ce>
+	<declarations>
+		<classes>
+			<ce pkg="ca.uwaterloo.cs.se.bench.simple" id="ca.uwaterloo.cs.se.bench.simple.SimpleClass" isInt="false" isAbs="false"
+				isClass="true" />
+			<ce pkg="ca.uwaterloo.cs.se.bench.simple" id="ca.uwaterloo.cs.se.bench.simple.InhInterface" isInt="true" isAbs="false"
+				isClass="false" />
+			<ce pkg="ca.uwaterloo.cs.se.bench.simple" id="ca.uwaterloo.cs.se.bench.simple.InhAbstractClass" isInt="false" isAbs="true"
+				isClass="false" />
+			<ce pkg="ca.uwaterloo.cs.se.bench.simple" id="ca.uwaterloo.cs.se.bench.simple.InhClassA" isInt="false" isAbs="false"
+				isClass="true" />
+			<ce id="java.util.Collection" isExt="true"/>
+			<ce id="java.util.Vector" isExt="true"/>
+			<ce id="java.lang.String" isExt="true"/>
+			<ce id="V" isExt="true"/>
+		</classes>
+		<contains>
+			<ce id="ca.uwaterloo.cs.se.bench.simple.SimpleClass">
+				<me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.a1()" />
+				<me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.a2()" />
+				<me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.b1()" />
+				<me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.b2()">
+					<return id="java.util.Vector" />
+				</me>
+				<me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f1()" />
+				<me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection;)">
+					<params>
+						<param id="java.util.Collection" order="0" />
+					</params>
+				</me>
+				<me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.n0()" />
+				<fe id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.fieldA" type="java.lang.String" />
+			</ce>
+			<ce id="java.util.Vector">
+				<me id="java.util.Vector.Vector()" />
+			</ce>
+		</contains>
+	</declarations>
+	<relationships>
+		<calls>
+			<!-- <call s="" t="" /> -->
+			<call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.a1()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.a2()" />
+			<call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.b1()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.b2()" />
+			<call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.b2()" t="java.util.Vector.Vector()" />
+			<call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f1()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection;)" />
+		</calls>
+		<references>
+			<!-- <ref s="" t="" /> -->
+			 <ref s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.n0()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.fieldA" />
+		</references>
+		<inherits>
+			<!-- <inh p="" c="" /> -->
+			<inh p="ca.uwaterloo.cs.se.bench.simple.InhInterface" c="ca.uwaterloo.cs.se.bench.simple.InhAbstractClass" />
+			<inh p="ca.uwaterloo.cs.se.bench.simple.InhAbstractClass" c="ca.uwaterloo.cs.se.bench.simple.InhClassA" />
+		</inherits>
+	</relationships>
+
 </dependency_uw>

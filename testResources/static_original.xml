@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE dependencies SYSTEM "http://depfind.sourceforge.net/dtd/dependencies.dtd">
+
+<dependencies>
+    <package confirmed="no">
+        <name></name>
+        <class confirmed="no">
+            <name>I[][]</name>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.d1()</inbound>
+        </class>
+    </package>
+    <package confirmed="yes">
+        <name>ca.uwaterloo.cs.se.bench.simple</name>
+        <class confirmed="yes">
+            <name>ca.uwaterloo.cs.se.bench.simple.AnnotationClass</name>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.AnnotationClass.AnnotationClass()</name>
+                <outbound type="feature" confirmed="no">java.lang.Object.Object()</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.AnnotationClass.hasJDKAnnotation()</name>
+                <outbound type="class" confirmed="no">java.lang.Deprecated</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.AnnotationClass.hasJUnitAnnotation()</name>
+                <outbound type="class" confirmed="no">org.junit.Test</outbound>
+            </feature>
+        </class>
+        <class confirmed="yes">
+            <name>ca.uwaterloo.cs.se.bench.simple.AnonClass</name>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass$1.AnonClass$1(ca.uwaterloo.cs.se.bench.simple.AnonClass)</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass$1.this$0</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass$2.AnonClass$2(ca.uwaterloo.cs.se.bench.simple.AnonClass)</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass$2.this$0</inbound>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.AnonClass.AnonClass()</name>
+                <outbound type="feature" confirmed="no">java.lang.Object.Object()</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleAnonymous()</name>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass$1.AnonClass$1(ca.uwaterloo.cs.se.bench.simple.AnonClass)</outbound>
+                <outbound type="class" confirmed="no">java.lang.Object</outbound>
+                <outbound type="feature" confirmed="no">java.util.Collections.sort(java.util.List, java.util.Comparator)</outbound>
+                <outbound type="class" confirmed="no">java.util.Comparator</outbound>
+                <outbound type="class" confirmed="no">java.util.List</outbound>
+                <outbound type="feature" confirmed="no">java.util.Vector.Vector()</outbound>
+                <outbound type="feature" confirmed="no">java.util.Vector.add(java.lang.Object)</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleGenericAnonymous()</name>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass$2.AnonClass$2(ca.uwaterloo.cs.se.bench.simple.AnonClass)</outbound>
+                <outbound type="class" confirmed="no">java.lang.Object</outbound>
+                <outbound type="feature" confirmed="no">java.util.Collections.sort(java.util.List, java.util.Comparator)</outbound>
+                <outbound type="class" confirmed="no">java.util.Comparator</outbound>
+                <outbound type="class" confirmed="no">java.util.List</outbound>
+                <outbound type="feature" confirmed="no">java.util.Vector.Vector()</outbound>
+                <outbound type="feature" confirmed="no">java.util.Vector.add(java.lang.Object)</outbound>
+            </feature>
+        </class>
+        <class confirmed="yes">
+            <name>ca.uwaterloo.cs.se.bench.simple.AnonClass$1</name>
+            <outbound type="class" confirmed="no">java.util.Comparator</outbound>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.AnonClass$1.AnonClass$1(ca.uwaterloo.cs.se.bench.simple.AnonClass)</name>
+                <outbound type="class" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass</outbound>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass$1.this$0</outbound>
+                <outbound type="feature" confirmed="no">java.lang.Object.Object()</outbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleAnonymous()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.AnonClass$1.compare(java.lang.Object, java.lang.Object)</name>
+                <outbound type="class" confirmed="no">java.lang.Object</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.AnonClass$1.this$0</name>
+                <outbound type="class" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass</outbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass$1.AnonClass$1(ca.uwaterloo.cs.se.bench.simple.AnonClass)</inbound>
+            </feature>
+        </class>
+        <class confirmed="yes">
+            <name>ca.uwaterloo.cs.se.bench.simple.AnonClass$2</name>
+            <outbound type="class" confirmed="no">java.util.Comparator</outbound>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.AnonClass$2.AnonClass$2(ca.uwaterloo.cs.se.bench.simple.AnonClass)</name>
+                <outbound type="class" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass</outbound>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass$2.this$0</outbound>
+                <outbound type="feature" confirmed="no">java.lang.Object.Object()</outbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleGenericAnonymous()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.AnonClass$2.compare(java.lang.Object, java.lang.Object)</name>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass$2.compare(java.lang.String, java.lang.String)</outbound>
+                <outbound type="class" confirmed="no">java.lang.Object</outbound>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.AnonClass$2.compare(java.lang.String, java.lang.String)</name>
+                <outbound type="feature" confirmed="no">java.lang.String.compareTo(java.lang.String)</outbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass$2.compare(java.lang.Object, java.lang.Object)</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.AnonClass$2.this$0</name>
+                <outbound type="class" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass</outbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass$2.AnonClass$2(ca.uwaterloo.cs.se.bench.simple.AnonClass)</inbound>
+            </feature>
+        </class>
+        <class confirmed="yes">
+            <name>ca.uwaterloo.cs.se.bench.simple.InhAbstractClass</name>
+            <outbound type="class" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.InhInterface</outbound>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.InhAbstractClass()</name>
+                <outbound type="feature" confirmed="no">java.lang.Object.Object()</outbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.InhClassA.InhClassA()</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.InhClassB.InhClassB()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.abstractMethodA()</name>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.abstractMethodB()</name>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.interfaceMethodA()</name>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.interfaceMethodC()</name>
+            </feature>
+        </class>
+        <class confirmed="yes">
+            <name>ca.uwaterloo.cs.se.bench.simple.InhClassA</name>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.InhClassA.InhClassA()</name>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.InhAbstractClass()</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.InhClassA.abstractMethodA()</name>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.InhClassA.interfaceMethodA()</name>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.InhClassA.interfaceMethodB()</name>
+            </feature>
+        </class>
+        <class confirmed="yes">
+            <name>ca.uwaterloo.cs.se.bench.simple.InhClassB</name>
+            <outbound type="class" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.InhInterface</outbound>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.InhClassB.InhClassB()</name>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.InhAbstractClass()</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.InhClassB.abstractMethodA()</name>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.InhClassB.interfaceMethodA()</name>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.InhClassB.interfaceMethodB()</name>
+            </feature>
+        </class>
+        <class confirmed="yes">
+            <name>ca.uwaterloo.cs.se.bench.simple.InhClassC</name>
+            <outbound type="class" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.InhInterface</outbound>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.InhClassC.InhClassC()</name>
+                <outbound type="feature" confirmed="no">java.lang.Object.Object()</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.InhClassC.interfaceMethodA()</name>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.InhClassC.interfaceMethodB()</name>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.InhClassC.interfaceMethodC()</name>
+            </feature>
+        </class>
+        <class confirmed="yes">
+            <name>ca.uwaterloo.cs.se.bench.simple.InhInterface</name>
+            <outbound type="class" confirmed="no">java.lang.Object</outbound>
+            <inbound type="class" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.InhAbstractClass</inbound>
+            <inbound type="class" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.InhClassB</inbound>
+            <inbound type="class" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.InhClassC</inbound>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.InhInterface.interfaceMethodA()</name>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.InhInterface.interfaceMethodB()</name>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.InhInterface.interfaceMethodC()</name>
+            </feature>
+        </class>
+        <class confirmed="yes">
+            <name>ca.uwaterloo.cs.se.bench.simple.NestedClass</name>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.NestedClass$InnerClass(ca.uwaterloo.cs.se.bench.simple.NestedClass)</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.this$0</inbound>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.NestedClass.NestedClass()</name>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedInitializedStringVector</outbound>
+                <outbound type="feature" confirmed="no">java.lang.Object.Object()</outbound>
+                <outbound type="feature" confirmed="no">java.util.Vector.Vector()</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedInitializedStringVector</name>
+                <outbound type="class" confirmed="no">java.util.Vector</outbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass.NestedClass()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedMethodA()</name>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedMethodB()</name>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedMethodC()</name>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.innerMethodC()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedString</name>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedStringVector</name>
+                <outbound type="class" confirmed="no">java.util.Vector</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedVector</name>
+                <outbound type="class" confirmed="no">java.util.Vector</outbound>
+            </feature>
+        </class>
+        <class confirmed="yes">
+            <name>ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass</name>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.NestedClass$InnerClass$InnerInnerClass(ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass)</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.this$1</inbound>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.NestedClass$InnerClass(ca.uwaterloo.cs.se.bench.simple.NestedClass)</name>
+                <outbound type="class" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass</outbound>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.this$0</outbound>
+                <outbound type="feature" confirmed="no">java.lang.Object.Object()</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.innerMethodA()</name>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.innerMethodB()</name>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodB()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.innerMethodC()</name>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.this$0</outbound>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedMethodC()</outbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodC()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.this$0</name>
+                <outbound type="class" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass</outbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.NestedClass$InnerClass(ca.uwaterloo.cs.se.bench.simple.NestedClass)</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.innerMethodC()</inbound>
+            </feature>
+        </class>
+        <class confirmed="yes">
+            <name>ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass</name>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.NestedClass$InnerClass$InnerInnerClass(ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass)</name>
+                <outbound type="class" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass</outbound>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.this$1</outbound>
+                <outbound type="feature" confirmed="no">java.lang.Object.Object()</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodA()</name>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodB()</name>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.this$1</outbound>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.innerMethodB()</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodC()</name>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.this$1</outbound>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.innerMethodC()</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.this$1</name>
+                <outbound type="class" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass</outbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.NestedClass$InnerClass$InnerInnerClass(ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass)</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodB()</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodC()</inbound>
+            </feature>
+        </class>
+        <class confirmed="yes">
+            <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass</name>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.SimpleClass()</name>
+                <outbound type="feature" confirmed="no">java.lang.Object.Object()</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.a1()</name>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.a2()</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.a2()</name>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.a1()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.b1()</name>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.b2()</outbound>
+                <outbound type="class" confirmed="no">java.util.Vector</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.b2()</name>
+                <outbound type="feature" confirmed="no">java.util.Vector.Vector()</outbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.b1()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.c1()</name>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.c2(java.lang.String)</outbound>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.c2(java.lang.String)</name>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.c1()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.d1()</name>
+                <outbound type="class" confirmed="no">I[][]</outbound>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.d2(java.lang.String, int[], int[][])</outbound>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.d2(java.lang.String, int[], int[][])</name>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.d1()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.e1()</name>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.e2(java.util.Vector)</outbound>
+                <outbound type="feature" confirmed="no">java.util.Vector.Vector()</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.e2(java.util.Vector)</name>
+                <outbound type="class" confirmed="no">java.util.Vector</outbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.e1()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.f1()</name>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection)</outbound>
+                <outbound type="class" confirmed="no">java.util.Collection</outbound>
+                <outbound type="feature" confirmed="no">java.util.Vector.Vector()</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection)</name>
+                <outbound type="class" confirmed="no">java.util.Collection</outbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.f1()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.g1()</name>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.g2(java.util.Collection)</outbound>
+                <outbound type="class" confirmed="no">java.util.Collection</outbound>
+                <outbound type="feature" confirmed="no">java.util.Vector.Vector()</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.g2(java.util.Collection)</name>
+                <outbound type="class" confirmed="no">java.util.Collection</outbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.g1()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.h1()</name>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.h2()</outbound>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.h2()</name>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.h1()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.i1()</name>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.i2()</outbound>
+                <outbound type="class" confirmed="no">java.util.Vector</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.i2()</name>
+                <outbound type="feature" confirmed="no">java.util.Vector.Vector()</outbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.i1()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.j1()</name>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.j2()</outbound>
+                <outbound type="class" confirmed="no">java.util.Collection</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.j2()</name>
+                <outbound type="class" confirmed="no">java.util.Collection</outbound>
+                <outbound type="feature" confirmed="no">java.util.Vector.Vector()</outbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.j1()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.k1()</name>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.k2(java.util.Vector)</outbound>
+                <outbound type="feature" confirmed="no">java.util.Vector.Vector()</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.k2(java.util.Vector)</name>
+                <outbound type="class" confirmed="no">java.util.Vector</outbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.k1()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.l1()</name>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.l2(java.util.Collection)</outbound>
+                <outbound type="class" confirmed="no">java.util.Collection</outbound>
+                <outbound type="feature" confirmed="no">java.util.Vector.Vector()</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.l2(java.util.Collection)</name>
+                <outbound type="class" confirmed="no">java.util.Collection</outbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.l1()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.m1()</name>
+                <outbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.m2(java.lang.String, int)</outbound>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>ca.uwaterloo.cs.se.bench.simple.SimpleClass.m2(java.lang.String, int)</name>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.m1()</inbound>
+            </feature>
+        </class>
+    </package>
+    <package confirmed="no">
+        <name>java.lang</name>
+        <class confirmed="no">
+            <name>java.lang.Deprecated</name>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnnotationClass.hasJDKAnnotation()</inbound>
+        </class>
+        <class confirmed="no">
+            <name>java.lang.Object</name>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass$1.compare(java.lang.Object, java.lang.Object)</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass$2.compare(java.lang.Object, java.lang.Object)</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleAnonymous()</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleGenericAnonymous()</inbound>
+            <inbound type="class" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.InhInterface</inbound>
+            <feature confirmed="no">
+                <name>java.lang.Object.Object()</name>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnnotationClass.AnnotationClass()</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass$1.AnonClass$1(ca.uwaterloo.cs.se.bench.simple.AnonClass)</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass$2.AnonClass$2(ca.uwaterloo.cs.se.bench.simple.AnonClass)</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass.AnonClass()</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.InhAbstractClass()</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.InhClassC.InhClassC()</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.NestedClass$InnerClass$InnerInnerClass(ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass)</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.NestedClass$InnerClass(ca.uwaterloo.cs.se.bench.simple.NestedClass)</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass.NestedClass()</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.SimpleClass()</inbound>
+            </feature>
+        </class>
+        <class confirmed="no">
+            <name>java.lang.String</name>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass$2.compare(java.lang.Object, java.lang.Object)</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedString</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.c1()</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.c2(java.lang.String)</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.d1()</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.d2(java.lang.String, int[], int[][])</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.h1()</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.h2()</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.m1()</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.m2(java.lang.String, int)</inbound>
+            <feature confirmed="no">
+                <name>java.lang.String.compareTo(java.lang.String)</name>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass$2.compare(java.lang.String, java.lang.String)</inbound>
+            </feature>
+        </class>
+    </package>
+    <package confirmed="no">
+        <name>java.util</name>
+        <class confirmed="no">
+            <name>java.util.Collection</name>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.f1()</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection)</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.g1()</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.g2(java.util.Collection)</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.j1()</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.j2()</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.l1()</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.l2(java.util.Collection)</inbound>
+        </class>
+        <class confirmed="no">
+            <name>java.util.Collections</name>
+            <feature confirmed="no">
+                <name>java.util.Collections.sort(java.util.List, java.util.Comparator)</name>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleAnonymous()</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleGenericAnonymous()</inbound>
+            </feature>
+        </class>
+        <class confirmed="no">
+            <name>java.util.Comparator</name>
+            <inbound type="class" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass$1</inbound>
+            <inbound type="class" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass$2</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleAnonymous()</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleGenericAnonymous()</inbound>
+        </class>
+        <class confirmed="no">
+            <name>java.util.List</name>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleAnonymous()</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleGenericAnonymous()</inbound>
+        </class>
+        <class confirmed="no">
+            <name>java.util.Vector</name>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedInitializedStringVector</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedStringVector</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedVector</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.b1()</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.e2(java.util.Vector)</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.i1()</inbound>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.k2(java.util.Vector)</inbound>
+            <feature confirmed="no">
+                <name>java.util.Vector.Vector()</name>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleAnonymous()</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleGenericAnonymous()</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.NestedClass.NestedClass()</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.b2()</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.e1()</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.f1()</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.g1()</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.i2()</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.j2()</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.k1()</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.SimpleClass.l1()</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>java.util.Vector.add(java.lang.Object)</name>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleAnonymous()</inbound>
+                <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleGenericAnonymous()</inbound>
+            </feature>
+        </class>
+    </package>
+    <package confirmed="no">
+        <name>org.junit</name>
+        <class confirmed="no">
+            <name>org.junit.Test</name>
+            <inbound type="feature" confirmed="yes">ca.uwaterloo.cs.se.bench.simple.AnnotationClass.hasJUnitAnnotation()</inbound>
+        </class>
+    </package>
+</dependencies>
