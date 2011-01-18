@@ -142,6 +142,22 @@
 		<classpath refid="dependencyfinder" />
 	</taskdef>
 
+	<target name="staticTest" depends="static" description="Validate static analyses">
+		<junit printsummary="yes" haltonfailure="yes" fork="yes" forkmode="once">
+			<!--<jvmarg value="-Djava.compiler=NONE"/>-->
+
+			<classpath refid="classpath.test" />
+
+			<formatter type="plain" />
+
+			<batchtest todir="${report.test}">
+				<fileset dir="${eval.test}">
+					<include name="**/*.java" />
+				</fileset>
+			</batchtest>
+		</junit>
+	</target>
+
 	<target name="static" depends="compile" description="perform static analyses">
 
 		<dependencyextractor destfile="${report.staticAnalysis}/static-${DSTAMP}_${TSTAMP}.xml" xml="yes" minimize="yes">
