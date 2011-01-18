@@ -3,20 +3,23 @@
         Benchmark program for testing static analyses. Adapted from Martin Robillard's JayFXBenchmark.
     </description>
 
+	<property name="code" location="code" />
+	<property name="build" location="build" />
+
 
 	<!-- sample code / tests for running sample code (for dynamic analyses) -->
-	<property name="src" location="src" />
-	<property name="src.test" location="srcTest" />
+	<property name="src" location="${code}/src" />
+	<property name="src.test" location="${code}/srcTest" />
 
 	<!-- eval code / tests for analysis validation -->
-	<property name="eval" location="eval" />
-	<property name="eval.test" location="evalTest" />
+	<property name="eval" location="${code}/eval" />
+	<property name="eval.test" location="${code}/evalTest" />
 
 	<!-- build directories -->
-	<property name="build.src" location="buildSrc" />
-	<property name="build.srcTest" location="buildSrcTest" />
-	<property name="build.eval" location="buildEval" />
-	<property name="build.evalTest" location="buildEvalTest" />
+	<property name="build.src" location="${build}/src" />
+	<property name="build.srcTest" location="${build}/srcTest" />
+	<property name="build.eval" location="${build}/eval" />
+	<property name="build.evalTest" location="${build}/evalTest" />
 
 	<property name="dist" location="dist" />
 	<property name="lib" location="lib" />
@@ -69,6 +72,7 @@
 		<!-- Create the time stamp -->
 		<tstamp />
 		<!-- Create the build directory structure used by compile -->
+		<mkdir dir="${build}" />
 		<mkdir dir="${build.src}" />
 		<mkdir dir="${build.srcTest}" />
 		<mkdir dir="${build.eval}" />
@@ -80,10 +84,7 @@
 
 	<target name="clean" description="clean up">
 		<!-- Delete the ${build} and ${dist} directory trees -->
-		<delete dir="${build.src}" />
-		<delete dir="${build.srcTest}" />
-		<delete dir="${build.eval}" />
-		<delete dir="${build.evalTest}" />
+		<delete dir="${build}" />
 		<delete dir="${dist}" />
 		<delete dir="${report.staticAnalysis}" />
 		<delete dir="${report.dynamicAnalysis}" />
@@ -107,7 +108,7 @@
 
 	<target name="jar" depends="compile" description="Packages JAR file and copies to depfind_uw for testing">
 		<jar jarfile="${jarFile}">
-			<zipfileset dir="${build}" prefix="" includes="**/*.class" />
+			<zipfileset dir="${build.src}" prefix="" includes="**/*.class" />
 		</jar>
 		<copy file="${jarFile}" tofile="${depfindDir}/input.jar" overwrite="yes" />
 	</target>
@@ -117,7 +118,7 @@
 		<mkdir dir="${dist}/lib" />
 
 		<!-- Put everything in ${build} into the AnalysisBenchmark-${DSTAMP}.jar file -->
-		<jar jarfile="${dist}/lib/AnalysisBenchamark-${DSTAMP}.jar" basedir="${build}" />
+		<jar jarfile="${dist}/lib/AnalysisBenchamark-${DSTAMP}.jar" basedir="${build.src}" />
 	</target>
 
 	<target name="test" depends="compile" description="perform tests">
@@ -184,7 +185,7 @@
 		<dependencyextractor destfile="${report.staticAnalysis}/static-${DSTAMP}_${TSTAMP}.xml" xml="yes" minimize="yes">
 			<path>
 				<!-- <pathelement location="."/> -->
-				<pathelement location="${build}" />
+				<pathelement location="${build.src}" />
 			</path>
 		</dependencyextractor>
 
