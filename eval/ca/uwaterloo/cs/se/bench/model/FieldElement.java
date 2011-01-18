@@ -3,9 +3,10 @@ package ca.uwaterloo.cs.se.bench.model;
 import java.util.Vector;
 
 public class FieldElement extends AnnotatableElement {
-	public FieldElement(String id, ClassElement type) {
+	public FieldElement(String id, boolean isExternal, ClassElement type) {
 		_id = id;
 		_type = type;
+		_isExternal = isExternal;
 	}
 
 	String _id; // field name

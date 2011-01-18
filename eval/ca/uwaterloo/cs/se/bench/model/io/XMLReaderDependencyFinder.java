@@ -32,8 +32,7 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 	public static final String LOG_PATTERN_VERBOSE = "%5p %d (%F:%L) - %m%n";
 
 	/**
-	 * This logger pattern is much faster as it does not have to compute
-	 * class/line numbers on the fly.
+	 * This logger pattern is much faster as it does not have to compute class/line numbers on the fly.
 	 */
 	public static final String LOG_PATTERN_FAST = "%5p - %m%n";
 
@@ -45,8 +44,8 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 	}
 
 	/**
-	 * The default Logger level will be INFO using this method. If you want a
-	 * different level use one of the methods that takes a level parameter.
+	 * The default Logger level will be INFO using this method. If you want a different level use one of the methods
+	 * that takes a level parameter.
 	 * 
 	 * @param verbose
 	 *            true for the verbose pattern; false for the fast pattern.
@@ -196,8 +195,9 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 			String id = fieldElement.getAttributeValue(ID);
 			String typeId = fieldElement.getAttributeValue(TYPE);
 			ClassElement ce = _model.getClass(typeId);
+			boolean isExternal = Boolean.parseBoolean(fieldElement.getAttributeValue(IS_EXTERNAL));
 
-			FieldElement fe = new FieldElement(id, ce);
+			FieldElement fe = new FieldElement(id, isExternal, ce);
 			fields.add(fe);
 			_model.addField(fe);
 		}

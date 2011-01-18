@@ -16,6 +16,8 @@
 	<property name="report.dynamicAnalysis" location="reportDynamic" />
 	<property name="report.test" location="reportTest" />
 
+	<property name="depfindDir" value="../depfind_uw/" />
+
 	<property name="jiprof.home" value="${lib}/jip-src-1.2" />
 
 	<!-- Start Dependency Finder Properties -->
@@ -82,6 +84,12 @@
 		<javac srcdir="${eval.test}" destdir="${eval.test}" includeantruntime="false" classpathref="classpath" />
 	</target>
 
+	<target name="jar" depends="compile" description="Packages JAR file and copies to depfind_uw for testing">
+		<jar jarfile="${jarFile}">
+			<zipfileset dir="${build}" prefix="" includes="**/*.class" />
+		</jar>
+		<copy file="${jarFile}" tofile="${depfindDir}/input.jar" overwrite="yes" />
+	</target>
 
 	<target name="dist" depends="compile" description="generate the distribution">
 		<!-- Create the distribution directory -->
