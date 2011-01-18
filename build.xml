@@ -3,9 +3,25 @@
         Benchmark program for testing static analyses. Adapted from Martin Robillard's JayFXBenchmark.
     </description>
 
+	<!-- Main Locations -->
+	<!-- src: 				the source files comprising the sample code -->
+	<!-- src.test: 			tests that simulate the src code executing (for dynamic analyses) -->
+	<!-- eval: 				code for building a model of a static or dynamic analysis -->
+	<!-- eval.test: 		code for validating the model of the static or dynamic analysis against what we would expect to be generated from src -->
+
+	<!-- Main Tasks -->
+	<!-- clean: 			removes any temporary resources -->
+	<!-- compile: 			compiles the src, srcTest, eval, evalTest code -->
+	<!-- jar: 				creates a jar of the compiled src code and copies it to depfind_uw -->
+	<!-- static: 			runs the static analysis on the code generated from src -->
+	<!-- validateStatic:	compares the results of the static analysis to a known oracle -->
+
+	<!-- Main Task TODO -->
+	<!-- dynamic:			runs the dynamic analysis using the tests generated from src.test -->
+	<!-- validateDynamic:	compares the results of the dynamic analysis to a known oracle -->
+
 	<property name="code" location="code" />
 	<property name="build" location="build" />
-
 
 	<!-- sample code / tests for running sample code (for dynamic analyses) -->
 	<property name="src" location="${code}/src" />
@@ -24,9 +40,11 @@
 	<property name="dist" location="dist" />
 	<property name="lib" location="lib" />
 
-	<property name="report.staticAnalysis" location="reportStatic" />
-	<property name="report.dynamicAnalysis" location="reportDynamic" />
-	<property name="report.test" location="reportTest" />
+	<property name="report" location="report" />
+	<property name="report.staticAnalysis" location="${report}/static" />
+	<property name="report.dynamicAnalysis" location="${report}/dynamic" />
+	<property name="report.srcTest" location="${report}/srcTest" />
+	<property name="report.evalTest" location="${report}/evalTest" />
 
 	<property name="depfindDir" value="../depfind_uw/" />
 
@@ -55,7 +73,7 @@
 			<include name="*.jar" />
 		</fileset>
 		<pathelement path="${build.src}" />
-		<!-- <pathelement path="${build.eval}" /> -->
+		<pathelement path="${build.srcTest}" />
 	</path>
 
 	<path id="classpath.eval">
@@ -79,16 +97,15 @@
 		<mkdir dir="${build.evalTest}" />
 		<mkdir dir="${report.staticAnalysis}" />
 		<mkdir dir="${report.dynamicAnalysis}" />
-		<mkdir dir="${report.test}" />
+		<mkdir dir="${report.srcTest}" />
+		<mkdir dir="${report.evalTest}" />
 	</target>
 
 	<target name="clean" description="clean up">
 		<!-- Delete the ${build} and ${dist} directory trees -->
 		<delete dir="${build}" />
 		<delete dir="${dist}" />
-		<delete dir="${report.staticAnalysis}" />
-		<delete dir="${report.dynamicAnalysis}" />
-		<delete dir="${report.test}" />
+		<delete dir="${report}" />
 	</target>
 
 
@@ -121,21 +138,22 @@
 		<jar jarfile="${dist}/lib/AnalysisBenchamark-${DSTAMP}.jar" basedir="${build.src}" />
 	</target>
 
-	<target name="test" depends="compile" description="perform tests">
+	<target name="testSrc" depends="compileSrc" description="perform tests">
 		<junit printsummary="yes" haltonfailure="no" fork="yes" forkmode="once">
 			<!--<jvmarg value="-Djava.compiler=NONE"/>-->
 
-			<classpath refid="classpath.test" />
+			<classpath refid="classpath.src" />
 
 			<formatter type="plain" />
 
-			<batchtest todir="${report.test}">
+			<batchtest todir="${report.srcTest}">
 				<fileset dir="${src.test}">
 					<include name="**/*.java" />
 				</fileset>
 			</batchtest>
 		</junit>
 	</target>
+
 
 	<target name="dynamic" depends="compile" description="perform tests">
 		<junit printsummary="yes" haltonfailure="no" fork="yes" forkmode="once">
@@ -151,7 +169,7 @@
 
 			<formatter type="plain" />
 
-			<batchtest todir="${report.test}">
+			<batchtest todir="${report.srcTest}">
 				<fileset dir="${src.test}">
 					<include name="**/*.java" />
 				</fileset>
@@ -164,7 +182,7 @@
 		<classpath refid="dependencyfinder" />
 	</taskdef>
 
-	<target name="staticTest" depends="static" description="Validate static analyses">
+	<target name="validateStatic" depends="static" description="Validate static analyses">
 		<junit printsummary="yes" haltonfailure="yes" fork="yes" forkmode="once">
 			<!--<jvmarg value="-Djava.compiler=NONE"/>-->
 
@@ -172,7 +190,7 @@
 
 			<formatter type="plain" />
 
-			<batchtest todir="${report.test}">
+			<batchtest todir="${report.evalTest}">
 				<fileset dir="${eval.test}">
 					<include name="**/*.java" />
 				</fileset>
@@ -180,8 +198,9 @@
 		</junit>
 	</target>
 
-	<target name="static" depends="compile" description="perform static analyses">
 
+	<target name="static" depends="compile" description="perform static analyses">
+		<!-- BUG: for unknown reasons 'ant clean; ant static' fails; some environmental thing isn't being set up quite right -->
 		<dependencyextractor destfile="${report.staticAnalysis}/static-${DSTAMP}_${TSTAMP}.xml" xml="yes" minimize="yes">
 			<path>
 				<!-- <pathelement location="."/> -->
