@@ -39,7 +39,7 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 	public XMLReaderDependencyFinder(String fName) {
 		_fName = fName;
 		if (!new File(_fName).exists()) {
-			throw new RuntimeException();
+			throw new RuntimeException("File " + new File(fName).getAbsolutePath() + " does not exist");
 		}
 	}
 
