@@ -4,7 +4,7 @@
 			<ce pkg="ca.uwaterloo.cs.se.bench.simple" id="ca.uwaterloo.cs.se.bench.simple.SimpleClass"
 				isInt="false" isAbs="false" isClass="true" />
 			<ce pkg="ca.uwaterloo.cs.se.bench.simple" id="ca.uwaterloo.cs.se.bench.simple.InhInterface"
-				isInt="true" isAbs="false" isClass="false" />
+				isInt="true" isAbs="true" isClass="false" />
 			<ce pkg="ca.uwaterloo.cs.se.bench.simple" id="ca.uwaterloo.cs.se.bench.simple.InhAbstractClass"
 				isInt="false" isAbs="true" isClass="false" />
 			<ce pkg="ca.uwaterloo.cs.se.bench.simple" id="ca.uwaterloo.cs.se.bench.simple.InhClassA"

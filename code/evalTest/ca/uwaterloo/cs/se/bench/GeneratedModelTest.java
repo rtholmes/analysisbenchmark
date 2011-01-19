@@ -46,7 +46,7 @@ public class GeneratedModelTest {
 
 		Assert.assertTrue(ce.isInterface());
 
-		Assert.assertFalse(ce.isAbstract()); // depfind_uw #15: InhInterface shouldn't be abstract
+		Assert.assertTrue(ce.isAbstract()); // depfind_uw #15: InhInterface shouldn't be abstract
 
 		Assert.assertEquals(0, ce.getParents().size());
 		Assert.assertEquals(0, ce.getFields().size());

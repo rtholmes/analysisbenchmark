@@ -46,7 +46,7 @@ public class SyntheticModelTest {
 		Assert.assertNotNull(ce);
 
 		Assert.assertTrue(ce.isInterface());
-		Assert.assertFalse(ce.isAbstract());
+		Assert.assertTrue(ce.isAbstract());
 
 		Assert.assertEquals(0, ce.getParents().size());
 		Assert.assertEquals(0, ce.getFields().size());
