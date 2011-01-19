@@ -23,7 +23,6 @@ public class ClassElement extends AnnotatableElement {
 		_isExternal = isExternal;
 	}
 
-	String _id;
 	String _package;
 
 	Collection<ClassElement> _parents = new Vector<ClassElement>();
@@ -33,7 +32,8 @@ public class ClassElement extends AnnotatableElement {
 	boolean _isInterface = false;
 	boolean _isAbstract = false;
 	boolean _isClass = false;
-//	boolean _isExternal = false;
+
+	// boolean _isExternal = false;
 
 	public void setMethods(Collection<MethodElement> methods) {
 		_methods = methods;
@@ -41,10 +41,6 @@ public class ClassElement extends AnnotatableElement {
 
 	public void setFields(Collection<FieldElement> fields) {
 		_fields = fields;
-	}
-
-	public String getId() {
-		return _id;
 	}
 
 	public void addParent(ClassElement parent) {

@@ -9,8 +9,6 @@ public class FieldElement extends AnnotatableElement {
 		_isExternal = isExternal;
 	}
 
-	String _id; // field name
-
 	ClassElement _type;
 
 	// TODO: field generics
@@ -21,10 +19,6 @@ public class FieldElement extends AnnotatableElement {
 
 	// TODO: field multidimensional ararys
 	int _arrayDimensions = -1;
-
-	public String getId() {
-		return _id;
-	}
 
 	public ClassElement getType() {
 		return _type;

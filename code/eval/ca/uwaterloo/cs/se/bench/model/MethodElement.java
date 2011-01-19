@@ -9,8 +9,6 @@ public class MethodElement extends AnnotatableElement {
 		_id = id;
 	}
 
-	String _id;
-
 	List<MethodParamElement> _params = new Vector<MethodParamElement>();
 	Collection<MethodElement> _calls = new Vector<MethodElement>();
 	Collection<FieldElement> _references = new Vector<FieldElement>();
@@ -23,10 +21,6 @@ public class MethodElement extends AnnotatableElement {
 
 	public void setReturn(MethodReturnElement mre) {
 		_return = mre;
-	}
-
-	public String getId() {
-		return _id;
 	}
 
 	public void addCallTarget(MethodElement target) {
