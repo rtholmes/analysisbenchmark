@@ -4,11 +4,10 @@ import java.util.Collection;
 import java.util.Vector;
 
 public class ClassElement extends AnnotatableElement {
-	public ClassElement(String id, boolean isExternal, boolean isInterface, boolean isClass, boolean isAbstract) {
+	public ClassElement(String id, boolean isExternal, boolean isInterface, boolean isAbstract) {
 		_id = id;
 		_isExternal = isExternal;
 		_isInterface = isInterface;
-		_isClass = isClass;
 		_isAbstract = isAbstract;
 	}
 
@@ -31,7 +30,6 @@ public class ClassElement extends AnnotatableElement {
 
 	boolean _isInterface = false;
 	boolean _isAbstract = false;
-	boolean _isClass = false;
 
 	// boolean _isExternal = false;
 
@@ -49,10 +47,6 @@ public class ClassElement extends AnnotatableElement {
 
 	public boolean isInterface() {
 		return _isInterface;
-	}
-
-	public boolean isClass() {
-		return _isClass;
 	}
 
 	public boolean isAbstract() {
