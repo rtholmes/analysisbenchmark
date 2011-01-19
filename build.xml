@@ -177,11 +177,6 @@
 		</junit>
 	</target>
 
-	<!-- Start DependencyFinder -->
-	<taskdef resource="dependencyfindertasks.properties">
-		<classpath refid="dependencyfinder" />
-	</taskdef>
-
 	<target name="validateStatic" depends="static" description="Validate static analyses">
 		<junit printsummary="yes" haltonfailure="yes" fork="yes" forkmode="once">
 			<!--<jvmarg value="-Djava.compiler=NONE"/>-->
@@ -198,6 +193,10 @@
 		</junit>
 	</target>
 
+	<!-- Start DependencyFinder -->
+	<taskdef resource="dependencyfindertasks.properties">
+		<classpath refid="dependencyfinder" />
+	</taskdef>
 
 	<target name="static" depends="compile" description="perform static analyses">
 		<!-- BUG: for unknown reasons 'ant clean; ant static' fails; some environmental thing isn't being set up quite right -->
@@ -208,15 +207,13 @@
 			</path>
 		</dependencyextractor>
 
-		<xslt style="${dependencyfinder.home}/etc/DependencyGraphToHTML.xsl" in="${report.staticAnalysis}/static-${DSTAMP}_${TSTAMP}.xml" out="${report.staticAnalysis}/static-${DSTAMP}_${TSTAMP}.html" />
-
-		<!-- copy the style sheet -->
-		<copy file="${dependencyfinder.home}/etc/dependency.style.css" tofile="${report.staticAnalysis}/dependency.style.css" overwrite="no" />
-
 		<!-- make a copy of the latest extraction for easier reference -->
 		<copy file="${report.staticAnalysis}/static-${DSTAMP}_${TSTAMP}.xml" tofile="${report.staticAnalysis}/static_latest.xml" />
-		<copy file="${report.staticAnalysis}/static-${DSTAMP}_${TSTAMP}.html" tofile="${report.staticAnalysis}/static_latest.html" />
 
+		<!-- configure an HTML version of the report -->
+		<!-- The stylesheet doesn't work with the UW XML format <xslt style="${dependencyfinder.home}/etc/DependencyGraphToHTML.xsl" in="${report.staticAnalysis}/static-${DSTAMP}_${TSTAMP}.xml" out="${report.staticAnalysis}/static-${DSTAMP}_${TSTAMP}.html" /> -->
+		<!-- The stylesheet doesn't work with the UW XML format <copy file="${dependencyfinder.home}/etc/dependency.style.css" tofile="${report.staticAnalysis}/dependency.style.css" overwrite="no" /> -->
+		<!-- The stylesheet doesn't work with the UW XML format <copy file="${report.staticAnalysis}/static-${DSTAMP}_${TSTAMP}.html" tofile="${report.staticAnalysis}/static_latest.html" /> -->
 	</target>
 	<!-- End DependencyFinder -->
 
