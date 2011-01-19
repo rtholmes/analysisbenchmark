@@ -15,8 +15,8 @@ import ca.uwaterloo.cs.se.bench.model.Model;
 import ca.uwaterloo.cs.se.bench.model.io.XMLReaderDependencyFinder;
 
 /**
- * Synthetic test; essentially makes sure the eval code is working separate from
- * the suite that will actually test the model.
+ * Synthetic test; essentially makes sure the eval code is working separate from the suite that will actually test the
+ * model.
  * 
  * @author rtholmes
  * 
@@ -46,7 +46,6 @@ public class SyntheticModelTest {
 		Assert.assertNotNull(ce);
 
 		Assert.assertTrue(ce.isInterface());
-		Assert.assertFalse(ce.isClass());
 		Assert.assertFalse(ce.isAbstract());
 
 		Assert.assertEquals(0, ce.getParents().size());
@@ -60,7 +59,6 @@ public class SyntheticModelTest {
 		Assert.assertNotNull(ce);
 
 		Assert.assertFalse(ce.isInterface());
-		Assert.assertFalse(ce.isClass());
 		Assert.assertTrue(ce.isAbstract());
 
 		Assert.assertEquals(1, ce.getParents().size());
@@ -76,15 +74,13 @@ public class SyntheticModelTest {
 		Assert.assertNotNull(ce);
 
 		Assert.assertFalse(ce.isInterface());
-		Assert.assertTrue(ce.isClass());
 		Assert.assertFalse(ce.isAbstract());
 
 		Assert.assertEquals(1, ce.getParents().size());
 		Assert.assertEquals(0, ce.getFields().size());
 		Assert.assertEquals(0, ce.getMethods().size());
 
-		Assert.assertEquals(_model.getClass("ca.uwaterloo.cs.se.bench.simple.InhAbstractClass"), ce.getParents().iterator()
-				.next());
+		Assert.assertEquals(_model.getClass("ca.uwaterloo.cs.se.bench.simple.InhAbstractClass"), ce.getParents().iterator().next());
 	}
 
 	@Test

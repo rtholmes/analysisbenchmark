@@ -9,7 +9,12 @@ public class FieldElement extends AnnotatableElement {
 		_isExternal = isExternal;
 	}
 
-	ClassElement _type;
+	public FieldElement(String id, boolean isExternal) {
+		_id = id;
+		_isExternal = isExternal;
+	}
+
+	ClassElement _type = null;
 
 	// TODO: field generics
 	Vector<ClassElement> _generics = new Vector<ClassElement>();

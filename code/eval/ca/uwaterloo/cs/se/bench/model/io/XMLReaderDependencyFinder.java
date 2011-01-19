@@ -41,6 +41,33 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 		if (!new File(_fName).exists()) {
 			throw new RuntimeException("File " + new File(fName).getAbsolutePath() + " does not exist");
 		}
+
+		_model = new Model();
+
+		insertDefaultData();
+	}
+
+	private void insertDefaultData() {
+		// add the void type
+		_model.addElement(new ClassElement("byte", true));
+		_model.addElement(new ClassElement("char", true));
+		_model.addElement(new ClassElement("double", true));
+		_model.addElement(new ClassElement("float", true));
+		_model.addElement(new ClassElement("int", true));
+		_model.addElement(new ClassElement("long", true));
+		_model.addElement(new ClassElement("short", true));
+		_model.addElement(new ClassElement("void", true));
+		_model.addElement(new ClassElement("boolean", true));
+
+		// conversion.put("B", "byte");
+		// conversion.put("C", "char");
+		// conversion.put("D", "double");
+		// conversion.put("F", "float");
+		// conversion.put("I", "int");
+		// conversion.put("J", "long");
+		// conversion.put("S", "short");
+		// conversion.put("V", "void");
+		// conversion.put("Z", "boolean");
 	}
 
 	/**
@@ -71,7 +98,6 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 
 	@SuppressWarnings("unchecked")
 	public Model parseModel() {
-		_model = new Model();
 
 		Document doc = readDocument(_fName);
 		Element rootElement = doc.getRootElement();
@@ -137,7 +163,6 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 	private void parseClassElement(Element classElement) {
 		String id = null;
 		boolean isInterface = false;
-		boolean isClass = false;
 		boolean isAbstract = false;
 		boolean isExternal = false;
 
@@ -150,9 +175,6 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 		if (hasAttribute(classElement, IS_INTERFACE))
 			isInterface = Boolean.parseBoolean(classElement.getAttributeValue(IS_INTERFACE));
 
-		if (hasAttribute(classElement, IS_CLASS))
-			isClass = Boolean.parseBoolean(classElement.getAttributeValue(IS_CLASS));
-
 		if (hasAttribute(classElement, IS_ABSTRACT))
 			isAbstract = Boolean.parseBoolean(classElement.getAttributeValue(IS_ABSTRACT));
 
@@ -160,10 +182,11 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 			isExternal = Boolean.parseBoolean(classElement.getAttributeValue(IS_EXTERNAL));
 
 		if (!_model.hasClass(id)) {
-			ClassElement ce = new ClassElement(id, isExternal, isInterface, isClass, isAbstract);
+			ClassElement ce = new ClassElement(id, isExternal, isInterface, isAbstract);
 			_model.addElement(ce);
 		} else {
-			throw new RuntimeException();
+			// don't add something that already exists
+			_log.warn("Class already exists in model: " + id);
 		}
 	}
 
@@ -193,11 +216,21 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 
 		for (Element fieldElement : fieldElements) {
 			String id = fieldElement.getAttributeValue(ID);
+
+			if (id == null || id.length() == 0) {
+				_log.debug("");
+			}
 			String typeId = fieldElement.getAttributeValue(TYPE);
-			ClassElement ce = _model.getClass(typeId);
 			boolean isExternal = Boolean.parseBoolean(fieldElement.getAttributeValue(IS_EXTERNAL));
 
-			FieldElement fe = new FieldElement(id, isExternal, ce);
+			FieldElement fe = null;
+			if (typeId != null && typeId.length() > 0) {
+				ClassElement ce = _model.getClass(typeId);
+				fe = new FieldElement(id, isExternal, ce);
+			} else {
+				fe = new FieldElement(id, isExternal);
+			}
+
 			fields.add(fe);
 			_model.addField(fe);
 		}
@@ -229,7 +262,7 @@ public class XMLReaderDependencyFinder implements XMLSchema {
 				MethodReturnElement mre = parseReturnType(methodElement.getChild(RETURN));
 				me.setReturn(mre);
 			} else {
-				me.setReturn(new MethodReturnElement(_model.getClass("V")));
+				me.setReturn(new MethodReturnElement(_model.getClass("void")));
 			}
 		}
 

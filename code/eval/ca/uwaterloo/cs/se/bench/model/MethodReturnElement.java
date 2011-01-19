@@ -6,4 +6,7 @@ public class MethodReturnElement extends TypeReferenceElement {
 		super(type);
 	}
 
+	public String toString() {
+		return "MethodReturn: " + _type.toString();
+	}
 }
