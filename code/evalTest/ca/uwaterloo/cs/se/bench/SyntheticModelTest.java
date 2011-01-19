@@ -123,7 +123,7 @@ public class SyntheticModelTest {
 
 	@Test
 	public void parseV() {
-		ClassElement ce = _model.getClass("V");
+		ClassElement ce = _model.getClass("void");
 		Assert.assertNotNull(ce);
 
 		Assert.assertTrue(ce.isExternal());
@@ -153,7 +153,7 @@ public class SyntheticModelTest {
 		Assert.assertNotNull(_model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.b1()"));
 		Assert.assertNotNull(_model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.b2()"));
 		Assert.assertNotNull(_model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.f1()"));
-		Assert.assertNotNull(_model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection;)"));
+		Assert.assertNotNull(_model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection)"));
 	}
 
 	@Test
@@ -189,7 +189,7 @@ public class SyntheticModelTest {
 
 	@Test
 	public void parseSimpleClassF2() {
-		MethodElement me = _model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection;)");
+		MethodElement me = _model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection)");
 		Assert.assertNotNull(me);
 
 		MethodParamElement param = new MethodParamElement(_model.getClass("java.util.Collection"), 0);
