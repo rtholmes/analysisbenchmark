@@ -20,15 +20,11 @@ import ca.uwaterloo.cs.se.bench.model.io.XMLReaderDependencyFinder;
  * @author rtholmes
  * 
  */
-public class GeneratedModelTest {
+public class StaticModelValidator {
+
+	protected Model _model;
 
 	private final String fName = "report/static/static_latest.xml";
-	private Model _model;
-
-	@BeforeClass
-	public static void beforeClass() {
-		XMLReaderDependencyFinder.startLog4J(true);
-	}
 
 	@Before
 	public void initModel() {
@@ -37,6 +33,11 @@ public class GeneratedModelTest {
 		_model = xmlrdf.parseModel();
 
 		Assert.assertNotNull(_model);
+	}
+
+	@BeforeClass
+	public static void beforeClass() {
+		XMLReaderDependencyFinder.startLog4J(true);
 	}
 
 	@Test
