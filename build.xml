@@ -40,6 +40,8 @@
 	<property name="dist" location="dist" />
 	<property name="lib" location="lib" />
 
+	<property name="jarFile" location="${dist}/AnalysisBenchmark.jar" />
+
 	<property name="report" location="report" />
 	<property name="report.staticAnalysis" location="${report}/static" />
 	<property name="report.dynamicAnalysis" location="${report}/dynamic" />
@@ -102,7 +104,6 @@
 	</target>
 
 	<target name="clean" description="clean up">
-		<!-- Delete the ${build} and ${dist} directory trees -->
 		<delete dir="${build}" />
 		<delete dir="${dist}" />
 		<delete dir="${report}" />
@@ -160,7 +161,6 @@
 			<!--<jvmarg value="-Djava.compiler=NONE"/>-->
 
 			<!-- all we need to profile -->
-
 			<jvmarg value="-javaagent:${jiprof.home}/profile/profile.jar" />
 			<jvmarg value="-Dprofile.properties=${jiprof.home}/profile/jiprof.properties" />
 			<!--<jvmarg value="-Dprofile.properties=${jiprof.home}/profile/ant.profile.properties"/>-->
@@ -180,7 +180,6 @@
 	<target name="validateStatic" depends="static" description="Validate static analyses">
 		<junit printsummary="yes" haltonfailure="yes" fork="yes" forkmode="once">
 			<!--<jvmarg value="-Djava.compiler=NONE"/>-->
-
 			<classpath refid="classpath.eval" />
 
 			<formatter type="plain" />
@@ -216,7 +215,4 @@
 		<!-- The stylesheet doesn't work with the UW XML format <copy file="${report.staticAnalysis}/static-${DSTAMP}_${TSTAMP}.html" tofile="${report.staticAnalysis}/static_latest.html" /> -->
 	</target>
 	<!-- End DependencyFinder -->
-
-
-
 </project>
