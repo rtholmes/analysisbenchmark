@@ -22,7 +22,7 @@ import ca.uwaterloo.cs.se.bench.model.MethodParamElement;
 import ca.uwaterloo.cs.se.bench.model.MethodReturnElement;
 import ca.uwaterloo.cs.se.bench.model.Model;
 
-public class XMLReaderDependencyFinder implements XMLSchema {
+public class XMLReaderDependencyFinder implements DependencyFinderSchema {
 	private Logger _log = Logger.getLogger(getClass());
 
 	private String _fName;

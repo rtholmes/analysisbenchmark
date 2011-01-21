@@ -1,6 +1,6 @@
 package ca.uwaterloo.cs.se.bench.model.io;
 
-public interface XMLSchema {
+public interface DependencyFinderSchema {
 	public static final String DECLARATIONS = "declarations";
 	public static final String RELATIONSHIPS = "relationships";
 
