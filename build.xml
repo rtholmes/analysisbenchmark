@@ -56,7 +56,7 @@
 	<property name="dependencyfinder.home" value="${lib}/DependencyFinder-1.2.1-beta4" />
 
 
-	<!-- support dynamic tracing -->
+	<!-- dynamic tracing environment -->
 	<property name="dynamicTracer.home" value="../dynamictracer" />
 	<property name="lsmr.base" value="../ca.lsmr.common" />
 
@@ -68,16 +68,6 @@
 		<include name="*.jar" />
 	</fileset>
 	<!-- end tracing -->
-
-	<!--
-	<path id="java.classpath">
-		<fileset refid="lib" />
-		<fileset refid="lsmr.lib" />
-		<fileset refid="dynamicTracer.lib" />
-		<dirset dir="${lsmr.home}/bin" />
-		<dirset dir="${dynamicTracer.home}/bin" />
-	</path>
--->
 
 
 	<path id="dependencyfinder">
@@ -100,12 +90,6 @@
 		</fileset>
 		<pathelement path="${build.src}" />
 		<pathelement path="${build.srcTest}" />
-		<!-- rth: for dynamic -->
-		<dirset dir="${lsmr.base}/bin" />
-		<dirset dir="${dynamicTracer.home}/bin" />
-		<fileset refid="lsmr.lib" />
-		<fileset refid="dynamicTracer.lib" />
-		<!-- end rth -->
 	</path>
 
 	<path id="classpath.eval">
@@ -113,9 +97,18 @@
 		<fileset dir="${lib}">
 			<include name="*.jar" />
 		</fileset>
-		<!--<pathelement path="${build.src}" />-->
 		<pathelement path="${build.eval}" />
 		<pathelement path="${build.evalTest}" />
+	</path>
+
+	<path id="classpath.src.trace">
+		<path refid="classpath.src" />
+		<!-- rth: for dynamic -->
+		<dirset dir="${lsmr.base}/bin" />
+		<dirset dir="${dynamicTracer.home}/bin" />
+		<fileset refid="lsmr.lib" />
+		<fileset refid="dynamicTracer.lib" />
+		<!-- end rth -->
 	</path>
 
 	<target name="init">
@@ -185,17 +178,11 @@
 		</junit>
 	</target>
 
-
-	<target name="dynamic" depends="compile" description="perform tests">
+	<target name="dynamic" depends="compileSrc" description="perform tests">
 		<junit printsummary="yes" haltonfailure="no" fork="yes" forkmode="once">
 			<!--<jvmarg value="-Djava.compiler=NONE"/>-->
 
-			<!-- all we need to profile -->
-			<jvmarg value="-javaagent:${jiprof.home}/profile/profile.jar" />
-			<jvmarg value="-Dprofile.properties=${jiprof.home}/profile/jiprof.properties" />
-			<!--<jvmarg value="-Dprofile.properties=${jiprof.home}/profile/ant.profile.properties"/>-->
-
-			<classpath refid="classpath.test" />
+			<classpath refid="classpath.src.trace" />
 
 			<formatter type="plain" />
 
@@ -206,6 +193,7 @@
 			</batchtest>
 		</junit>
 	</target>
+
 
 	<target name="validateStatic" depends="static" description="Validate static analyses">
 		<junit printsummary="yes" haltonfailure="yes" fork="yes" forkmode="once">
