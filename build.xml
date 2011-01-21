@@ -194,7 +194,6 @@
 		</junit>
 	</target>
 
-
 	<target name="validateStatic" depends="static" description="Validate static analyses">
 		<junit printsummary="yes" haltonfailure="yes" fork="yes" forkmode="once">
 			<!--<jvmarg value="-Djava.compiler=NONE"/>-->
