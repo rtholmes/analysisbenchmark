@@ -56,6 +56,30 @@
 	<property name="dependencyfinder.home" value="${lib}/DependencyFinder-1.2.1-beta4" />
 
 
+	<!-- support dynamic tracing -->
+	<property name="dynamicTracer.home" value="../dynamictracer" />
+	<property name="lsmr.base" value="../ca.lsmr.common" />
+
+	<fileset id="lsmr.lib" dir="${lsmr.base}/lib/">
+		<include name="*.jar" />
+	</fileset>
+
+	<fileset id="dynamicTracer.lib" dir="${dynamicTracer.home}/lib/">
+		<include name="*.jar" />
+	</fileset>
+	<!-- end tracing -->
+
+	<!--
+	<path id="java.classpath">
+		<fileset refid="lib" />
+		<fileset refid="lsmr.lib" />
+		<fileset refid="dynamicTracer.lib" />
+		<dirset dir="${lsmr.home}/bin" />
+		<dirset dir="${dynamicTracer.home}/bin" />
+	</path>
+-->
+
+
 	<path id="dependencyfinder">
 		<pathelement location="${dependencyfinder.home}/classes" />
 		<pathelement path="${build.eval}" />
@@ -76,6 +100,12 @@
 		</fileset>
 		<pathelement path="${build.src}" />
 		<pathelement path="${build.srcTest}" />
+		<!-- rth: for dynamic -->
+		<dirset dir="${lsmr.base}/bin" />
+		<dirset dir="${dynamicTracer.home}/bin" />
+		<fileset refid="lsmr.lib" />
+		<fileset refid="dynamicTracer.lib" />
+		<!-- end rth -->
 	</path>
 
 	<path id="classpath.eval">
