@@ -19,8 +19,8 @@ public class DynamicModelValidator {
 
 	@Before
 	public void initModel() {
-		XMLReaderDynamicTracer xmlrdf = new XMLReaderDynamicTracer(fName);
-		_model = xmlrdf.parseModel();
+		XMLReaderDynamicTracer xmlrdt = new XMLReaderDynamicTracer(fName);
+		_model = xmlrdt.parseModel();
 
 		Assert.assertNotNull(_model);
 	}
@@ -32,8 +32,8 @@ public class DynamicModelValidator {
 
 	@Test
 	public void testA1callsA2() {
-		MethodElement a1 = _model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.a1()");
-		MethodElement a2 = _model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.a2()");
+		MethodElement a1 = _model.getMethod(Ids.SimpleClass_a1);
+		MethodElement a2 = _model.getMethod(Ids.SimpleClass_a2);
 
 		Assert.assertNotNull(a1);
 		Assert.assertNotNull(a2);

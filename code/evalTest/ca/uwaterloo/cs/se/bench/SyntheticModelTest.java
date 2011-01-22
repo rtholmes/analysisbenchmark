@@ -15,8 +15,8 @@ import ca.uwaterloo.cs.se.bench.model.Model;
 import ca.uwaterloo.cs.se.bench.model.io.XMLReaderDependencyFinder;
 
 /**
- * Synthetic test; essentially makes sure the eval code is working separate from the suite that will actually test the
- * model.
+ * Synthetic test; essentially makes sure the eval code is working separate from
+ * the suite that will actually test the model.
  * 
  * @author rtholmes
  * 
@@ -80,12 +80,13 @@ public class SyntheticModelTest {
 		Assert.assertEquals(0, ce.getFields().size());
 		Assert.assertEquals(0, ce.getMethods().size());
 
-		Assert.assertEquals(_model.getClass("ca.uwaterloo.cs.se.bench.simple.InhAbstractClass"), ce.getParents().iterator().next());
+		Assert.assertEquals(_model.getClass("ca.uwaterloo.cs.se.bench.simple.InhAbstractClass"), ce.getParents().iterator()
+				.next());
 	}
 
 	@Test
 	public void parseCollection() {
-		ClassElement ce = _model.getClass("java.util.Collection");
+		ClassElement ce = _model.getClass(Ids.Collection);
 		Assert.assertNotNull(ce);
 
 		Assert.assertTrue(ce.isExternal());
@@ -97,7 +98,7 @@ public class SyntheticModelTest {
 
 	@Test
 	public void parseVector() {
-		ClassElement ce = _model.getClass("java.util.Vector");
+		ClassElement ce = _model.getClass(Ids.Vector);
 		Assert.assertNotNull(ce);
 
 		Assert.assertTrue(ce.isExternal());
@@ -106,12 +107,13 @@ public class SyntheticModelTest {
 		Assert.assertEquals(0, ce.getFields().size());
 		Assert.assertEquals(1, ce.getMethods().size());
 
-		Assert.assertEquals("java.util.Vector.Vector()", ce.getMethods().iterator().next().getId());
+		Assert.assertFalse(ce.getMethods().isEmpty());
+		Assert.assertEquals(Ids.Vector_init, ce.getMethods().iterator().next().getId());
 	}
 
 	@Test
 	public void parseString() {
-		ClassElement ce = _model.getClass("java.lang.String");
+		ClassElement ce = _model.getClass(Ids.String);
 		Assert.assertNotNull(ce);
 
 		Assert.assertTrue(ce.isExternal());
@@ -135,7 +137,7 @@ public class SyntheticModelTest {
 
 	@Test
 	public void parseSimpleClassStructure() {
-		ClassElement ce = _model.getClass("ca.uwaterloo.cs.se.bench.simple.SimpleClass");
+		ClassElement ce = _model.getClass(Ids.SimpleClass);
 		Assert.assertNotNull(ce);
 
 		Assert.assertFalse(ce.isExternal());
@@ -144,34 +146,35 @@ public class SyntheticModelTest {
 		Assert.assertEquals(1, ce.getFields().size());
 		Assert.assertEquals(7, ce.getMethods().size());
 
-		Assert.assertEquals("ca.uwaterloo.cs.se.bench.simple.SimpleClass.fieldA", ce.getFields().iterator().next().getId());
+		Assert.assertEquals(Ids.SimpleClass_fieldA, ce.getFields().iterator().next().getId());
 
 		// TODO: ensure method is attached to type
 
-		Assert.assertNotNull(_model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.a1()"));
-		Assert.assertNotNull(_model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.a2()"));
-		Assert.assertNotNull(_model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.b1()"));
-		Assert.assertNotNull(_model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.b2()"));
-		Assert.assertNotNull(_model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.f1()"));
-		Assert.assertNotNull(_model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection)"));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_a1));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_a2));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_b1));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_b2));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_f1));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_f2));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_n0));
 	}
 
 	@Test
 	public void parseSimpleClassFieldA() {
-		ClassElement ce = _model.getClass("ca.uwaterloo.cs.se.bench.simple.SimpleClass");
+		ClassElement ce = _model.getClass(Ids.SimpleClass);
 		Assert.assertNotNull(ce);
 
-		FieldElement fe = _model.getField("ca.uwaterloo.cs.se.bench.simple.SimpleClass.fieldA");
+		FieldElement fe = _model.getField(Ids.SimpleClass_fieldA);
 		Assert.assertNotNull(fe);
-		Assert.assertEquals("java.lang.String", fe.getType().getId());
+		Assert.assertEquals(Ids.String, fe.getType().getId());
 	}
 
 	@Test
 	public void parseSimpleClassA1() {
-		MethodElement me = _model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.a1()");
+		MethodElement me = _model.getMethod(Ids.SimpleClass_a1);
 		Assert.assertNotNull(me);
 
-		MethodElement target = _model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.a2()");
+		MethodElement target = _model.getMethod(Ids.SimpleClass_a2);
 		Assert.assertNotNull(target);
 
 		Assert.assertEquals(target, me.getCalls().iterator().next());
@@ -179,20 +182,20 @@ public class SyntheticModelTest {
 
 	@Test
 	public void parseSimpleClassB2() {
-		MethodElement me = _model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.b2()");
+		MethodElement me = _model.getMethod(Ids.SimpleClass_b2);
 		Assert.assertNotNull(me);
 
-		MethodReturnElement retType = new MethodReturnElement(_model.getClass("java.util.Vector"));
+		MethodReturnElement retType = new MethodReturnElement(_model.getClass(Ids.Vector));
 
 		Assert.assertEquals(retType, me.getReturnElement());
 	}
 
 	@Test
 	public void parseSimpleClassF2() {
-		MethodElement me = _model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection)");
+		MethodElement me = _model.getMethod(Ids.SimpleClass_f2);
 		Assert.assertNotNull(me);
 
-		MethodParamElement param = new MethodParamElement(_model.getClass("java.util.Collection"), 0);
+		MethodParamElement param = new MethodParamElement(_model.getClass(Ids.Collection), 0);
 		Assert.assertNotNull(param);
 
 		Assert.assertEquals(param, me.getParameters().iterator().next());
@@ -200,10 +203,10 @@ public class SyntheticModelTest {
 
 	@Test
 	public void parseSimpleClassN0() {
-		MethodElement me = _model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.n0()");
+		MethodElement me = _model.getMethod(Ids.SimpleClass_n0);
 		Assert.assertNotNull(me);
 
-		FieldElement target = _model.getField("ca.uwaterloo.cs.se.bench.simple.SimpleClass.fieldA");
+		FieldElement target = _model.getField(Ids.SimpleClass_fieldA);
 		Assert.assertNotNull(target);
 		Assert.assertEquals(target, me.getReferences().iterator().next());
 	}

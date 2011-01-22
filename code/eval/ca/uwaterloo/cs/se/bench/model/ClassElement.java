@@ -65,10 +65,6 @@ public class ClassElement extends AnnotatableElement {
 		return _methods;
 	}
 
-	// public boolean isExternal() {
-	// return _isExternal;
-	// }
-
 	public String toString() {
 		return getId();
 	}

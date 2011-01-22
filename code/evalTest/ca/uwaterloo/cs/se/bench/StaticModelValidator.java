@@ -14,8 +14,8 @@ import ca.uwaterloo.cs.se.bench.model.Model;
 import ca.uwaterloo.cs.se.bench.model.io.XMLReaderDependencyFinder;
 
 /**
- * Synthetic test; essentially makes sure the eval code is working separate from the suite that will actually test the
- * model.
+ * Synthetic test; essentially makes sure the eval code is working separate from
+ * the suite that will actually test the model.
  * 
  * @author rtholmes
  * 
@@ -47,7 +47,8 @@ public class StaticModelValidator {
 
 		Assert.assertTrue(ce.isInterface());
 
-		Assert.assertTrue(ce.isAbstract()); // depfind_uw #15: InhInterface shouldn't be abstract
+		Assert.assertTrue(ce.isAbstract()); // depfind_uw #15: InhInterface
+											// shouldn't be abstract
 
 		Assert.assertEquals(0, ce.getParents().size());
 		Assert.assertEquals(0, ce.getFields().size());
@@ -81,7 +82,8 @@ public class StaticModelValidator {
 		Assert.assertEquals(0, ce.getFields().size());
 		Assert.assertEquals(4, ce.getMethods().size());
 
-		Assert.assertEquals(_model.getClass("ca.uwaterloo.cs.se.bench.simple.InhAbstractClass"), ce.getParents().iterator().next());
+		Assert.assertEquals(_model.getClass("ca.uwaterloo.cs.se.bench.simple.InhAbstractClass"), ce.getParents().iterator()
+				.next());
 	}
 
 	@Test
@@ -148,13 +150,32 @@ public class StaticModelValidator {
 		Assert.assertEquals("ca.uwaterloo.cs.se.bench.simple.SimpleClass.fieldA", ce.getFields().iterator().next().getId());
 
 		// TODO: ensure method is attached to type
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_a1));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_a2));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_b1));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_b2));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_c1));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_c2));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_d1));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_d2));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_e1));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_e2));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_f1));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_f2));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_g1));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_g2));
 
-		Assert.assertNotNull(_model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.a1()"));
-		Assert.assertNotNull(_model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.a2()"));
-		Assert.assertNotNull(_model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.b1()"));
-		Assert.assertNotNull(_model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.b2()"));
-		Assert.assertNotNull(_model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.f1()"));
-		Assert.assertNotNull(_model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection)"));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_h1));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_h2));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_i1));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_i2));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_j1));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_j2));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_l1));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_l2));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_m1));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_m2));
+		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_n0));
 	}
 
 	@Test
@@ -194,7 +215,8 @@ public class StaticModelValidator {
 		Assert.assertNotNull(me);
 
 		// XXX: parameters not working yet
-		// MethodParamElement param = new MethodParamElement(_model.getClass("java.util.Collection"), 0);
+		// MethodParamElement param = new
+		// MethodParamElement(_model.getClass("java.util.Collection"), 0);
 		// Assert.assertNotNull(param);
 		//
 		// Assert.assertEquals(param, me.getParameters().iterator().next());
