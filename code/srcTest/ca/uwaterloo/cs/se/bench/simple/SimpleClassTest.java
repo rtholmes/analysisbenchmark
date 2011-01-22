@@ -73,10 +73,14 @@ public class SimpleClassTest {
 	public void testL() {
 		_sc.l1();
 	}
-	
+
 	@Test
 	public void testM() {
 		_sc.m1();
 	}
 
+	@Test
+	public void testN() {
+		_sc.n0();
+	}
 }
