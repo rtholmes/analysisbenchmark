@@ -30,6 +30,8 @@ public class StaticModelValidator {
 	public void initModel() {
 
 		XMLReaderDependencyFinder xmlrdf = new XMLReaderDependencyFinder(fName);
+		Assert.assertNotNull(xmlrdf);
+
 		_model = xmlrdf.parseModel();
 
 		Assert.assertNotNull(_model);
@@ -42,7 +44,7 @@ public class StaticModelValidator {
 
 	@Test
 	public void parseInhInterface() {
-		ClassElement ce = _model.getClass("ca.uwaterloo.cs.se.bench.simple.InhInterface");
+		ClassElement ce = _model.getClass(Ids.InhInterface);
 		Assert.assertNotNull(ce);
 
 		Assert.assertTrue(ce.isInterface());
@@ -57,7 +59,7 @@ public class StaticModelValidator {
 
 	@Test
 	public void parseInhAbstractClass() {
-		ClassElement ce = _model.getClass("ca.uwaterloo.cs.se.bench.simple.InhAbstractClass");
+		ClassElement ce = _model.getClass(Ids.InhAbstractClass);
 		Assert.assertNotNull(ce);
 
 		Assert.assertFalse(ce.isInterface());
@@ -67,12 +69,12 @@ public class StaticModelValidator {
 		Assert.assertEquals(0, ce.getFields().size());
 		Assert.assertEquals(5, ce.getMethods().size());
 
-		Assert.assertEquals(_model.getClass("ca.uwaterloo.cs.se.bench.simple.InhInterface"), ce.getParents().iterator().next());
+		Assert.assertEquals(_model.getClass(Ids.InhInterface), ce.getParents().iterator().next());
 	}
 
 	@Test
 	public void parseInhClassA() {
-		ClassElement ce = _model.getClass("ca.uwaterloo.cs.se.bench.simple.InhClassA");
+		ClassElement ce = _model.getClass(Ids.InhClassA);
 		Assert.assertNotNull(ce);
 
 		Assert.assertFalse(ce.isInterface());
@@ -82,13 +84,12 @@ public class StaticModelValidator {
 		Assert.assertEquals(0, ce.getFields().size());
 		Assert.assertEquals(4, ce.getMethods().size());
 
-		Assert.assertEquals(_model.getClass("ca.uwaterloo.cs.se.bench.simple.InhAbstractClass"), ce.getParents().iterator()
-				.next());
+		Assert.assertEquals(_model.getClass(Ids.InhAbstractClass), ce.getParents().iterator().next());
 	}
 
 	@Test
 	public void parseCollection() {
-		ClassElement ce = _model.getClass("java.util.Collection");
+		ClassElement ce = _model.getClass(Ids.Collection);
 		Assert.assertNotNull(ce);
 
 		Assert.assertTrue(ce.isExternal());
@@ -100,7 +101,7 @@ public class StaticModelValidator {
 
 	@Test
 	public void parseVector() {
-		ClassElement ce = _model.getClass("java.util.Vector");
+		ClassElement ce = _model.getClass(Ids.Vector);
 		Assert.assertNotNull(ce);
 
 		Assert.assertTrue(ce.isExternal());
@@ -109,12 +110,12 @@ public class StaticModelValidator {
 		Assert.assertEquals(0, ce.getFields().size());
 		Assert.assertEquals(2, ce.getMethods().size()); // Vector(), add(Object)
 
-		Assert.assertEquals("java.util.Vector.Vector()", ce.getMethods().iterator().next().getId());
+		Assert.assertEquals(Ids.Vector_init, ce.getMethods().iterator().next().getId());
 	}
 
 	@Test
 	public void parseString() {
-		ClassElement ce = _model.getClass("java.lang.String");
+		ClassElement ce = _model.getClass(Ids.String);
 		Assert.assertNotNull(ce);
 
 		Assert.assertTrue(ce.isExternal());
@@ -138,7 +139,7 @@ public class StaticModelValidator {
 
 	@Test
 	public void parseSimpleClassStructure() {
-		ClassElement ce = _model.getClass("ca.uwaterloo.cs.se.bench.simple.SimpleClass");
+		ClassElement ce = _model.getClass(Ids.SimpleClass);
 		Assert.assertNotNull(ce);
 
 		Assert.assertFalse(ce.isExternal());
@@ -147,7 +148,7 @@ public class StaticModelValidator {
 		Assert.assertEquals(1, ce.getFields().size());
 		Assert.assertEquals(28, ce.getMethods().size());
 
-		Assert.assertEquals("ca.uwaterloo.cs.se.bench.simple.SimpleClass.fieldA", ce.getFields().iterator().next().getId());
+		Assert.assertEquals(Ids.SimpleClass_fieldA, ce.getFields().iterator().next().getId());
 
 		// TODO: ensure method is attached to type
 		Assert.assertTrue(_model.hasMethod(Ids.SimpleClass_a1));
@@ -180,20 +181,20 @@ public class StaticModelValidator {
 
 	@Test
 	public void parseSimpleClassFieldA() {
-		ClassElement ce = _model.getClass("ca.uwaterloo.cs.se.bench.simple.SimpleClass");
+		ClassElement ce = _model.getClass(Ids.SimpleClass);
 		Assert.assertNotNull(ce);
 
-		FieldElement fe = _model.getField("ca.uwaterloo.cs.se.bench.simple.SimpleClass.fieldA");
+		FieldElement fe = _model.getField(Ids.SimpleClass_fieldA);
 		Assert.assertNotNull(fe);
-		Assert.assertEquals("java.lang.String", fe.getType().getId());
+		Assert.assertEquals(Ids.String, fe.getType().getId());
 	}
 
 	@Test
 	public void parseSimpleClassA1() {
-		MethodElement me = _model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.a1()");
+		MethodElement me = _model.getMethod(Ids.SimpleClass_a1);
 		Assert.assertNotNull(me);
 
-		MethodElement target = _model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.a2()");
+		MethodElement target = _model.getMethod(Ids.SimpleClass_a2);
 		Assert.assertNotNull(target);
 
 		Assert.assertEquals(target, me.getCalls().iterator().next());
@@ -201,17 +202,17 @@ public class StaticModelValidator {
 
 	@Test
 	public void parseSimpleClassB2() {
-		MethodElement me = _model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.b2()");
+		MethodElement me = _model.getMethod(Ids.SimpleClass_b2);
 		Assert.assertNotNull(me);
 
-		MethodReturnElement retType = new MethodReturnElement(_model.getClass("java.util.Vector"));
+		MethodReturnElement retType = new MethodReturnElement(_model.getClass(Ids.Vector));
 
 		Assert.assertEquals(retType, me.getReturnElement());
 	}
 
 	@Test
 	public void parseSimpleClassF2() {
-		MethodElement me = _model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection)");
+		MethodElement me = _model.getMethod(Ids.SimpleClass_f2);
 		Assert.assertNotNull(me);
 
 		// XXX: parameters not working yet
@@ -224,10 +225,10 @@ public class StaticModelValidator {
 
 	@Test
 	public void parseSimpleClassN0() {
-		MethodElement me = _model.getMethod("ca.uwaterloo.cs.se.bench.simple.SimpleClass.n0()");
+		MethodElement me = _model.getMethod(Ids.SimpleClass_n0);
 		Assert.assertNotNull(me);
 
-		FieldElement target = _model.getField("ca.uwaterloo.cs.se.bench.simple.SimpleClass.fieldA");
+		FieldElement target = _model.getField(Ids.SimpleClass_fieldA);
 		Assert.assertNotNull(target);
 		Assert.assertEquals(target, me.getReferences().iterator().next());
 	}
