@@ -12,10 +12,11 @@ public interface Ids {
 
 	public final String Vector = "java.util.Vector";
 	public final String Vector_String = "java.util.Vector<String>";
-	public final String Vector_init = "java.util.Vector.Vector()";
+	public final String Vector_init = "java.util.Vector.<init>()";
 
 	public final String SimpleClass = "ca.uwaterloo.cs.se.bench.simple.SimpleClass";
 	public final String SimpleClass_fieldA = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.fieldA";
+	public final String SimpleClass_init = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.<init>()";
 	public final String SimpleClass_a1 = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.a1()";
 	public final String SimpleClass_a2 = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.a2()";
 	public final String SimpleClass_b1 = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.b1()";

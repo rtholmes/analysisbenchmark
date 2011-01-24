@@ -33,7 +33,7 @@
 					isExt="true" type="java.lang.String" />
 			</ce>
 			<ce id="java.util.Vector">
-				<me id="java.util.Vector.Vector()" />
+				<me id="java.util.Vector.&lt;init&gt;()" />
 			</ce>
 		</contains>
 	</declarations>
@@ -42,7 +42,7 @@
 			<!-- <call s="" t="" /> -->
 			<call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.a1()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.a2()" />
 			<call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.b1()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.b2()" />
-			<call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.b2()" t="java.util.Vector.Vector()" />
+			<call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.b2()" t="java.util.Vector.&lt;init&gt;()" />
 			<call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f1()"
 				t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection)" />
 		</calls>

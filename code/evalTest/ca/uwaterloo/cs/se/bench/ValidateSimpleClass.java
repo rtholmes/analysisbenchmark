@@ -58,6 +58,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 		Assert.assertNotNull(s_ce);
 		Assert.assertEquals(28, s_ce.getMethods().size());
 
+		Assert.assertTrue(_staticModel.hasMethod(Ids.SimpleClass_init));
 		Assert.assertTrue(_staticModel.hasMethod(Ids.SimpleClass_a1));
 		Assert.assertTrue(_staticModel.hasMethod(Ids.SimpleClass_a2));
 		Assert.assertTrue(_staticModel.hasMethod(Ids.SimpleClass_b1));
@@ -86,6 +87,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 
 		// dynamic
 		// aggregates not checked because tracer doesn't record containment
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_init));
 		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_a1));
 		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_a2));
 		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_b1));
