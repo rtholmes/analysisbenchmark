@@ -212,8 +212,8 @@ public class XMLReaderDynamicTracer {
 	}
 
 	private String translateMethodName(String fullName) {
-		// if (true)
-		// return fullName;
+		if (true)
+			return fullName;
 
 		String unqualifiedMethodName = "";
 		// String fullName = method.getName();

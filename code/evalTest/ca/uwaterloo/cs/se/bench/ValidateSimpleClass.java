@@ -86,31 +86,31 @@ public class ValidateSimpleClass extends AbstractValidation {
 
 		// dynamic
 		// aggregates not checked because tracer doesn't record containment
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_a1));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_a2));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_b1));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_b2));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_c1));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_c2));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_d1));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_d2));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_e1));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_e2));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_f1));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_f2));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_g1));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_g2));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_h1));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_h2));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_i1));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_i2));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_j1));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_j2));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_l1));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_l2));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_m1));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_m2));
-		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_n0));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_a1));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_a2));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_b1));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_b2));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_c1));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_c2));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_d1));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_d2));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_e1));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_e2));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_f1));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_f2));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_g1));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_g2));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_h1));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_h2));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_i1));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_i2));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_j1));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_j2));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_l1));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_l2));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_m1));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_m2));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_n0));
 	}
 
 	@Test
