@@ -199,7 +199,10 @@ public class SyntheticModelTest {
 		Assert.assertNotNull(param);
 
 		Assert.assertEquals(param, me.getParameters().iterator().next());
+
 	}
+	
+
 
 	@Test
 	public void parseSimpleClassN0() {

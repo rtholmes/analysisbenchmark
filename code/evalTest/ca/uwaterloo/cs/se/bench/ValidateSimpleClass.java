@@ -155,10 +155,165 @@ public class ValidateSimpleClass extends AbstractValidation {
 		Assert.assertEquals(0, d_a2.getCalls().size());
 		Assert.assertTrue(d_a1.getCalls().contains(d_a2));
 	}
-
-	// Done
-	@Ignore
+//	Done
 	@Test
+	public void test_b() {
+		// static
+
+		// b1 properties
+		MethodElement s_b1 = _staticModel.getMethod(Ids.SimpleClass_b1);
+		Assert.assertNotNull(s_b1);
+		Assert.assertEquals(Ids.Prim_void, s_b1.getReturnElement().getType().getId());
+		Assert.assertEquals(0, s_b1.getParameters().size());
+
+		// b2 properties
+		MethodElement s_b2 = _staticModel.getMethod(Ids.SimpleClass_b2);
+		Assert.assertNotNull(s_b2);
+		Assert.assertEquals(Ids.Vector,s_b2.getReturnElement().getType().getId());
+		Assert.assertEquals(0, s_b2.getParameters().size());
+
+		// b1 -> b2 static call
+		Assert.assertEquals(1, s_b1.getCalls().size());
+		Assert.assertEquals(1, s_b2.getCalls().size());
+		Assert.assertTrue(s_b1.getCalls().contains(s_b2));
+
+		// dynamic
+		// b1
+		MethodElement d_b1 = _dynamicModel.getMethod(Ids.SimpleClass_b1);
+		Assert.assertNotNull(d_b1);
+
+		// b2
+		MethodElement d_b2 = _dynamicModel.getMethod(Ids.SimpleClass_b2);
+		Assert.assertNotNull(d_b2);
+
+		// b1 -> b2 dynamic call
+		Assert.assertEquals(1, d_b1.getCalls().size());
+		Assert.assertEquals(1, d_b2.getCalls().size());
+		Assert.assertTrue(d_b1.getCalls().contains(d_b2));
+		
+	}
+	
+	// Done
+	@Test
+	public void test_c() {
+		// static
+
+		// c1 properties
+		MethodElement s_c1 = _staticModel.getMethod(Ids.SimpleClass_c1);
+		Assert.assertNotNull(s_c1);
+		Assert.assertEquals(Ids.Prim_void, s_c1.getReturnElement().getType().getId());
+		Assert.assertEquals(0, s_c1.getParameters().size());
+
+		// c2 properties
+		MethodElement s_c2 = _staticModel.getMethod(Ids.SimpleClass_c2);
+		Assert.assertNotNull(s_c2);
+		Assert.assertEquals(s_c2.getReturnElement().getType().getId(), Ids.Prim_void);
+		//		Assert.assertEquals(1, s_c2.getParameters().size());  issue #5 in depfind
+
+		// c1 -> c2 static call
+		Assert.assertEquals(1, s_c1.getCalls().size());
+		Assert.assertEquals(0, s_c2.getCalls().size());
+		Assert.assertTrue(s_c1.getCalls().contains(s_c2));
+
+		// dynamic
+		// c1
+		MethodElement d_c1 = _dynamicModel.getMethod(Ids.SimpleClass_c1);
+		Assert.assertNotNull(d_c1);
+
+		// c2
+		MethodElement d_c2 = _dynamicModel.getMethod(Ids.SimpleClass_c2);
+		Assert.assertNotNull(d_c2);
+
+		// c1 -> c2 dynamic call
+		Assert.assertEquals(1, d_c1.getCalls().size());
+		Assert.assertEquals(0, d_c2.getCalls().size());
+		Assert.assertTrue(d_c1.getCalls().contains(d_c2));
+		
+	}
+	
+	//Done
+	@Test
+	public void test_d() {
+		// static
+
+		// d1 properties
+		MethodElement s_d1 = _staticModel.getMethod(Ids.SimpleClass_d1);
+		Assert.assertNotNull(s_d1);
+		Assert.assertEquals(Ids.Prim_void, s_d1.getReturnElement().getType().getId());
+		Assert.assertEquals(0, s_d1.getParameters().size());
+
+		// d2 properties
+		MethodElement s_d2 = _staticModel.getMethod(Ids.SimpleClass_d2);
+		Assert.assertNotNull(s_d2);
+		Assert.assertEquals(s_d2.getReturnElement().getType().getId(), Ids.Prim_void);
+		//		Assert.assertEquals(3, s_d2.getParameters().size());  issue #5 in depfind
+
+		// d1 -> d2 static call
+		Assert.assertEquals(1, s_d1.getCalls().size());
+		Assert.assertEquals(0, s_d2.getCalls().size());
+		Assert.assertTrue(s_d1.getCalls().contains(s_d2));
+
+		// dynamic
+		// d1
+		MethodElement d_d1 = _dynamicModel.getMethod(Ids.SimpleClass_d1);
+		Assert.assertNotNull(d_d1);
+
+		// d2
+		MethodElement d_d2 = _dynamicModel.getMethod(Ids.SimpleClass_d2);
+		Assert.assertNotNull(d_d2);
+
+		// d1 -> d2 dynamic call
+		Assert.assertEquals(1, d_d1.getCalls().size());
+		Assert.assertEquals(0, d_d2.getCalls().size());
+		Assert.assertTrue(d_d1.getCalls().contains(d_d2));
+		
+	}
+	
+	//Done
+	@Test
+	public void test_e() {
+		// static
+
+		// e1 properties
+		MethodElement s_e1 = _staticModel.getMethod(Ids.SimpleClass_e1);
+		Assert.assertNotNull(s_e1);
+		Assert.assertEquals(Ids.Prim_void, s_e1.getReturnElement().getType().getId());
+		Assert.assertEquals(0, s_e1.getParameters().size());
+
+		// e2 properties
+		MethodElement s_e2 = _staticModel.getMethod(Ids.SimpleClass_e2);
+		Assert.assertNotNull(s_e2);
+		Assert.assertEquals(s_e2.getReturnElement().getType().getId(), Ids.Prim_void);
+		//		Assert.assertEquals(1, s_e2.getParameters().size());  issue #5 in depfind
+
+		// e1 -> e2 static call
+		Assert.assertEquals(2, s_e1.getCalls().size());
+		Assert.assertEquals(0, s_e2.getCalls().size());
+		Assert.assertTrue(s_e1.getCalls().contains(s_e2));
+
+		// dynamic
+		// e1
+		MethodElement d_e1 = _dynamicModel.getMethod(Ids.SimpleClass_e1);
+		Assert.assertNotNull(d_e1);
+
+		// e2
+		MethodElement d_e2 = _dynamicModel.getMethod(Ids.SimpleClass_e2);
+		Assert.assertNotNull(d_e2);
+
+		// e1 -> e2 dynamic call
+		Assert.assertEquals(2, d_e1.getCalls().size());
+		Assert.assertEquals(0, d_e2.getCalls().size());
+		Assert.assertTrue(d_e1.getCalls().contains(d_e2));
+		
+		// e1 calls new Vector()
+		Assert.assertTrue(Iterators.contains(d_e1.getCalls().iterator(), _dynamicModel.getMethod(Ids.Vector_init)));
+		// e1 calls e2
+		Assert.assertTrue(Iterators.contains(d_e1.getCalls().iterator(), d_e2));
+	}
+	
+	// Done
+	@Test
+//	@Ignore
 	public void test_f() {
 		// static
 
@@ -175,10 +330,10 @@ public class ValidateSimpleClass extends AbstractValidation {
 		Assert.assertEquals(Ids.Prim_void, s_f2.getReturnElement().getType().getId()); // void return
 
 		// TODO: depfind_uw Issue # 5
-		Assert.assertEquals(1, s_f2.getParameters().size()); // has 1 param
+//		Assert.assertEquals(1, s_f2.getParameters().size()); // has 1 param
 		MethodParamElement mpe0 = new MethodParamElement(_staticModel.getClass(Ids.Collection), 0);
 		// TODO: depfind_uw Issue # 5
-		Assert.assertTrue(Iterators.contains(s_f2.getParameters().iterator(), mpe0)); // param correct
+//		Assert.assertTrue(Iterators.contains(s_f2.getParameters().iterator(), mpe0)); // param correct
 		Assert.assertEquals(0, s_f2.getCalls().size()); // makes 0 calls
 
 		// f1 calls new Vector()
@@ -204,6 +359,128 @@ public class ValidateSimpleClass extends AbstractValidation {
 		Assert.assertTrue(Iterators.contains(d_f1.getCalls().iterator(), d_f2));
 	}
 
+//	Done
+	@Test
+	public void test_g() {
+		// static
+
+		// g1 properties
+		MethodElement s_g1 = _staticModel.getMethod(Ids.SimpleClass_g1);
+		Assert.assertNotNull(s_g1);
+		Assert.assertEquals(Ids.Prim_void, s_g1.getReturnElement().getType().getId());
+		Assert.assertEquals(0, s_g1.getParameters().size());
+
+		// g2 properties
+		MethodElement s_g2 = _staticModel.getMethod(Ids.SimpleClass_g2);
+		Assert.assertNotNull(s_g2);
+		Assert.assertEquals(s_g2.getReturnElement().getType().getId(), Ids.Prim_void);
+		//		Assert.assertEquals(1, s_g2.getParameters().size());  issue #5 in depfind
+
+		// g1 -> g2 static call
+		Assert.assertEquals(2, s_g1.getCalls().size());
+		Assert.assertEquals(0, s_g2.getCalls().size());
+		Assert.assertTrue(s_g1.getCalls().contains(s_g2));
+
+		// dynamic
+		// g1
+		MethodElement d_g1 = _dynamicModel.getMethod(Ids.SimpleClass_g1);
+		Assert.assertNotNull(d_g1);
+
+		// g2
+		MethodElement d_g2 = _dynamicModel.getMethod(Ids.SimpleClass_g2);
+		Assert.assertNotNull(d_g2);
+
+		// g1 -> g2 dynamic call
+		Assert.assertEquals(2, d_g1.getCalls().size());
+		Assert.assertEquals(0, d_g2.getCalls().size());
+		Assert.assertTrue(d_g1.getCalls().contains(d_g2));
+		
+		// g1 calls new Vector()
+		Assert.assertTrue(Iterators.contains(d_g1.getCalls().iterator(), _dynamicModel.getMethod(Ids.Vector_init)));
+		// g1 calls e2
+		Assert.assertTrue(Iterators.contains(d_g1.getCalls().iterator(), d_g2));
+	}
+
+	//	Done
+	@Test
+	public void test_h() {
+		// static
+
+		// h1 properties
+		MethodElement s_h1 = _staticModel.getMethod(Ids.SimpleClass_h1);
+		Assert.assertNotNull(s_h1);
+		Assert.assertEquals(Ids.Prim_void, s_h1.getReturnElement().getType().getId());
+		Assert.assertEquals(0, s_h1.getParameters().size());
+
+		// h2 properties
+		MethodElement s_h2 = _staticModel.getMethod(Ids.SimpleClass_h2);
+		Assert.assertNotNull(s_h2);
+		Assert.assertEquals(Ids.String,s_h2.getReturnElement().getType().getId());
+		Assert.assertEquals(0, s_h2.getParameters().size());
+
+		// h1 -> h2 static call
+		Assert.assertEquals(1, s_h1.getCalls().size());
+		Assert.assertEquals(0, s_h2.getCalls().size());
+		Assert.assertTrue(s_h1.getCalls().contains(s_h2));
+
+		// dynamic
+		// h1
+		MethodElement d_h1 = _dynamicModel.getMethod(Ids.SimpleClass_h1);
+		Assert.assertNotNull(d_h1);
+
+		// h2
+		MethodElement d_h2 = _dynamicModel.getMethod(Ids.SimpleClass_h2);
+		Assert.assertNotNull(d_h2);
+
+		// h1 -> h2 dynamic call
+		Assert.assertEquals(1, d_h1.getCalls().size());
+		Assert.assertEquals(0, d_h2.getCalls().size());
+		Assert.assertTrue(d_h1.getCalls().contains(d_h2));
+		
+	}
+	
+//	Done
+	@Test
+	public void test_i() {
+		// static
+
+		// i1 properties
+		MethodElement s_i1 = _staticModel.getMethod(Ids.SimpleClass_i1);
+		Assert.assertNotNull(s_i1);
+		Assert.assertEquals(Ids.Prim_void, s_i1.getReturnElement().getType().getId());
+		Assert.assertEquals(0, s_i1.getParameters().size());
+
+		// i2 properties
+		MethodElement s_i2 = _staticModel.getMethod(Ids.SimpleClass_i2);
+		Assert.assertNotNull(s_i2);
+		Assert.assertEquals(Ids.Vector, s_i2.getReturnElement().getType().getId());
+		Assert.assertEquals(0, s_i2.getParameters().size());  
+
+		// i1 -> i2 static call
+		Assert.assertEquals(1, s_i1.getCalls().size());
+		Assert.assertEquals(1, s_i2.getCalls().size());
+		Assert.assertTrue(s_i1.getCalls().contains(s_i2));
+
+		// dynamic
+		// i1
+		MethodElement d_i1 = _dynamicModel.getMethod(Ids.SimpleClass_i1);
+		Assert.assertNotNull(d_i1);
+
+		// i2
+		MethodElement d_i2 = _dynamicModel.getMethod(Ids.SimpleClass_i2);
+		Assert.assertNotNull(d_i2);
+
+		// i1 -> i2 dynamic call
+		Assert.assertEquals(1, d_i1.getCalls().size());
+		Assert.assertEquals(1, d_i2.getCalls().size());
+		Assert.assertTrue(d_i1.getCalls().contains(d_i2));
+		
+		// i2 calls new Vector()
+		Assert.assertTrue(Iterators.contains(d_i2.getCalls().iterator(), _dynamicModel.getMethod(Ids.Vector_init)));
+		// i1 calls i2
+		Assert.assertTrue(Iterators.contains(d_i1.getCalls().iterator(), d_i2));
+	}
+	
 	// Done
 	@Test
 	public void test_fieldA() {
