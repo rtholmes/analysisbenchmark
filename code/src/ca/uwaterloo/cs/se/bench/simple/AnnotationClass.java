@@ -13,4 +13,15 @@ public class AnnotationClass {
 	public void hasJUnitAnnotation() {
 
 	}
+
+	@SuppressWarnings({ "deprecation", "unused" })
+	public void hadCompoundAnnotation() {
+
+	}
+
+	@Test
+	@Deprecated
+	public void hasMultipleAnnotations() {
+
+	}
 }

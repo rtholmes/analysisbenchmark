@@ -10,7 +10,7 @@ public class NestedClass {
 	Vector<String> nestedInitializedStringVector = new Vector<String>();
 
 	public void nestedMethodA() {
-
+		nestedInitializedStringVector.add("nestedMethodA");
 	}
 
 	public void nestedMethodB() {
@@ -23,7 +23,7 @@ public class NestedClass {
 
 	public class InnerClass {
 		public void innerMethodA() {
-
+			nestedInitializedStringVector.add("innerMethodA");
 		}
 
 		public void innerMethodB() {
@@ -36,7 +36,7 @@ public class NestedClass {
 
 		public class InnerInnerClass {
 			public void innerInnerMethodA() {
-
+				nestedInitializedStringVector.add("innerInnerMethodA");
 			}
 
 			public void innerInnerMethodB() {
