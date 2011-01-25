@@ -2,9 +2,9 @@ package ca.uwaterloo.cs.se.bench;
 
 public interface Ids {
 
-	public final String Integer_primitive = "int";
-	public final String Integer_primitive_1d = "int[]";
-	public final String Integer_primitive_2d = "int[][]";
+	public final String Prim_int = "int";
+	public final String Prim_int_1d = "int[]";
+	public final String Prim_int_2d = "int[][]";
 
 	public final String String = "java.lang.String";
 	public final String Collection = "java.util.Collection";
@@ -48,5 +48,13 @@ public interface Ids {
 	public final String InhInterface = "ca.uwaterloo.cs.se.bench.simple.InhInterface";
 	public final String InhAbstractClass = "ca.uwaterloo.cs.se.bench.simple.InhAbstractClass";
 	public final String InhClassA = "ca.uwaterloo.cs.se.bench.simple.InhClassA";
+
+	public final String AnonClass = "ca.uwaterloo.cs.se.bench.simple.AnonClass";
+	public final String AnonClass_simpleAnonymous = "ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleAnonymous()";
+	public final String AnonClass_genericAnonymous = "ca.uwaterloo.cs.se.bench.simple.AnonClass.genericAnonymous()";
+
+	public final String Prim_void = "void";
+
+	// ca.uwaterloo.cs.se.bench.simple.AnonClass$2.compare(java.lang.String, java.lang.String)
 
 }

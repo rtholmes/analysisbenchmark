@@ -14,6 +14,6 @@ public class AnonClassTest {
 	@Test
 	public void execSimpleGeneric() {
 		AnonClass ac = new AnonClass();
-		ac.simpleGenericAnonymous();
+		ac.genericAnonymous();
 	}
 }

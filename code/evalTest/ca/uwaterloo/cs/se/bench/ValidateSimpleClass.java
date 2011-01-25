@@ -2,12 +2,13 @@ package ca.uwaterloo.cs.se.bench;
 
 import junit.framework.Assert;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import ca.uwaterloo.cs.se.bench.model.ClassElement;
 import ca.uwaterloo.cs.se.bench.model.FieldElement;
 import ca.uwaterloo.cs.se.bench.model.MethodElement;
-import ca.uwaterloo.cs.se.bench.model.MethodReturnElement;
+import ca.uwaterloo.cs.se.bench.model.MethodParamElement;
 
 import com.google.common.collect.Iterators;
 
@@ -19,6 +20,7 @@ import com.google.common.collect.Iterators;
  */
 public class ValidateSimpleClass extends AbstractValidation {
 
+	// done
 	@Test
 	public void checkClass() {
 		// static
@@ -34,6 +36,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 		// Assert.assertNotNull(d_ce);
 	}
 
+	// done
 	@Test
 	public void checkFields() {
 		// static
@@ -51,6 +54,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 		// Assert.assertEquals(Ids.SimpleClass_fieldA, _dynamicModel.getField(Ids.SimpleClass_fieldA).getId());
 	}
 
+	// done
 	@Test
 	public void checkMethods() {
 		// static
@@ -115,74 +119,128 @@ public class ValidateSimpleClass extends AbstractValidation {
 		Assert.assertTrue(_dynamicModel.hasMethod(Ids.SimpleClass_n0));
 	}
 
+	// Done
 	@Test
-	public void parseSimpleClassB2() {
-		MethodElement me = _staticModel.getMethod(Ids.SimpleClass_b2);
-		Assert.assertNotNull(me);
+	public void test_a() {
+		// static
 
-		MethodReturnElement retType = new MethodReturnElement(_staticModel.getClass(Ids.Vector));
+		// a1 properties
+		MethodElement s_a1 = _staticModel.getMethod(Ids.SimpleClass_a1);
+		Assert.assertNotNull(s_a1);
+		Assert.assertEquals(Ids.Prim_void, s_a1.getReturnElement().getType().getId());
+		Assert.assertEquals(0, s_a1.getParameters().size());
 
-		Assert.assertEquals(retType, me.getReturnElement());
+		// a2 properties
+		MethodElement s_a2 = _staticModel.getMethod(Ids.SimpleClass_a2);
+		Assert.assertNotNull(s_a2);
+		Assert.assertEquals(s_a2.getReturnElement().getType().getId(), Ids.Prim_void);
+		Assert.assertEquals(0, s_a2.getParameters().size());
+
+		// a1 -> a2 static call
+		Assert.assertEquals(1, s_a1.getCalls().size());
+		Assert.assertEquals(0, s_a2.getCalls().size());
+		Assert.assertTrue(s_a1.getCalls().contains(s_a2));
+
+		// dynamic
+		// a1
+		MethodElement d_a1 = _dynamicModel.getMethod(Ids.SimpleClass_a1);
+		Assert.assertNotNull(d_a1);
+
+		// a2
+		MethodElement d_a2 = _dynamicModel.getMethod(Ids.SimpleClass_a2);
+		Assert.assertNotNull(d_a2);
+
+		// a1 -> a2 dynamic call
+		Assert.assertEquals(1, d_a1.getCalls().size());
+		Assert.assertEquals(0, d_a2.getCalls().size());
+		Assert.assertTrue(d_a1.getCalls().contains(d_a2));
 	}
 
+	// Done
+	@Ignore
 	@Test
-	public void parseSimpleClassF2() {
-		MethodElement me = _staticModel.getMethod(Ids.SimpleClass_f2);
-		Assert.assertNotNull(me);
+	public void test_f() {
+		// static
 
-		// XXX: parameters not working yet
-		// MethodParamElement param = new
-		// MethodParamElement(_model.getClass("java.util.Collection"), 0);
-		// Assert.assertNotNull(param);
-		//
-		// Assert.assertEquals(param, me.getParameters().iterator().next());
-	}
+		// f1 properties
+		MethodElement s_f1 = _staticModel.getMethod(Ids.SimpleClass_f1);
+		Assert.assertNotNull(s_f1); // exists
+		Assert.assertEquals(Ids.Prim_void, s_f1.getReturnElement().getType().getId()); // void return
+		Assert.assertEquals(0, s_f1.getParameters().size()); // no params
+		Assert.assertEquals(2, s_f1.getCalls().size()); // makes 2 calls
 
-	@Test
-	public void parseSimpleClassFieldA() {
-		ClassElement ce = _staticModel.getClass(Ids.SimpleClass);
-		Assert.assertNotNull(ce);
+		// f2 properties
+		MethodElement s_f2 = _staticModel.getMethod(Ids.SimpleClass_f2);
+		Assert.assertNotNull(s_f2); // exists
+		Assert.assertEquals(Ids.Prim_void, s_f2.getReturnElement().getType().getId()); // void return
 
-		FieldElement fe = _staticModel.getField(Ids.SimpleClass_fieldA);
-		Assert.assertNotNull(fe);
-		Assert.assertEquals(Ids.String, fe.getType().getId());
-	}
+		// TODO: depfind_uw Issue # 5
+		Assert.assertEquals(1, s_f2.getParameters().size()); // has 1 param
+		MethodParamElement mpe0 = new MethodParamElement(_staticModel.getClass(Ids.Collection), 0);
+		// TODO: depfind_uw Issue # 5
+		Assert.assertTrue(Iterators.contains(s_f2.getParameters().iterator(), mpe0)); // param correct
+		Assert.assertEquals(0, s_f2.getCalls().size()); // makes 0 calls
 
-	@Test
-	public void parseSimpleClassN0() {
-		MethodElement me = _staticModel.getMethod(Ids.SimpleClass_n0);
-		Assert.assertNotNull(me);
+		// f1 calls new Vector()
+		Assert.assertTrue(Iterators.contains(s_f1.getCalls().iterator(), _staticModel.getMethod(Ids.Vector_init)));
+		// f1 calls f2
+		Assert.assertTrue(Iterators.contains(s_f1.getCalls().iterator(), s_f2));
 
-		FieldElement target = _staticModel.getField(Ids.SimpleClass_fieldA);
-		Assert.assertNotNull(target);
-		Assert.assertEquals(target, me.getReferences().iterator().next());
+		// dynamic
+
+		// f1
+		MethodElement d_f1 = _dynamicModel.getMethod(Ids.SimpleClass_f1);
+		Assert.assertNotNull(d_f1); // exists
+		Assert.assertEquals(2, d_f1.getCalls().size()); // makes 2 calls
+
+		// f2
+		MethodElement d_f2 = _dynamicModel.getMethod(Ids.SimpleClass_f2);
+		Assert.assertNotNull(d_f2); // exists
+		Assert.assertEquals(0, d_f2.getCalls().size()); // makes 0 calls
+
+		// f1 calls new Vector()
+		Assert.assertTrue(Iterators.contains(d_f1.getCalls().iterator(), _dynamicModel.getMethod(Ids.Vector_init)));
+		// f1 calls f2
+		Assert.assertTrue(Iterators.contains(d_f1.getCalls().iterator(), d_f2));
 	}
 
 	// Done
 	@Test
-	public void testSimpleClass_a1_a2() {
+	public void test_fieldA() {
 		// static
-		MethodElement s_source = _staticModel.getMethod(Ids.SimpleClass_a1);
-		MethodElement s_target = _staticModel.getMethod(Ids.SimpleClass_a2);
+		FieldElement s_fieldA = _staticModel.getField(Ids.SimpleClass_fieldA);
+		Assert.assertNotNull(s_fieldA);
+		Assert.assertEquals(Ids.String, s_fieldA.getType().getId());
 
-		Assert.assertNotNull(s_source);
-		Assert.assertNotNull(s_target);
+		// dynamic tracer doesn't record fields
+	}
 
-		Assert.assertEquals(1, s_source.getCalls().size());
-		Assert.assertEquals(0, s_target.getCalls().size());
+	// Done
+	@Test
+	public void test_n() {
+		// static
 
-		Assert.assertTrue(s_source.getCalls().contains(s_target));
+		// n0 properties
+		MethodElement s_n0 = _staticModel.getMethod(Ids.SimpleClass_n0);
+		Assert.assertNotNull(s_n0);
+		Assert.assertEquals(Ids.Prim_void, s_n0.getReturnElement().getType().getId());
+		Assert.assertEquals(0, s_n0.getParameters().size());
+
+		// fieldA properties
+		FieldElement s_fieldA = _staticModel.getField(Ids.SimpleClass_fieldA);
+		Assert.assertNotNull(s_fieldA); // field exists
+		Assert.assertEquals(Ids.String, s_fieldA.getType().getId()); // type is string
+		Assert.assertEquals(1, s_n0.getReferences().size()); // only 1 ref
+		Assert.assertTrue(Iterators.contains(s_n0.getReferences().iterator(), s_fieldA)); // ref exists
 
 		// dynamic
-		MethodElement d_source = _dynamicModel.getMethod(Ids.SimpleClass_a1);
-		MethodElement d_target = _dynamicModel.getMethod(Ids.SimpleClass_a2);
 
-		Assert.assertNotNull(d_source);
-		Assert.assertNotNull(d_target);
+		// n0
+		MethodElement d_n0 = _dynamicModel.getMethod(Ids.SimpleClass_n0);
+		Assert.assertNotNull(d_n0);
 
-		Assert.assertEquals(1, d_source.getCalls().size());
-		Assert.assertEquals(0, d_target.getCalls().size());
-		Assert.assertTrue(d_source.getCalls().contains(d_target));
+		// TODO: dynamictracer Issue # 3
+		// dynamic trace doesn't currently support field references
 	}
 
 }

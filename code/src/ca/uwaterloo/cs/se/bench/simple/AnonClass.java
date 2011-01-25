@@ -21,7 +21,7 @@ public class AnonClass {
 		});
 	}
 
-	public void simpleGenericAnonymous() {
+	public void genericAnonymous() {
 		Vector<String> v = new Vector<String>();
 		v.add("one");
 		v.add("two");

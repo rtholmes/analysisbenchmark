@@ -71,8 +71,6 @@ public class XMLReaderDynamicTracer {
 	@SuppressWarnings("unchecked")
 	public Model parseModel() {
 
-		// Session session = new Session(fName);
-		// Model model = new Model();
 		Document doc = readDocument(_fName);
 
 		Element rootElement = doc.getRootElement();
@@ -87,14 +85,6 @@ public class XMLReaderDynamicTracer {
 
 		}
 
-		// RFE: don't load fields for now
-		// for (Element fieldElem : (List<Element>) staticElement.getChild("fields").getChildren("field")) {
-		//
-		// String fieldName = fieldElem.getAttributeValue("name");
-		// FieldElement fe = convertField(fieldName, session);
-		//
-		// }
-
 		// edges
 		Element dynamicElement = rootElement.getChild("dynamic");
 		for (Element targetElem : (List<Element>) dynamicElement.getChild("methods").getChildren("method")) {
@@ -106,77 +96,23 @@ public class XMLReaderDynamicTracer {
 				if (DynamicTracerSchema.ignoreName(sourceName) || DynamicTracerSchema.ignoreName(targetName)) {
 
 				} else {
-
 					// XXX: this is huge! names are backwards in current trace
 					MethodElement targetMethod = convertMethod(targetName, _model);
 					MethodElement sourceMethod = convertMethod(sourceName, _model);
-					// HACK: above is how it should be
-					// MethodElement targetMethod = convertMethod(sourceName, session);
-					// MethodElement sourceMethod = convertMethod(targetName, session);
-					// if (targetMethod.getName().contains("<clinit>") || ILonganIO.ignoreName(targetName)) {
-					//
-					// } else {
+
 					if (sourceMethod != null && targetMethod != null) {
 						sourceMethod.getCalls().add(targetMethod);
-						// targetMethod.getCalledBy().add(sourceMethod.getId());
 					}
-					// }
 				}
 			}
 		}
-
-		// RFE: field references not being parsed because they just aren't happening
-		// for (Element targetElem : (List<Element>) dynamicElement.getChild("fields").getChildren("field")) {
-		//
-		// MethodElement targetMethod = convertMethod(targetElem.getAttributeValue("name"), session);
-		// for (Element sourceElem : (List<Element>) targetElem.getChildren("calledBy")) {
-		// MethodElement sourceMethod = convertMethod(sourceElem.getAttributeValue("name"), session);
-		//
-		// if (targetMethod.getName().contains("<clinit>")) {
-		//
-		// } else {
-		// if (sourceMethod != null && targetMethod != null) {
-		// targetMethod.getCalledBy().add(sourceMethod.getId());
-		// }
-		// }
-		// }
-		// }
-
 		return _model;
 	}
-
-	//
-	// private FieldElement convertField(String fieldName, Model session) {
-	// int id = -1;
-	//
-	// if (!session.hasIDForElement(fieldName)) {
-	// // session.addIDForElement(fieldName, _nextId++);
-	// id = _nextId++;
-	// } else {
-	// id = session.getIdForElement(fieldName);
-	// }
-	//
-	// if (!session.fieldExists(id)) {
-	// session.addField(id, new FieldElement(id, fieldName));
-	// }
-	// return session.getFieldForName(fieldName);
-	// }
 
 	private MethodElement convertMethod(String methodName, Model session) {
 		int id = -1;
 
 		methodName = standardizeMethodName(methodName);
-
-		System.out.println("ConvertMethod " + methodName);
-
-		// if (!session.hasIDForElement(methodName)) {
-		// id = _nextId++;
-		// } else {
-		// id = session.getIdForElement(methodName);
-		// }
-		// if (!session.methodExists(id)) {
-		// session.addMethod(id, new MethodElement(id, methodName, false));
-		// }
 
 		if (!session.hasMethod(methodName)) {
 			MethodElement me = new MethodElement(methodName);
@@ -190,30 +126,17 @@ public class XMLReaderDynamicTracer {
 		if (originalName.equals(""))
 			return originalName;
 
-		// // XXX: if the object is a constructor, don't do this, it'll trim to the first parameter this way
-		//
-		// int firstSpace = originalName.indexOf(' ');
-		//
-		// // the whole point of this is to strip off the return type, but this shouldn't be fully-qualified anyways
-		// if (firstSpace > 0 && originalName.substring(0, firstSpace).indexOf(".") < 0) {
-		// String newName = "";
-		// if (firstSpace > 0)
-		// newName = originalName.substring(firstSpace + 1);
-		// // _log.trace("dyn name trans: " + originalName + " -> " + newName);
-		//
-		// return newName;
-		// }
-		//
-		// // _log.trace("dyn name same: " + originalName);
-		// return originalName;
-		// // return newName;
-
 		return translateMethodName(originalName);
 	}
 
+	@SuppressWarnings("unused")
 	private String translateMethodName(String fullName) {
-		if (true)
+
+		if (true) {
 			return fullName;
+		}
+
+		// currently we aren't doing any translation
 
 		String unqualifiedMethodName = "";
 		// String fullName = method.getName();
