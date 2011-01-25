@@ -15,7 +15,7 @@ public class AnonClass {
 
 			@Override
 			public int compare(Object arg0, Object arg1) {
-				return 0;
+				return ((String) arg0).compareTo((String) arg1);
 			}
 
 		});
