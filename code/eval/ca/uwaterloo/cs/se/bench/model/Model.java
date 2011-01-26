@@ -12,21 +12,21 @@ public class Model {
 
 	public void addElement(ClassElement ce) {
 		if (hasClass(ce.getId())) {
-			throw new RuntimeException();
+			throw new RuntimeException("Class already exists: " + ce.getId());
 		}
 		_classes.put(ce.getId(), ce);
 	}
 
 	public void addElement(FieldElement fe) {
 		if (hasField(fe.getId())) {
-			throw new RuntimeException();
+			throw new RuntimeException("Field already exists: " + fe.getId());
 		}
 		_fields.put(fe.getId(), fe);
 	}
 
 	public void addElement(MethodElement me) {
 		if (hasMethod(me.getId())) {
-			throw new RuntimeException();
+			throw new RuntimeException("Method already exists: " + me.getId());
 		}
 		_methods.put(me.getId(), me);
 	}
