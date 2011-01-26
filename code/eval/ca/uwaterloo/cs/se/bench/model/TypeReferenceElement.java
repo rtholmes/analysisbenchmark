@@ -8,8 +8,7 @@ public class TypeReferenceElement {
 		_type = type;
 	}
 
-	ClassElement _type;
-	// ClassElement _type;
+	final ClassElement _type;
 
 	// TODO: generic returns
 	Vector<ClassElement> _generics = new Vector<ClassElement>();
@@ -25,6 +24,11 @@ public class TypeReferenceElement {
 			return ((TypeReferenceElement) o).getType().equals(getType());
 		}
 		return false;
+	}
+
+	@Override
+	public int hashCode() {
+		return getType().hashCode();
 	}
 
 	public ClassElement getType() {
