@@ -6,41 +6,15 @@ import java.util.Map;
 public class Model {
 
 	Map<String, ClassElement> _classes = new Hashtable<String, ClassElement>();
-	Map<String, MethodElement> _methods = new Hashtable<String, MethodElement>();
-
 	Map<String, FieldElement> _fields = new Hashtable<String, FieldElement>();
 
-	public boolean hasClass(String id) {
-		return _classes.containsKey(id);
-	}
-
-	public boolean hasMethod(String id) {
-		return _methods.containsKey(id);
-	}
-
-	public boolean hasField(String id) {
-		return _fields.containsKey(id);
-	}
-
-	public ClassElement getClass(String id) {
-		if (!hasClass(id)) {
-			throw new RuntimeException("Unknown: " + id);
-		}
-		return _classes.get(id);
-	}
+	Map<String, MethodElement> _methods = new Hashtable<String, MethodElement>();
 
 	public void addElement(ClassElement ce) {
 		if (hasClass(ce.getId())) {
 			throw new RuntimeException();
 		}
 		_classes.put(ce.getId(), ce);
-	}
-
-	public void addElement(MethodElement me) {
-		if (hasMethod(me.getId())) {
-			throw new RuntimeException();
-		}
-		_methods.put(me.getId(), me);
 	}
 
 	public void addElement(FieldElement fe) {
@@ -50,11 +24,18 @@ public class Model {
 		_fields.put(fe.getId(), fe);
 	}
 
-	public MethodElement getMethod(String id) {
-		if (!hasMethod(id)) {
+	public void addElement(MethodElement me) {
+		if (hasMethod(me.getId())) {
+			throw new RuntimeException();
+		}
+		_methods.put(me.getId(), me);
+	}
+
+	public ClassElement getClass(String id) {
+		if (!hasClass(id)) {
 			throw new RuntimeException("Unknown: " + id);
 		}
-		return _methods.get(id);
+		return _classes.get(id);
 	}
 
 	public FieldElement getField(String id) {
@@ -64,11 +45,23 @@ public class Model {
 		return _fields.get(id);
 	}
 
-	public void addField(FieldElement fe) {
-		if (hasField(fe.getId())) {
-			throw new RuntimeException();
+	public MethodElement getMethod(String id) {
+		if (!hasMethod(id)) {
+			throw new RuntimeException("Unknown: " + id);
 		}
-		_fields.put(fe.getId(), fe);
+		return _methods.get(id);
+	}
+
+	public boolean hasClass(String id) {
+		return _classes.containsKey(id);
+	}
+
+	public boolean hasField(String id) {
+		return _fields.containsKey(id);
+	}
+
+	public boolean hasMethod(String id) {
+		return _methods.containsKey(id);
 	}
 
 }
