@@ -24,7 +24,7 @@ public class ValidateInhClassA extends AbstractValidation {
 
 		Assert.assertEquals(1, ce.getParents().size());
 		Assert.assertEquals(0, ce.getFields().size());
-		Assert.assertEquals(4, ce.getMethods().size());
+		Assert.assertEquals(5, ce.getMethods().size());
 
 		Assert.assertEquals(_staticModel.getClass(Ids.InhAbstractClass), ce.getParents().iterator().next());
 	}

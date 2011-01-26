@@ -9,7 +9,7 @@ public class MethodParamElement extends TypeReferenceElement {
 
 	final int _order;
 
-	int getOrder() {
+	public int getOrder() {
 		return _order;
 	}
 

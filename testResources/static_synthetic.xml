@@ -25,7 +25,7 @@
 				<me
 					id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection)">
 					<params>
-						<param id="java.util.Collection" order="0" />
+						<param type="java.util.Collection" index="0" />
 					</params>
 				</me>
 				<me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.n0()" />

@@ -11,7 +11,7 @@ public interface DependencyFinderSchema {
 	public static final String IS_INTERFACE = "isInt";
 	public static final String IS_CLASS = "isClass";
 	public static final String IS_ABSTRACT = "isAbs";
-	public static final String IS_EXTERNAL= "isExt";
+	public static final String IS_EXTERNAL = "isExt";
 	public static final String PARAMS = "params";
 	public static final String PARAM = "param";
 	public static final String RETURN = "return";
@@ -29,7 +29,8 @@ public interface DependencyFinderSchema {
 	public static final String ANNOTATIONS = "annotations";
 	public static final String ANNOTATION = "annotation";
 	public static final String PARENTS = "parents";
-	public static final String ORDER = "order";
+	// public static final String ORDER = "order";
+	public static final String INDEX = "index";
 	public static final String SOURCE = "s";
 	public static final String TARGET = "t";
 	public static final String PARENT = "p";

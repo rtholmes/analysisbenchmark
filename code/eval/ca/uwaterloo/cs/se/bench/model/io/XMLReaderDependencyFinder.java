@@ -71,8 +71,7 @@ public class XMLReaderDependencyFinder implements DependencyFinderSchema {
 	}
 
 	/**
-	 * The default Logger level will be INFO using this method. If you want a different level use one of the methods
-	 * that takes a level parameter.
+	 * The default Logger level will be INFO using this method. If you want a different level use one of the methods that takes a level parameter.
 	 * 
 	 * @param verbose
 	 *            true for the verbose pattern; false for the fast pattern.
@@ -232,7 +231,7 @@ public class XMLReaderDependencyFinder implements DependencyFinderSchema {
 			}
 
 			fields.add(fe);
-			_model.addField(fe);
+			_model.addElement(fe);
 		}
 
 		return fields;
@@ -320,9 +319,18 @@ public class XMLReaderDependencyFinder implements DependencyFinderSchema {
 		}
 
 		for (Element paramElement : paramElements) {
-			String typeId = paramElement.getAttributeValue(ID);
-			ClassElement ce = _model.getClass(typeId);
-			int order = Integer.parseInt(paramElement.getAttributeValue(ORDER));
+			String typeId = paramElement.getAttributeValue(TYPE);
+			ClassElement ce = null;
+
+			if (!_model.hasClass(typeId)) {
+				// just guess about the external value, this isn't the best solution
+				_model.addElement(new ClassElement(typeId, true));
+
+				_log.warn("Creating class element from a method param; perhaps this should be fixed. type: " + typeId);
+			}
+			ce = _model.getClass(typeId);
+
+			int order = Integer.parseInt(paramElement.getAttributeValue(INDEX));
 
 			MethodParamElement mpe = new MethodParamElement(ce, order);
 			params.add(mpe);

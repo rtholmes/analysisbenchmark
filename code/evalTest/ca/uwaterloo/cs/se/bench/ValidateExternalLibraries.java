@@ -49,6 +49,6 @@ public class ValidateExternalLibraries extends AbstractValidation {
 
 		Assert.assertEquals(0, ce.getParents().size());
 		Assert.assertEquals(0, ce.getFields().size());
-		Assert.assertEquals(1, ce.getMethods().size()); // compareTo
+		Assert.assertEquals(5, ce.getMethods().size());
 	}
 }
