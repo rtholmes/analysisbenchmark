@@ -1,6 +1,4 @@
-package ca.uwaterloo.cs.se.bench;
-
-import java.util.Vector;
+package ca.uwaterloo.cs.se.bench.simple;
 
 public interface Ids {
 
@@ -18,12 +16,9 @@ public interface Ids {
 
 	public final String FieldClass = "ca.uwaterloo.cs.se.bench.simple.FieldClass";
 	public final String FieldClass_fieldString = "ca.uwaterloo.cs.se.bench.simple.fieldString";
-	public final String FieldClass_fieldStringValue = "ca.uwaterloo.cs.se.bench.simple.fieldStringValue";	
-	public final String FieldClass_fieldStringInit = "ca.uwaterloo.cs.se.bench.simple.fieldStringInit";	
-	
-	
-	
-	
+	public final String FieldClass_fieldStringValue = "ca.uwaterloo.cs.se.bench.simple.fieldStringValue";
+	public final String FieldClass_fieldStringInit = "ca.uwaterloo.cs.se.bench.simple.fieldStringInit";
+
 	public final String SimpleClass = "ca.uwaterloo.cs.se.bench.simple.SimpleClass";
 	public final String SimpleClass_fieldA = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.fieldA";
 	public final String SimpleClass_init = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.<init>()";

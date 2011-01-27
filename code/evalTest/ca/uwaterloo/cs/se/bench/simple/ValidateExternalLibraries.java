@@ -1,4 +1,4 @@
-package ca.uwaterloo.cs.se.bench;
+package ca.uwaterloo.cs.se.bench.simple;
 
 import junit.framework.Assert;
 

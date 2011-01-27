@@ -1,4 +1,4 @@
-package ca.uwaterloo.cs.se.bench;
+package ca.uwaterloo.cs.se.bench.simple;
 
 import org.junit.Assert;
 import org.junit.Test;

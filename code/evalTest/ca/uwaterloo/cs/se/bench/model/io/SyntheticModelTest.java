@@ -1,4 +1,4 @@
-package ca.uwaterloo.cs.se.bench;
+package ca.uwaterloo.cs.se.bench.model.io;
 
 import junit.framework.Assert;
 
@@ -13,10 +13,10 @@ import ca.uwaterloo.cs.se.bench.model.MethodParamElement;
 import ca.uwaterloo.cs.se.bench.model.MethodReturnElement;
 import ca.uwaterloo.cs.se.bench.model.Model;
 import ca.uwaterloo.cs.se.bench.model.io.XMLReaderDependencyFinder;
+import ca.uwaterloo.cs.se.bench.simple.Ids;
 
 /**
- * Synthetic test; essentially makes sure the eval code is working separate from
- * the suite that will actually test the model.
+ * Synthetic test; essentially makes sure the eval code is working separate from the suite that will actually test the model.
  * 
  * @author rtholmes
  * 
@@ -80,8 +80,7 @@ public class SyntheticModelTest {
 		Assert.assertEquals(0, ce.getFields().size());
 		Assert.assertEquals(0, ce.getMethods().size());
 
-		Assert.assertEquals(_model.getClass("ca.uwaterloo.cs.se.bench.simple.InhAbstractClass"), ce.getParents().iterator()
-				.next());
+		Assert.assertEquals(_model.getClass("ca.uwaterloo.cs.se.bench.simple.InhAbstractClass"), ce.getParents().iterator().next());
 	}
 
 	@Test
@@ -201,8 +200,6 @@ public class SyntheticModelTest {
 		Assert.assertEquals(param, me.getParameters().iterator().next());
 
 	}
-	
-
 
 	@Test
 	public void parseSimpleClassN0() {
