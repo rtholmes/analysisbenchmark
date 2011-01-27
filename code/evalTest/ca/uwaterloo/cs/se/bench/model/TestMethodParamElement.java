@@ -67,21 +67,6 @@ public class TestMethodParamElement {
 		Assert.assertThat(mpe3, is(not(mpe2)));
 		Assert.assertThat(mpe2.hashCode(), is(not(mpe3.hashCode())));
 	}
-//
-//	@Test
-//	public void testEqualsTypeReferenceElement() {
-//		ClassElement ce1 = new ClassElement("typeA", true);
-//
-//		TypeReferenceElement tre1 = new TypeReferenceElement(ce1);
-//		Assert.assertThat(tre1, is(tre1));
-//
-//		MethodParamElement mpe1 = new MethodParamElement(ce1, 0);
-//		Assert.assertThat(mpe1, is(mpe1));
-//
-//		// because of type erasure we can't say Assert.assertThat(tre1, is(not(mpe1)));
-//		Assert.assertFalse(tre1.equals(mpe1));
-//		Assert.assertFalse(mpe1.equals(tre1));
-//	}
 
 	@Test
 	public void testEqualsMethodReturnElement() {
