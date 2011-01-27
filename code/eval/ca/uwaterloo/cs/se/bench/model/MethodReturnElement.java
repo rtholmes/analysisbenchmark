@@ -9,4 +9,16 @@ public class MethodReturnElement extends TypeReferenceElement {
 	public String toString() {
 		return "MethodReturn: " + _type.toString();
 	}
+
+	public boolean equals(Object o) {
+		if (o != null && o instanceof MethodReturnElement) {
+			return ((MethodReturnElement) o).getType().equals(getType());
+		}
+		return false;
+	}
+
+	@Override
+	public int hashCode() {
+		return getType().hashCode();
+	}
 }
