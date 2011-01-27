@@ -15,7 +15,8 @@ public class SimpleClass {
 	}
 
 	public void b1() {
-		b2();
+		Vector v = b2();
+		v.size();
 	}
 
 	private Vector b2() {
@@ -48,7 +49,7 @@ public class SimpleClass {
 	}
 
 	private void e2(Vector v) {
-
+		v.size();
 	}
 
 	public void f1() {
@@ -56,8 +57,8 @@ public class SimpleClass {
 		f2(v);
 	}
 
-	private void f2(Collection v) {
-
+	private void f2(Collection c) {
+		c.size();
 	}
 
 	public void g1() {
@@ -66,12 +67,12 @@ public class SimpleClass {
 	}
 
 	private void g2(Collection c) {
-		// TODO Auto-generated method stub
-
+		c.size();
 	}
 
 	public void h1() {
 		String s = h2();
+		s.length();
 	}
 
 	private String h2() {
@@ -102,7 +103,7 @@ public class SimpleClass {
 	}
 
 	private void k2(Vector<String> v) {
-
+		v.size();
 	}
 
 	public void l1() {
@@ -111,7 +112,7 @@ public class SimpleClass {
 	}
 
 	private void l2(Collection<String> c) {
-
+		c.size();
 	}
 
 	public void m1() {
