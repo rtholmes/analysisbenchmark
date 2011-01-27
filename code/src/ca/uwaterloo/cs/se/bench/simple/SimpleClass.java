@@ -80,6 +80,7 @@ public class SimpleClass {
 
 	public void i1() {
 		Vector v = i2();
+		v.size();
 	}
 
 	private Vector i2() {
@@ -88,6 +89,7 @@ public class SimpleClass {
 
 	public void j1() {
 		Collection c = j2();
+		c.size();
 	}
 
 	private Collection j2() {

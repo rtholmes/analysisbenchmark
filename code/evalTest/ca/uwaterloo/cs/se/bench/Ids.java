@@ -1,5 +1,7 @@
 package ca.uwaterloo.cs.se.bench;
 
+import java.util.Vector;
+
 public interface Ids {
 
 	public final String Prim_int = "int";
@@ -14,6 +16,14 @@ public interface Ids {
 	public final String Vector_String = "java.util.Vector<String>";
 	public final String Vector_init = "java.util.Vector.<init>()";
 
+	public final String FieldClass = "ca.uwaterloo.cs.se.bench.simple.FieldClass";
+	public final String FieldClass_fieldString = "ca.uwaterloo.cs.se.bench.simple.fieldString";
+	public final String FieldClass_fieldStringValue = "ca.uwaterloo.cs.se.bench.simple.fieldStringValue";	
+	public final String FieldClass_fieldStringInit = "ca.uwaterloo.cs.se.bench.simple.fieldStringInit";	
+	
+	
+	
+	
 	public final String SimpleClass = "ca.uwaterloo.cs.se.bench.simple.SimpleClass";
 	public final String SimpleClass_fieldA = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.fieldA";
 	public final String SimpleClass_init = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.<init>()";
@@ -38,7 +48,7 @@ public interface Ids {
 	public final String SimpleClass_j1 = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.j1()";
 	public final String SimpleClass_j2 = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.j2()";
 	public final String SimpleClass_k1 = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.k1()";
-	public final String SimpleClass_k2 = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.k2()";
+	public final String SimpleClass_k2 = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.k2(java.util.Vector)";
 	public final String SimpleClass_l1 = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.l1()";
 	public final String SimpleClass_l2 = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.l2(java.util.Collection)";
 	public final String SimpleClass_m1 = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.m1()";
@@ -54,6 +64,7 @@ public interface Ids {
 	public final String AnonClass_genericAnonymous = "ca.uwaterloo.cs.se.bench.simple.AnonClass.genericAnonymous()";
 
 	public final String Prim_void = "void";
+	public final String Prim_bool = "boolean";
 
 	// ca.uwaterloo.cs.se.bench.simple.AnonClass$2.compare(java.lang.String, java.lang.String)
 
