@@ -15,10 +15,14 @@ public interface Ids {
 	public final String Vector_init = "java.util.Vector.<init>()";
 
 	public final String FieldClass = "ca.uwaterloo.cs.se.bench.simple.FieldClass";
-	public final String FieldClass_fieldString = "ca.uwaterloo.cs.se.bench.simple.fieldString";
-	public final String FieldClass_fieldStringValue = "ca.uwaterloo.cs.se.bench.simple.fieldStringValue";
-	public final String FieldClass_fieldStringInit = "ca.uwaterloo.cs.se.bench.simple.fieldStringInit";
-
+	public final String FieldClass_fieldString = "ca.uwaterloo.cs.se.bench.simple.FieldClass.fieldString";
+	public final String FieldClass_fieldStringValue = "ca.uwaterloo.cs.se.bench.simple.FieldClass.fieldStringValue";
+	public final String FieldClass_fieldStringInit = "ca.uwaterloo.cs.se.bench.simple.FieldClass.fieldStringInit";
+	public final String FieldClass_staticFieldVector = "ca.uwaterloo.cs.se.bench.simple.FieldClass.staticFieldVector";
+	public final String FieldClass_staticFieldVectorInit = "ca.uwaterloo.cs.se.bench.simple.FieldClass.staticFieldVectorInit";
+	public final String FieldClass_staticBlockHashSetInit = "ca.uwaterloo.cs.se.bench.simple.FieldClass.staticBlockHashSetInit";
+	
+	
 	public final String SimpleClass = "ca.uwaterloo.cs.se.bench.simple.SimpleClass";
 	public final String SimpleClass_fieldA = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.fieldA";
 	public final String SimpleClass_init = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.<init>()";

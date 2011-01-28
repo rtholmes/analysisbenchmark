@@ -23,7 +23,7 @@ public class ValidateExternalLibraries extends AbstractValidation {
 
 		Assert.assertEquals(0, ce.getParents().size());
 		Assert.assertEquals(0, ce.getFields().size());
-		Assert.assertEquals(0, ce.getMethods().size());
+		Assert.assertEquals(1, ce.getMethods().size());
 	}
 
 	@Test
@@ -35,7 +35,7 @@ public class ValidateExternalLibraries extends AbstractValidation {
 
 		Assert.assertEquals(0, ce.getParents().size());
 		Assert.assertEquals(0, ce.getFields().size());
-		Assert.assertEquals(2, ce.getMethods().size()); // Vector(), add(Object)
+		Assert.assertEquals(3, ce.getMethods().size()); // Vector(), add(Object)
 
 		Assert.assertEquals(Ids.Vector_init, ce.getMethods().iterator().next().getId());
 	}
@@ -49,6 +49,6 @@ public class ValidateExternalLibraries extends AbstractValidation {
 
 		Assert.assertEquals(0, ce.getParents().size());
 		Assert.assertEquals(0, ce.getFields().size());
-		Assert.assertEquals(5, ce.getMethods().size());
+		Assert.assertEquals(6, ce.getMethods().size());
 	}
 }

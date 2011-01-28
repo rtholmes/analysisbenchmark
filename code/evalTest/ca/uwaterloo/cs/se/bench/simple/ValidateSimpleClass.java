@@ -174,7 +174,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 		Assert.assertEquals(0, s_b2.getParameters().size());
 
 		// b1 -> b2 static call
-		Assert.assertEquals(1, s_b1.getCalls().size());
+		Assert.assertEquals(2, s_b1.getCalls().size());
 		Assert.assertEquals(1, s_b2.getCalls().size());
 		Assert.assertTrue(s_b1.getCalls().contains(s_b2));
 
@@ -188,7 +188,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 		Assert.assertNotNull(d_b2);
 
 		// b1 -> b2 dynamic call
-		Assert.assertEquals(1, d_b1.getCalls().size());
+		Assert.assertEquals(2, d_b1.getCalls().size());
 		Assert.assertEquals(1, d_b2.getCalls().size());
 		Assert.assertTrue(d_b1.getCalls().contains(d_b2));
 
@@ -289,7 +289,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 
 		// e1 -> e2 static call
 		Assert.assertEquals(2, s_e1.getCalls().size());
-		Assert.assertEquals(0, s_e2.getCalls().size());
+		Assert.assertEquals(1, s_e2.getCalls().size());
 		Assert.assertTrue(s_e1.getCalls().contains(s_e2));
 
 		// dynamic
@@ -303,7 +303,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 
 		// e1 -> e2 dynamic call
 		Assert.assertEquals(2, d_e1.getCalls().size());
-		Assert.assertEquals(0, d_e2.getCalls().size());
+		Assert.assertEquals(1, d_e2.getCalls().size());
 		Assert.assertTrue(d_e1.getCalls().contains(d_e2));
 
 		// e1 calls new Vector()
@@ -332,7 +332,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 		Assert.assertEquals(1, s_f2.getParameters().size()); // has 1 param
 		MethodParamElement mpe0 = new MethodParamElement(_staticModel.getClass(Ids.Collection), 0);
 		Assert.assertTrue(Iterators.contains(s_f2.getParameters().iterator(), mpe0)); // param correct
-		Assert.assertEquals(0, s_f2.getCalls().size()); // makes 0 calls
+		Assert.assertEquals(1, s_f2.getCalls().size()); // makes 0 calls
 
 		// f1 calls new Vector()
 		Assert.assertTrue(Iterators.contains(s_f1.getCalls().iterator(), _staticModel.getMethod(Ids.Vector_init)));
@@ -349,7 +349,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 		// f2
 		MethodElement d_f2 = _dynamicModel.getMethod(Ids.SimpleClass_f2);
 		Assert.assertNotNull(d_f2); // exists
-		Assert.assertEquals(0, d_f2.getCalls().size()); // makes 0 calls
+		Assert.assertEquals(1, d_f2.getCalls().size()); // makes 0 calls
 
 		// f1 calls new Vector()
 		Assert.assertTrue(Iterators.contains(d_f1.getCalls().iterator(), _dynamicModel.getMethod(Ids.Vector_init)));
@@ -376,7 +376,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 
 		// g1 -> g2 static call
 		Assert.assertEquals(2, s_g1.getCalls().size());
-		Assert.assertEquals(0, s_g2.getCalls().size());
+		Assert.assertEquals(1, s_g2.getCalls().size());
 		Assert.assertTrue(s_g1.getCalls().contains(s_g2));
 
 		// dynamic
@@ -390,7 +390,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 
 		// g1 -> g2 dynamic call
 		Assert.assertEquals(2, d_g1.getCalls().size());
-		Assert.assertEquals(0, d_g2.getCalls().size());
+		Assert.assertEquals(1, d_g2.getCalls().size());
 		Assert.assertTrue(d_g1.getCalls().contains(d_g2));
 
 		// g1 calls new Vector()
@@ -417,7 +417,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 		Assert.assertEquals(0, s_h2.getParameters().size());
 
 		// h1 -> h2 static call
-		Assert.assertEquals(1, s_h1.getCalls().size());
+		Assert.assertEquals(2, s_h1.getCalls().size());
 		Assert.assertEquals(0, s_h2.getCalls().size());
 		Assert.assertTrue(s_h1.getCalls().contains(s_h2));
 
@@ -431,7 +431,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 		Assert.assertNotNull(d_h2);
 
 		// h1 -> h2 dynamic call
-		Assert.assertEquals(1, d_h1.getCalls().size());
+		Assert.assertEquals(2, d_h1.getCalls().size());
 		Assert.assertEquals(0, d_h2.getCalls().size());
 		Assert.assertTrue(d_h1.getCalls().contains(d_h2));
 
@@ -455,7 +455,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 		Assert.assertEquals(0, s_i2.getParameters().size());
 
 		// i1 -> i2 static call
-		Assert.assertEquals(1, s_i1.getCalls().size());
+		Assert.assertEquals(2, s_i1.getCalls().size());
 		Assert.assertEquals(1, s_i2.getCalls().size());
 		Assert.assertTrue(s_i1.getCalls().contains(s_i2));
 
@@ -469,7 +469,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 		Assert.assertNotNull(d_i2);
 
 		// i1 -> i2 dynamic call
-		Assert.assertEquals(1, d_i1.getCalls().size());
+		Assert.assertEquals(2, d_i1.getCalls().size());
 		Assert.assertEquals(1, d_i2.getCalls().size());
 		Assert.assertTrue(d_i1.getCalls().contains(d_i2));
 
@@ -497,7 +497,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 		Assert.assertEquals(0, s_j2.getParameters().size());
 
 		// j1 -> j2 static call
-		Assert.assertEquals(1, s_j1.getCalls().size());
+		Assert.assertEquals(2, s_j1.getCalls().size());
 		Assert.assertEquals(1, s_j2.getCalls().size());
 		Assert.assertTrue(s_j1.getCalls().contains(s_j2));
 
@@ -511,7 +511,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 		Assert.assertNotNull(d_j2);
 
 		// j1 -> j2 dynamic call
-		Assert.assertEquals(1, d_j1.getCalls().size());
+		Assert.assertEquals(2, d_j1.getCalls().size());
 		Assert.assertEquals(1, d_j2.getCalls().size());
 		Assert.assertTrue(d_j1.getCalls().contains(d_j2));
 
@@ -540,7 +540,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 
 		// k1 -> k2 static call
 		Assert.assertEquals(2, s_k1.getCalls().size());
-		Assert.assertEquals(0, s_k2.getCalls().size());
+		Assert.assertEquals(1, s_k2.getCalls().size());
 		Assert.assertTrue(s_k1.getCalls().contains(s_k2));
 
 		// dynamic
@@ -554,7 +554,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 
 		// k1 -> k2 dynamic call
 		Assert.assertEquals(2, d_k1.getCalls().size());
-		Assert.assertEquals(0, d_k2.getCalls().size());
+		Assert.assertEquals(1, d_k2.getCalls().size());
 		Assert.assertTrue(d_k1.getCalls().contains(d_k2));
 
 		// k1 calls new Vector()
@@ -582,7 +582,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 
 		// l1 -> l2 static call
 		Assert.assertEquals(2, s_l1.getCalls().size());
-		Assert.assertEquals(0, s_l2.getCalls().size());
+		Assert.assertEquals(1, s_l2.getCalls().size());
 		Assert.assertTrue(s_l1.getCalls().contains(s_l2));
 
 		// dynamic
@@ -596,7 +596,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 
 		// l1 -> l2 dynamic call
 		Assert.assertEquals(2, d_l1.getCalls().size());
-		Assert.assertEquals(0, d_l2.getCalls().size());
+		Assert.assertEquals(1, d_l2.getCalls().size());
 		Assert.assertTrue(d_l1.getCalls().contains(d_l2));
 
 		// l1 calls new Vector()
