@@ -37,7 +37,7 @@ public class ValidateFieldClass extends AbstractValidation {
 		// Assert.assertNotNull(d_ce);
 	}
 
-	
+	// Done
 	@Test
 	public void checkFields() {
 		// static
@@ -76,6 +76,15 @@ public class ValidateFieldClass extends AbstractValidation {
 		// Assert.assertEquals(Ids.SimpleClass_fieldA, _dynamicModel.getField(Ids.SimpleClass_fieldA).getId());
 	}
 
+	public void checkMethods() {
+		// static
+		ClassElement s_ce = _staticModel.getClass(Ids.FieldClass);
+		Assert.assertNotNull(s_ce);
+		Assert.assertEquals(28, s_ce.getMethods().size());
+
+		Assert.assertTrue(_staticModel.hasMethod(Ids.FieldClass_init));
+		
+	}
 	
 	
 	

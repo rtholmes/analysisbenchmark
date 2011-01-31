@@ -21,6 +21,21 @@ public interface Ids {
 	public final String FieldClass_staticFieldVector = "ca.uwaterloo.cs.se.bench.simple.FieldClass.staticFieldVector";
 	public final String FieldClass_staticFieldVectorInit = "ca.uwaterloo.cs.se.bench.simple.FieldClass.staticFieldVectorInit";
 	public final String FieldClass_staticBlockHashSetInit = "ca.uwaterloo.cs.se.bench.simple.FieldClass.staticBlockHashSetInit";
+	public final String FieldClass_init = "ca.uwaterloo.cs.se.bench.simple.FieldClass.<init>()";
+	
+	
+	public final String NestedClass = "ca.uwaterloo.cs.se.bench.simple.NestedClass";
+	public final String NestedClass_InnerClass = "ca.uwaterloo.cs.se.bench.simple.NestedClass.InnerClass";
+	public final String NestedClass_nestedString = "ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedString";
+	public final String NestedClass_nestedVector = "ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedVector";
+	public final String NestedClass_nestedStringVector = "ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedStringVector";
+	public final String NestedClass_nestedInitializedStringVector = "ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedInitializedStringVector";
+	public final String NestedClass_init = "ca.uwaterloo.cs.se.bench.simple.NestedClass.<init>()";
+	public final String NestedClass_nestedMethodA = "ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedMethodA()";
+	public final String NestedClass_nestedMethodB = "ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedMethodB()";
+	public final String NestedClass_nestedMethodC = "ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedMethodC()";
+	
+	
 	
 	
 	public final String SimpleClass = "ca.uwaterloo.cs.se.bench.simple.SimpleClass";
