@@ -2,9 +2,9 @@ package ca.uwaterloo.cs.se.bench.model;
 
 public class AnnotationElement {
 
-	String _type;
+	ClassElement _type;
 
-	public AnnotationElement(String type) {
+	public AnnotationElement(ClassElement type) {
 		_type = type;
 	}
 }
