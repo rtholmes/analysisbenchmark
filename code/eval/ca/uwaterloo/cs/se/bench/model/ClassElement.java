@@ -4,15 +4,25 @@ import java.util.Collection;
 import java.util.Vector;
 
 public class ClassElement extends AnnotatableElement {
-	Collection<FieldElement> _fields = new Vector<FieldElement>();
 
-	boolean _isAbstract = false;
+	/**
+	 * Super classes / super interfaces.
+	 */
+	private Collection<ClassElement> _parents = new Vector<ClassElement>();
 
-	boolean _isInterface = false;
+	/**
+	 * Contained methods.
+	 */
+	private Collection<MethodElement> _methods = new Vector<MethodElement>();
 
-	Collection<MethodElement> _methods = new Vector<MethodElement>();
-	String _package;
-	Collection<ClassElement> _parents = new Vector<ClassElement>();
+	/**
+	 * Contained fields.
+	 */
+	private Collection<FieldElement> _fields = new Vector<FieldElement>();
+
+	private boolean _isAbstract = false;
+
+	private boolean _isInterface = false;
 
 	/**
 	 * If a class is external we don't have additional attributes for it.
@@ -24,14 +34,13 @@ public class ClassElement extends AnnotatableElement {
 		_id = id;
 		_isExternal = isExternal;
 	}
+
 	public ClassElement(String id, boolean isExternal, boolean isInterface, boolean isAbstract) {
 		_id = id;
 		_isExternal = isExternal;
 		_isInterface = isInterface;
 		_isAbstract = isAbstract;
 	}
-
-	// boolean _isExternal = false;
 
 	public void addParent(ClassElement parent) {
 		_parents.add(parent);

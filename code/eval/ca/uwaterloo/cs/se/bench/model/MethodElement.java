@@ -5,22 +5,14 @@ import java.util.List;
 import java.util.Vector;
 
 public class MethodElement extends AnnotatableElement {
-	public MethodElement(String id) {
-		_id = id;
-	}
+	private Collection<MethodElement> _calls = new Vector<MethodElement>();
 
-	List<MethodParamElement> _params = new Vector<MethodParamElement>();
-	Collection<MethodElement> _calls = new Vector<MethodElement>();
-	Collection<FieldElement> _references = new Vector<FieldElement>();
-
+	private List<MethodParamElement> _params = new Vector<MethodParamElement>();
+	private Collection<FieldElement> _references = new Vector<FieldElement>();
 	MethodReturnElement _return;
 
-	public void setParams(List<MethodParamElement> params) {
-		_params = params;
-	}
-
-	public void setReturn(MethodReturnElement mre) {
-		_return = mre;
+	public MethodElement(String id) {
+		_id = id;
 	}
 
 	public void addCallTarget(MethodElement target) {
@@ -31,23 +23,31 @@ public class MethodElement extends AnnotatableElement {
 		_references.add(field);
 	}
 
-	public String toString() {
-		return getId();
-	}
-
 	public Collection<MethodElement> getCalls() {
 		return _calls;
 	}
 
-	public MethodReturnElement getReturnElement() {
-		return _return;
+	public List<MethodParamElement> getParameters() {
+		return _params;
 	}
 
 	public Collection<FieldElement> getReferences() {
 		return _references;
 	}
 
-	public List<MethodParamElement> getParameters() {
-		return _params;
+	public MethodReturnElement getReturnElement() {
+		return _return;
+	}
+
+	public void setParams(List<MethodParamElement> params) {
+		_params = params;
+	}
+
+	public void setReturn(MethodReturnElement mre) {
+		_return = mre;
+	}
+
+	public String toString() {
+		return getId();
 	}
 }

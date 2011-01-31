@@ -4,20 +4,20 @@ import java.util.Vector;
 
 public abstract class TypeReferenceElement {
 
+	// TODO: multidimensional array returns
+	private int _arrayDimensions = -1;
+
+	// TODO: generic returns
+	private Vector<ClassElement> _generics = new Vector<ClassElement>();
+
+	// TODO: array returns
+	private boolean _isArray = false;
+
+	private final ClassElement _type;
+
 	public TypeReferenceElement(ClassElement type) {
 		_type = type;
 	}
-
-	final ClassElement _type;
-
-	// TODO: generic returns
-	Vector<ClassElement> _generics = new Vector<ClassElement>();
-
-	// TODO: array returns
-	boolean _isArray = false;
-
-	// TODO: multidimensional array returns
-	int _arrayDimensions = -1;
 
 	public ClassElement getType() {
 		return _type;
