@@ -20,6 +20,8 @@
 	<!-- dynamic:			runs the dynamic analysis using the tests generated from src.test -->
 	<!-- validateDynamic:	compares the results of the dynamic analysis to a known oracle -->
 
+	<property name="maxmemory" value="1024m" />
+	
 	<property name="code" location="code" />
 	<property name="build" location="build" />
 
@@ -129,7 +131,8 @@
 	<target name="clean" description="clean up">
 		<delete dir="${build}" />
 		<delete dir="${dist}" />
-		<delete dir="${report}" />
+		<!-- stop deleting the reports all the time -->
+		<!-- <delete dir="${report}" /> -->
 	</target>
 
 
@@ -163,13 +166,13 @@
 	</target>
 
 	<target name="testSrc" depends="compileSrc" description="perform tests">
-		<junit printsummary="yes" haltonfailure="no" fork="yes" forkmode="once">
+		<junit maxmemory="${maxmemory}" printsummary="yes" haltonfailure="no" fork="yes" forkmode="once">
 			<!--<jvmarg value="-Djava.compiler=NONE"/>-->
 
 			<classpath refid="classpath.src" />
 
 			<formatter type="plain" />
-
+			
 			<batchtest todir="${report.srcTest}">
 				<fileset dir="${src.test}">
 					<include name="**/*.java" />
@@ -179,7 +182,7 @@
 	</target>
 
 	<target name="dynamic" depends="compileSrc" description="perform tests">
-		<junit printsummary="yes" haltonfailure="no" fork="yes" forkmode="once">
+		<junit maxmemory="${maxmemory}" printsummary="yes" haltonfailure="no" fork="yes" forkmode="once">
 			<!--<jvmarg value="-Djava.compiler=NONE"/>-->
 
 			<classpath refid="classpath.src.trace" />
@@ -195,7 +198,7 @@
 	</target>
 
 	<target name="validateStatic" depends="static" description="Validate static analyses">
-		<junit printsummary="yes" haltonfailure="yes" fork="yes" forkmode="once">
+		<junit maxmemory="${maxmemory}" printsummary="yes" haltonfailure="yes" fork="yes" forkmode="once">
 			<!--<jvmarg value="-Djava.compiler=NONE"/>-->
 			<classpath refid="classpath.eval" />
 
