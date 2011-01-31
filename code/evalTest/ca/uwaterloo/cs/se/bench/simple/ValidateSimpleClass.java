@@ -1,7 +1,10 @@
 package ca.uwaterloo.cs.se.bench.simple;
 
-import junit.framework.Assert;
+import java.util.Collection;
+import java.util.List;
+import java.util.Vector;
 
+import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -11,6 +14,9 @@ import ca.uwaterloo.cs.se.bench.model.MethodElement;
 import ca.uwaterloo.cs.se.bench.model.MethodParamElement;
 
 import com.google.common.collect.Iterators;
+
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.matchers.JUnitMatchers.*;
 
 /**
  * Test SimpleClass
@@ -46,7 +52,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 
 		ClassElement s_ce = _staticModel.getClass(Ids.SimpleClass);
 		Assert.assertEquals(1, s_ce.getFields().size());
-		Assert.assertTrue(Iterators.contains(s_ce.getFields().iterator(), _staticModel.getField(Ids.SimpleClass_fieldA)));
+		Assert.assertThat(s_ce.getFields(), hasItem(_staticModel.getField(Ids.SimpleClass_fieldA)));
 
 		// dynamic (commented out because we're not currently tracing field references)
 		// Assert.assertTrue(_dynamicModel.hasField(Ids.SimpleClass_fieldA));
@@ -307,7 +313,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 		Assert.assertTrue(d_e1.getCalls().contains(d_e2));
 
 		// e1 calls new Vector()
-		Assert.assertTrue(Iterators.contains(d_e1.getCalls().iterator(), _dynamicModel.getMethod(Ids.Vector_init)));
+		Assert.assertThat(d_e1.getCalls(), hasItem(_dynamicModel.getMethod(Ids.Vector_init)));
 		// e1 calls e2
 		Assert.assertTrue(Iterators.contains(d_e1.getCalls().iterator(), d_e2));
 	}
@@ -493,7 +499,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 		// j2 properties
 		MethodElement s_j2 = _staticModel.getMethod(Ids.SimpleClass_j2);
 		Assert.assertNotNull(s_j2);
-		Assert.assertEquals(Ids.Collection, s_j2.getReturnElement().getType().getId());  
+		Assert.assertEquals(Ids.Collection, s_j2.getReturnElement().getType().getId());
 		Assert.assertEquals(0, s_j2.getParameters().size());
 
 		// j1 -> j2 static call
@@ -520,8 +526,8 @@ public class ValidateSimpleClass extends AbstractValidation {
 		// j1 calls j2
 		Assert.assertTrue(Iterators.contains(d_j1.getCalls().iterator(), d_j2));
 	}
-	
-	// Done	
+
+	// Done
 	@Test
 	public void test_k() {
 		// static
@@ -535,7 +541,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 		// k2 properties
 		MethodElement s_k2 = _staticModel.getMethod(Ids.SimpleClass_k2);
 		Assert.assertNotNull(s_k2);
-		Assert.assertEquals(Ids.Prim_void, s_k2.getReturnElement().getType().getId());  
+		Assert.assertEquals(Ids.Prim_void, s_k2.getReturnElement().getType().getId());
 		Assert.assertEquals(1, s_k2.getParameters().size());
 
 		// k1 -> k2 static call
@@ -562,7 +568,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 		// k1 calls k2
 		Assert.assertTrue(Iterators.contains(d_k1.getCalls().iterator(), d_k2));
 	}
-	
+
 	// Done
 	@Test
 	public void test_l() {
@@ -577,7 +583,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 		// l2 properties
 		MethodElement s_l2 = _staticModel.getMethod(Ids.SimpleClass_l2);
 		Assert.assertNotNull(s_l2);
-		Assert.assertEquals(Ids.Prim_void, s_l2.getReturnElement().getType().getId());  
+		Assert.assertEquals(Ids.Prim_void, s_l2.getReturnElement().getType().getId());
 		Assert.assertEquals(1, s_l2.getParameters().size());
 
 		// l1 -> l2 static call
@@ -604,7 +610,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 		// l1 calls l2
 		Assert.assertTrue(Iterators.contains(d_l1.getCalls().iterator(), d_l2));
 	}
-	
+
 	// Done
 	@Test
 	public void test_m() {
@@ -619,7 +625,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 		// m2 properties
 		MethodElement s_m2 = _staticModel.getMethod(Ids.SimpleClass_m2);
 		Assert.assertNotNull(s_m2);
-		Assert.assertEquals(Ids.Prim_bool , s_m2.getReturnElement().getType().getId());
+		Assert.assertEquals(Ids.Prim_bool, s_m2.getReturnElement().getType().getId());
 		// Assert.assertEquals(2, s_m2.getParameters().size()); issue #5 in depfind
 
 		// m1 -> m2 static call
@@ -642,6 +648,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 		Assert.assertTrue(d_m1.getCalls().contains(d_m2));
 
 	}
+
 	// Done
 	@Test
 	public void test_fieldA() {
