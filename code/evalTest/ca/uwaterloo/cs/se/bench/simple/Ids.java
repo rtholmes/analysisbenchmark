@@ -26,17 +26,24 @@ public interface Ids {
 	
 	public final String NestedClass = "ca.uwaterloo.cs.se.bench.simple.NestedClass";
 	public final String NestedClass_InnerClass = "ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass";
+	public final String NestedClass_InnerInnerClass = "ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass";
 	public final String NestedClass_nestedString = "ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedString";
 	public final String NestedClass_nestedVector = "ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedVector";
 	public final String NestedClass_nestedStringVector = "ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedStringVector";
 	public final String NestedClass_nestedInitializedStringVector = "ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedInitializedStringVector";
 	public final String NestedClass_init = "ca.uwaterloo.cs.se.bench.simple.NestedClass.<init>()";
+	public final String NestedClass_innerinit = "ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.<init>(ca.uwaterloo.cs.se.bench.simple.NestedClass)";
+	public final String NestedClass_innerinnerinit = "ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.<init>(ca.uwaterloo.cs.se.bench.simple.NestedClass)";
 	public final String NestedClass_nestedMethodA = "ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedMethodA()";
 	public final String NestedClass_nestedMethodB = "ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedMethodB()";
 	public final String NestedClass_nestedMethodC = "ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedMethodC()";
-	
-	
-	
+	public final String NestedClass_innerMethodA = "ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.innerMethodA()";
+	public final String NestedClass_innerMethodB = "ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.innerMethodB()";
+	public final String NestedClass_innerMethodC = "ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.innerMethodC()";
+	public final String NestedClass_innerinnerMethodA = "ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodA()";
+	public final String NestedClass_innerinnerMethodB = "ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodB()";
+	public final String NestedClass_innerinnerMethodC = "ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodC()";														
+
 	
 	public final String SimpleClass = "ca.uwaterloo.cs.se.bench.simple.SimpleClass";
 	public final String SimpleClass_fieldA = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.fieldA";
