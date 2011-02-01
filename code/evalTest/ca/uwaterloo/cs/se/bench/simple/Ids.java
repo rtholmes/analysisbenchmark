@@ -25,7 +25,7 @@ public interface Ids {
 	
 	
 	public final String NestedClass = "ca.uwaterloo.cs.se.bench.simple.NestedClass";
-	public final String NestedClass_InnerClass = "ca.uwaterloo.cs.se.bench.simple.NestedClass.InnerClass";
+	public final String NestedClass_InnerClass = "ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass";
 	public final String NestedClass_nestedString = "ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedString";
 	public final String NestedClass_nestedVector = "ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedVector";
 	public final String NestedClass_nestedStringVector = "ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedStringVector";
