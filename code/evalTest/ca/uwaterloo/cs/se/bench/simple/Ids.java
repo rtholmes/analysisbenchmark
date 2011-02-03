@@ -43,7 +43,6 @@ public interface Ids {
 	public final String NestedClass_innerinnerMethodA = "ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodA()";
 	public final String NestedClass_innerinnerMethodB = "ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodB()";
 	public final String NestedClass_innerinnerMethodC = "ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodC()";														
-
 	
 	public final String SimpleClass = "ca.uwaterloo.cs.se.bench.simple.SimpleClass";
 	public final String SimpleClass_fieldA = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.fieldA";
@@ -77,9 +76,15 @@ public interface Ids {
 	public final String SimpleClass_n0 = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.n0()";
 
 	public final String InhInterface = "ca.uwaterloo.cs.se.bench.simple.InhInterface";
-	public final String InhAbstractClass = "ca.uwaterloo.cs.se.bench.simple.InhAbstractClass";
-	public final String InhClassA = "ca.uwaterloo.cs.se.bench.simple.InhClassA";
+	public final String InhInterface_init = "ca.uwaterloo.cs.se.bench.simple.InhInterface.<init>()";
+	public final String InhInterface_interfaceMethodA = "ca.uwaterloo.cs.se.bench.simple.InhInterface.interfaceMethodA()";
+	public final String InhInterface_interfaceMethodB = "ca.uwaterloo.cs.se.bench.simple.InhInterface.interfaceMethodB()";
+	public final String InhInterface_interfaceMethodC = "ca.uwaterloo.cs.se.bench.simple.InhInterface.interfaceMethodC()";
 
+	public final String InhAbstractClass = "ca.uwaterloo.cs.se.bench.simple.InhAbstractClass";
+	
+	public final String InhClassA = "ca.uwaterloo.cs.se.bench.simple.InhClassA";
+	
 	public final String AnonClass = "ca.uwaterloo.cs.se.bench.simple.AnonClass";
 	public final String AnonClass_simpleAnonymous = "ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleAnonymous()";
 	public final String AnonClass_genericAnonymous = "ca.uwaterloo.cs.se.bench.simple.AnonClass.genericAnonymous()";
