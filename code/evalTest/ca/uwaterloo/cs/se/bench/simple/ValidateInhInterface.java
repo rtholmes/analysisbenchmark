@@ -35,7 +35,7 @@ public class ValidateInhInterface extends AbstractValidation {
 		Assert.assertNotNull(s_ce);
 		Assert.assertEquals(3, s_ce.getMethods().size());
 
-//		Assert.assertTrue(_staticModel.hasMethod(Ids.InhInterface_init));
+		Assert.assertTrue(_staticModel.hasMethod(Ids.InhInterface_init));
 		Assert.assertTrue(_staticModel.hasMethod(Ids.InhInterface_interfaceMethodA));
 		Assert.assertTrue(_staticModel.hasMethod(Ids.InhInterface_interfaceMethodB));
 		Assert.assertTrue(_staticModel.hasMethod(Ids.InhInterface_interfaceMethodC));

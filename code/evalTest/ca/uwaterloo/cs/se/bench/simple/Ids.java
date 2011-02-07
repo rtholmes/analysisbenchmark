@@ -81,9 +81,20 @@ public interface Ids {
 	public final String InhInterface_interfaceMethodB = "ca.uwaterloo.cs.se.bench.simple.InhInterface.interfaceMethodB()";
 	public final String InhInterface_interfaceMethodC = "ca.uwaterloo.cs.se.bench.simple.InhInterface.interfaceMethodC()";
 
-	public final String InhAbstractClass = "ca.uwaterloo.cs.se.bench.simple.InhAbstractClass";
-	
 	public final String InhClassA = "ca.uwaterloo.cs.se.bench.simple.InhClassA";
+	public final String InhClassA_init = "ca.uwaterloo.cs.se.bench.simple.InhClassA.<init>()";
+	public final String InhClassA_interfaceMethodA = "ca.uwaterloo.cs.se.bench.simple.InhClassA.interfaceMethodA()";
+	public final String InhClassA_interfaceMethodB = "ca.uwaterloo.cs.se.bench.simple.InhClassA.interfaceMethodB()";
+	public final String InhClassA_abstractMethodA = "ca.uwaterloo.cs.se.bench.simple.InhClassA.abstractMethodA()";
+
+	
+	public final String InhAbstractClass = "ca.uwaterloo.cs.se.bench.simple.InhAbstractClass";
+	public final String InhAbstractClass_init = "ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.<init>()";
+	public final String InhAbstractClass_interfaceMethodA = "ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.interfaceMethodA()";
+	public final String InhAbstractClass_interfaceMethodC = "ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.interfaceMethodC()";
+	public final String InhAbstractClass_abstractMethodA = "ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.abstractMethodA()";	
+	public final String InhAbstractClass_abstractMethodB = "ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.abstractMethodB()";	
+
 	
 	public final String AnonClass = "ca.uwaterloo.cs.se.bench.simple.AnonClass";
 	public final String AnonClass_simpleAnonymous = "ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleAnonymous()";
