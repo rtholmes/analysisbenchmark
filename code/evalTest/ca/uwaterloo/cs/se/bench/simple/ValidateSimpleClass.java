@@ -1,11 +1,8 @@
 package ca.uwaterloo.cs.se.bench.simple;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Vector;
+import static org.junit.matchers.JUnitMatchers.hasItem;
 
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import ca.uwaterloo.cs.se.bench.model.ClassElement;
@@ -14,9 +11,6 @@ import ca.uwaterloo.cs.se.bench.model.MethodElement;
 import ca.uwaterloo.cs.se.bench.model.MethodParamElement;
 
 import com.google.common.collect.Iterators;
-
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.matchers.JUnitMatchers.*;
 
 /**
  * Test SimpleClass
