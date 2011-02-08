@@ -1,6 +1,8 @@
 package ca.uwaterloo.cs.se.bench.simple;
 
 import org.junit.Test;
+import ca.uwaterloo.cs.se.bench.simple.InhInterface;
+import ca.uwaterloo.cs.se.bench.simple.InhClassA;
 
 /**
  * This isn't complete but is a sufficient start.
