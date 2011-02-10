@@ -1,5 +1,6 @@
 package ca.uwaterloo.cs.se.bench.simple;
 
+import static org.junit.matchers.JUnitMatchers.hasItem;
 import junit.framework.Assert;
 
 import org.junit.Test;
@@ -32,6 +33,19 @@ public class ValidateAnonClass extends AbstractValidation {
 		// Assert.assertNotNull(d_ce);
 	}
 
+	@Test
+	public void checkFields() {
+		// static
+	
+		ClassElement s_ce = _staticModel.getClass(Ids.AnonClass);
+		Assert.assertEquals(0, s_ce.getFields().size());
+
+		// dynamic (commented out because we're not currently tracing field references)
+		// Assert.assertTrue(_dynamicModel.hasField(Ids.SimpleClass_fieldA));
+		// Assert.assertNotNull(_dynamicModel.getField(Ids.SimpleClass_fieldA));
+		// Assert.assertEquals(Ids.SimpleClass_fieldA, _dynamicModel.getField(Ids.SimpleClass_fieldA).getId());
+	}
+	
 	@Test
 	public void checkMethods() {
 		ClassElement s_ce = _staticModel.getClass(Ids.AnonClass);
