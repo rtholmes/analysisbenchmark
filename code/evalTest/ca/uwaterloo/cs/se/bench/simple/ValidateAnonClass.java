@@ -54,10 +54,14 @@ public class ValidateAnonClass extends AbstractValidation {
 
 		Assert.assertTrue(_staticModel.hasMethod(Ids.AnonClass_simpleAnonymous));
 		Assert.assertTrue(_staticModel.hasMethod(Ids.AnonClass_genericAnonymous));
-
+		Assert.assertTrue(_staticModel.hasMethod(Ids.AnonClass_simpleAnonymous_compare));
+		Assert.assertTrue(_staticModel.hasMethod(Ids.AnonClass_genericAnonymous_compare));
+		
 		Assert.assertTrue(_dynamicModel.hasMethod(Ids.AnonClass_simpleAnonymous));
 		Assert.assertTrue(_dynamicModel.hasMethod(Ids.AnonClass_genericAnonymous));
-
+//		Assert.assertTrue(_dynamicModel.hasMethod(Ids.AnonClass_simpleAnonymous_compare));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.AnonClass_genericAnonymous_compare));
+		
 		// TODO: missing checks for the anonymous methods (e.g., ca...SimpleAnonymous$1.compare(String, String))
 	}
 

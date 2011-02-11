@@ -11,6 +11,7 @@ public class AnonClass {
 		v.add("one");
 		v.add("two");
 
+		
 		Collections.sort(new Vector(), new Comparator() {
 
 			@Override

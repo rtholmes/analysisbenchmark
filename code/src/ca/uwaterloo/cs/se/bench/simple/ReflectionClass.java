@@ -8,7 +8,7 @@ import java.util.Vector;
 public class ReflectionClass {
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	void instantiateString() {
+	void instantiateString() {																																			
 		try {
 			Class cls = Class.forName("java.lang.String");
 

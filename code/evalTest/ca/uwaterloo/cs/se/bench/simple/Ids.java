@@ -99,8 +99,8 @@ public interface Ids {
 	public final String AnonClass = "ca.uwaterloo.cs.se.bench.simple.AnonClass";
 	public final String AnonClass_simpleAnonymous = "ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleAnonymous()";
 	public final String AnonClass_genericAnonymous = "ca.uwaterloo.cs.se.bench.simple.AnonClass.genericAnonymous()";
-	public final String AnonClass_simpleAnonymous_compare = "ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleAnonymous().compare()";
-	public final String AnonClass_genericAnonymous_compare = "ca.uwaterloo.cs.se.bench.simple.AnonClass.genericAnonymous().compare()";
+	public final String AnonClass_simpleAnonymous_compare = "ca.uwaterloo.cs.se.bench.simple.AnonClass$1.compare(java.lang.Object, java.lang.Object)";
+	public final String AnonClass_genericAnonymous_compare = "ca.uwaterloo.cs.se.bench.simple.AnonClass$2.compare(java.lang.String, java.lang.String)";
 	
 	public final String Prim_void = "void";
 	public final String Prim_bool = "boolean";
