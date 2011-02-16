@@ -20,7 +20,7 @@ import ca.uwaterloo.cs.se.bench.model.MethodParamElement;
  */
 public class ValidateNestedClass extends AbstractValidation {
 
-//	Done
+	// Done
 	@Test
 	public void checkClass() {
 		// static
@@ -47,10 +47,8 @@ public class ValidateNestedClass extends AbstractValidation {
 		// ClassElement d_ce = _dynamicModel.getClass(Ids.SimpleClass);
 		// Assert.assertNotNull(d_ce);
 
-		Assert.assertTrue(_staticModel
-				.hasClass(Ids.NestedClass_InnerInnerClass));
-		ClassElement s_cr = _staticModel
-				.getClass(Ids.NestedClass_InnerInnerClass);
+		Assert.assertTrue(_staticModel.hasClass(Ids.NestedClass_InnerInnerClass));
+		ClassElement s_cr = _staticModel.getClass(Ids.NestedClass_InnerInnerClass);
 		Assert.assertNotNull(s_cr);
 
 		Assert.assertFalse(s_cr.isExternal());
@@ -68,44 +66,32 @@ public class ValidateNestedClass extends AbstractValidation {
 	public void checkFields() {
 		// static
 		Assert.assertTrue(_staticModel.hasField(Ids.NestedClass_nestedString));
-		Assert.assertNotNull(_staticModel
-				.getField(Ids.NestedClass_nestedString));
-		Assert.assertEquals(Ids.NestedClass_nestedString, _staticModel
-				.getField(Ids.NestedClass_nestedString).getId());
+		Assert.assertNotNull(_staticModel.getField(Ids.NestedClass_nestedString));
+		Assert.assertEquals(Ids.NestedClass_nestedString, _staticModel.getField(Ids.NestedClass_nestedString).getId());
 
 		Assert.assertTrue(_staticModel.hasField(Ids.NestedClass_nestedVector));
-		Assert.assertNotNull(_staticModel
-				.getField(Ids.NestedClass_nestedVector));
-		Assert.assertEquals(Ids.NestedClass_nestedVector, _staticModel
-				.getField(Ids.NestedClass_nestedVector).getId());
+		Assert.assertNotNull(_staticModel.getField(Ids.NestedClass_nestedVector));
+		Assert.assertEquals(Ids.NestedClass_nestedVector, _staticModel.getField(Ids.NestedClass_nestedVector).getId());
 
-		Assert.assertTrue(_staticModel
-				.hasField(Ids.NestedClass_nestedStringVector));
-		Assert.assertNotNull(_staticModel
-				.getField(Ids.NestedClass_nestedStringVector));
-		Assert.assertEquals(Ids.NestedClass_nestedStringVector, _staticModel
-				.getField(Ids.NestedClass_nestedStringVector).getId());
+		Assert.assertTrue(_staticModel.hasField(Ids.NestedClass_nestedStringVector));
+		Assert.assertNotNull(_staticModel.getField(Ids.NestedClass_nestedStringVector));
+		Assert.assertEquals(Ids.NestedClass_nestedStringVector, _staticModel.getField(Ids.NestedClass_nestedStringVector).getId());
 
-		Assert.assertTrue(_staticModel
-				.hasField(Ids.NestedClass_nestedInitializedStringVector));
-		Assert.assertNotNull(_staticModel
-				.getField(Ids.NestedClass_nestedInitializedStringVector));
-		Assert.assertEquals(
-				Ids.NestedClass_nestedInitializedStringVector,
-				_staticModel.getField(
-						Ids.NestedClass_nestedInitializedStringVector).getId());
+		Assert.assertTrue(_staticModel.hasField(Ids.NestedClass_nestedInitializedStringVector));
+		Assert.assertNotNull(_staticModel.getField(Ids.NestedClass_nestedInitializedStringVector));
+		Assert.assertEquals(Ids.NestedClass_nestedInitializedStringVector,
+				_staticModel.getField(Ids.NestedClass_nestedInitializedStringVector).getId());
 
 		ClassElement s_ce = _staticModel.getClass(Ids.NestedClass);
 		Assert.assertEquals(4, s_ce.getFields().size());
-		Assert.assertTrue(Iterators.contains(s_ce.getFields().iterator(),
-				_staticModel.getField(Ids.NestedClass_nestedString)));
-		
+		Assert.assertTrue(Iterators.contains(s_ce.getFields().iterator(), _staticModel.getField(Ids.NestedClass_nestedString)));
+
 		ClassElement s_ct = _staticModel.getClass(Ids.NestedClass_InnerClass);
 		Assert.assertEquals(1, s_ct.getFields().size());
 
 		ClassElement s_cr = _staticModel.getClass(Ids.NestedClass_InnerInnerClass);
 		Assert.assertEquals(1, s_cr.getFields().size());
-		
+
 		// dynamic (commented out because we're not currently tracing field
 		// references)
 		// Assert.assertTrue(_dynamicModel.hasField(Ids.SimpleClass_fieldA));
@@ -132,37 +118,34 @@ public class ValidateNestedClass extends AbstractValidation {
 		Assert.assertTrue(_staticModel.hasMethod(Ids.NestedClass_innerinnerMethodA));
 		Assert.assertTrue(_staticModel.hasMethod(Ids.NestedClass_innerinnerMethodB));
 		Assert.assertTrue(_staticModel.hasMethod(Ids.NestedClass_innerinnerMethodC));
-		
+
 		// dynamic
 		// aggregates not checked because tracer doesn't record containment
 		Assert.assertTrue(_dynamicModel.hasMethod(Ids.NestedClass_init));
-		Assert.assertTrue(_dynamicModel
-				.hasMethod(Ids.NestedClass_nestedMethodA));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.NestedClass_nestedMethodA));
 		// B isn't called in the test suite
 		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.NestedClass_nestedMethodB));
-		Assert.assertTrue(_dynamicModel
-				.hasMethod(Ids.NestedClass_nestedMethodC));
-		
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.NestedClass_nestedMethodC));
+
 		// dynamic
 		// aggregates not checked because tracer doesn't record containment
-		/*A not called
-		Assert.assertTrue(_dynamicModel.hasMethod(Ids.NestedClass_innerinit));
-		Assert.assertTrue(_dynamicModel
-				.hasMethod(Ids.NestedClass_innerMethodA));  */
+		/*
+		 * A not called Assert.assertTrue(_dynamicModel.hasMethod(Ids.NestedClass_innerinit)); Assert.assertTrue(_dynamicModel
+		 * .hasMethod(Ids.NestedClass_innerMethodA));
+		 */
 
-		 Assert.assertTrue(_dynamicModel.hasMethod(Ids.NestedClass_innerMethodB));
-		 Assert.assertTrue(_dynamicModel.hasMethod(Ids.NestedClass_innerMethodC));
-		
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.NestedClass_innerMethodB));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.NestedClass_innerMethodC));
+
 		// dynamic
 		// aggregates not checked because tracer doesn't record containment
 		Assert.assertTrue(_dynamicModel.hasMethod(Ids.NestedClass_innerinnerinit));
-/* A not called
-		Assert.assertTrue(_dynamicModel
-				.hasMethod(Ids.NestedClass_innerinnerMethodA)); */
+		/*
+		 * A not called Assert.assertTrue(_dynamicModel .hasMethod(Ids.NestedClass_innerinnerMethodA));
+		 */
 		// B isn't called in the test suite
 		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.NestedClass_nestedMethodB));
-		Assert.assertTrue(_dynamicModel
-				.hasMethod(Ids.NestedClass_innerinnerMethodC));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.NestedClass_innerinnerMethodC));
 
 	}
 
@@ -188,31 +171,30 @@ public class ValidateNestedClass extends AbstractValidation {
 		Assert.assertNotNull(s_c);
 		Assert.assertEquals(s_c.getReturnElement().getType().getId(), Ids.Prim_void);
 		Assert.assertEquals(0, s_c.getParameters().size());
-		
-		//  static call
+
+		// static call
 		Assert.assertEquals(1, s_a.getCalls().size());
 		Assert.assertEquals(0, s_b.getCalls().size());
 		Assert.assertEquals(0, s_c.getCalls().size());
-		
+
 		// dynamic
 		// a
 		MethodElement d_a = _dynamicModel.getMethod(Ids.NestedClass_nestedMethodA);
 		Assert.assertNotNull(d_a);
 
-		/* b is not called
-		MethodElement d_b = _dynamicModel.getMethod(Ids.NestedClass_nestedMethodB);
-		Assert.assertNotNull(d_b);
-*/
+		/*
+		 * b is not called MethodElement d_b = _dynamicModel.getMethod(Ids.NestedClass_nestedMethodB); Assert.assertNotNull(d_b);
+		 */
 		// c
 		MethodElement d_c = _dynamicModel.getMethod(Ids.NestedClass_nestedMethodC);
 		Assert.assertNotNull(d_c);
-		
+
 		// a1 -> a2 dynamic call
 		Assert.assertEquals(1, d_a.getCalls().size());
-//		Assert.assertEquals(0, d_b.getCalls().size());
+		// Assert.assertEquals(0, d_b.getCalls().size());
 		Assert.assertEquals(0, d_c.getCalls().size());
 
-		//		Assert.assertTrue(d_a1.getCalls().contains(d_a2));
+		// Assert.assertTrue(d_a1.getCalls().contains(d_a2));
 	}
 
 	// Done
@@ -237,17 +219,16 @@ public class ValidateNestedClass extends AbstractValidation {
 		Assert.assertNotNull(s_c);
 		Assert.assertEquals(s_c.getReturnElement().getType().getId(), Ids.Prim_void);
 		Assert.assertEquals(0, s_c.getParameters().size());
-		
-		//  static call
+
+		// static call
 		Assert.assertEquals(1, s_a.getCalls().size());
 		Assert.assertEquals(0, s_b.getCalls().size());
 		Assert.assertEquals(1, s_c.getCalls().size());
-		
+
 		// dynamic
-		/* a is not called
-		MethodElement d_a = _dynamicModel.getMethod(Ids.NestedClass_innerMethodA);
-		Assert.assertNotNull(d_a);
-*/
+		/*
+		 * a is not called MethodElement d_a = _dynamicModel.getMethod(Ids.NestedClass_innerMethodA); Assert.assertNotNull(d_a);
+		 */
 
 		MethodElement d_b = _dynamicModel.getMethod(Ids.NestedClass_innerMethodB);
 		Assert.assertNotNull(d_b);
@@ -255,13 +236,13 @@ public class ValidateNestedClass extends AbstractValidation {
 		// c
 		MethodElement d_c = _dynamicModel.getMethod(Ids.NestedClass_innerMethodC);
 		Assert.assertNotNull(d_c);
-		
+
 		// a1 -> a2 dynamic call
-//		Assert.assertEquals(1, d_a.getCalls().size());
+		// Assert.assertEquals(1, d_a.getCalls().size());
 		Assert.assertEquals(0, d_b.getCalls().size());
 		Assert.assertEquals(1, d_c.getCalls().size());
 
-		//		Assert.assertTrue(d_a1.getCalls().contains(d_a2));
+		// Assert.assertTrue(d_a1.getCalls().contains(d_a2));
 	}
 
 	@Test
@@ -285,30 +266,27 @@ public class ValidateNestedClass extends AbstractValidation {
 		Assert.assertNotNull(s_c);
 		Assert.assertEquals(s_c.getReturnElement().getType().getId(), Ids.Prim_void);
 		Assert.assertEquals(0, s_c.getParameters().size());
-		
-		//  static call
+
+		// static call
 		Assert.assertEquals(1, s_a.getCalls().size());
 		Assert.assertEquals(1, s_b.getCalls().size());
 		Assert.assertEquals(1, s_c.getCalls().size());
-		
-		// dynamic
-		/* a is not called
-		MethodElement d_a = _dynamicModel.getMethod(Ids.NestedClass_innerMethodA);
-		Assert.assertNotNull(d_a);
 
-  b not called
-		MethodElement d_b = _dynamicModel.getMethod(Ids.NestedClass_innerinnerMethodB);
-		Assert.assertNotNull(d_b);
-*/
+		// dynamic
+		/*
+		 * a is not called MethodElement d_a = _dynamicModel.getMethod(Ids.NestedClass_innerMethodA); Assert.assertNotNull(d_a);
+		 * 
+		 * b not called MethodElement d_b = _dynamicModel.getMethod(Ids.NestedClass_innerinnerMethodB); Assert.assertNotNull(d_b);
+		 */
 		// c
 		MethodElement d_c = _dynamicModel.getMethod(Ids.NestedClass_innerinnerMethodC);
 		Assert.assertNotNull(d_c);
-		
+
 		// a1 -> a2 dynamic call
-//		Assert.assertEquals(1, d_a.getCalls().size());
-//		Assert.assertEquals(0, d_b.getCalls().size());
+		// Assert.assertEquals(1, d_a.getCalls().size());
+		// Assert.assertEquals(0, d_b.getCalls().size());
 		Assert.assertEquals(1, d_c.getCalls().size());
 
-		//		Assert.assertTrue(d_a1.getCalls().contains(d_a2));
+		// Assert.assertTrue(d_a1.getCalls().contains(d_a2));
 	}
 }

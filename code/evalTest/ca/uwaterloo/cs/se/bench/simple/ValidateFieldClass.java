@@ -48,24 +48,25 @@ public class ValidateFieldClass extends AbstractValidation {
 		Assert.assertTrue(_staticModel.hasField(Ids.FieldClass_fieldStringValue));
 		Assert.assertNotNull(_staticModel.getField(Ids.FieldClass_fieldStringValue));
 		Assert.assertEquals(Ids.FieldClass_fieldStringValue, _staticModel.getField(Ids.FieldClass_fieldStringValue).getId());
-		
+
 		Assert.assertTrue(_staticModel.hasField(Ids.FieldClass_staticFieldVector));
 		Assert.assertNotNull(_staticModel.getField(Ids.FieldClass_staticFieldVector));
 		Assert.assertEquals(Ids.FieldClass_staticFieldVector, _staticModel.getField(Ids.FieldClass_staticFieldVector).getId());
-		
+
 		Assert.assertTrue(_staticModel.hasField(Ids.FieldClass_staticFieldVectorInit));
 		Assert.assertNotNull(_staticModel.getField(Ids.FieldClass_staticFieldVectorInit));
-		Assert.assertEquals(Ids.FieldClass_staticFieldVectorInit, _staticModel.getField(Ids.FieldClass_staticFieldVectorInit).getId());
-		
+		Assert.assertEquals(Ids.FieldClass_staticFieldVectorInit, _staticModel.getField(Ids.FieldClass_staticFieldVectorInit)
+				.getId());
+
 		Assert.assertTrue(_staticModel.hasField(Ids.FieldClass_staticBlockHashSetInit));
 		Assert.assertNotNull(_staticModel.getField(Ids.FieldClass_staticBlockHashSetInit));
-		Assert.assertEquals(Ids.FieldClass_staticBlockHashSetInit, _staticModel.getField(Ids.FieldClass_staticBlockHashSetInit).getId());
-		
+		Assert.assertEquals(Ids.FieldClass_staticBlockHashSetInit, _staticModel.getField(Ids.FieldClass_staticBlockHashSetInit)
+				.getId());
+
 		Assert.assertTrue(_staticModel.hasField(Ids.FieldClass_fieldStringInit));
 		Assert.assertNotNull(_staticModel.getField(Ids.FieldClass_fieldStringInit));
 		Assert.assertEquals(Ids.FieldClass_fieldStringInit, _staticModel.getField(Ids.FieldClass_fieldStringInit).getId());
-		
-		
+
 		ClassElement s_ce = _staticModel.getClass(Ids.FieldClass);
 		Assert.assertEquals(6, s_ce.getFields().size());
 		Assert.assertTrue(Iterators.contains(s_ce.getFields().iterator(), _staticModel.getField(Ids.FieldClass_fieldString)));
@@ -83,9 +84,7 @@ public class ValidateFieldClass extends AbstractValidation {
 		Assert.assertEquals(28, s_ce.getMethods().size());
 
 		Assert.assertTrue(_staticModel.hasMethod(Ids.FieldClass_init));
-		
+
 	}
-	
-	
-	
+
 }

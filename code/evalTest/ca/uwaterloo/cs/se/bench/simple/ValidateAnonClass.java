@@ -36,7 +36,7 @@ public class ValidateAnonClass extends AbstractValidation {
 	@Test
 	public void checkFields() {
 		// static
-	
+
 		ClassElement s_ce = _staticModel.getClass(Ids.AnonClass);
 		Assert.assertEquals(0, s_ce.getFields().size());
 
@@ -45,7 +45,7 @@ public class ValidateAnonClass extends AbstractValidation {
 		// Assert.assertNotNull(_dynamicModel.getField(Ids.SimpleClass_fieldA));
 		// Assert.assertEquals(Ids.SimpleClass_fieldA, _dynamicModel.getField(Ids.SimpleClass_fieldA).getId());
 	}
-	
+
 	@Test
 	public void checkMethods() {
 		ClassElement s_ce = _staticModel.getClass(Ids.AnonClass);
@@ -56,12 +56,12 @@ public class ValidateAnonClass extends AbstractValidation {
 		Assert.assertTrue(_staticModel.hasMethod(Ids.AnonClass_genericAnonymous));
 		Assert.assertTrue(_staticModel.hasMethod(Ids.AnonClass_simpleAnonymous_compare));
 		Assert.assertTrue(_staticModel.hasMethod(Ids.AnonClass_genericAnonymous_compare));
-		
+
 		Assert.assertTrue(_dynamicModel.hasMethod(Ids.AnonClass_simpleAnonymous));
 		Assert.assertTrue(_dynamicModel.hasMethod(Ids.AnonClass_genericAnonymous));
-//		Assert.assertTrue(_dynamicModel.hasMethod(Ids.AnonClass_simpleAnonymous_compare));
+		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.AnonClass_simpleAnonymous_compare));
 		Assert.assertTrue(_dynamicModel.hasMethod(Ids.AnonClass_genericAnonymous_compare));
-		
+
 		// TODO: missing checks for the anonymous methods (e.g., ca...SimpleAnonymous$1.compare(String, String))
 	}
 

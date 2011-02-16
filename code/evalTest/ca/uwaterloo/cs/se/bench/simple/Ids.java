@@ -22,8 +22,7 @@ public interface Ids {
 	public final String FieldClass_staticFieldVectorInit = "ca.uwaterloo.cs.se.bench.simple.FieldClass.staticFieldVectorInit";
 	public final String FieldClass_staticBlockHashSetInit = "ca.uwaterloo.cs.se.bench.simple.FieldClass.staticBlockHashSetInit";
 	public final String FieldClass_init = "ca.uwaterloo.cs.se.bench.simple.FieldClass.<init>()";
-	
-	
+
 	public final String NestedClass = "ca.uwaterloo.cs.se.bench.simple.NestedClass";
 	public final String NestedClass_InnerClass = "ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass";
 	public final String NestedClass_InnerInnerClass = "ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass";
@@ -42,8 +41,8 @@ public interface Ids {
 	public final String NestedClass_innerMethodC = "ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.innerMethodC()";
 	public final String NestedClass_innerinnerMethodA = "ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodA()";
 	public final String NestedClass_innerinnerMethodB = "ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodB()";
-	public final String NestedClass_innerinnerMethodC = "ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodC()";														
-	
+	public final String NestedClass_innerinnerMethodC = "ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodC()";
+
 	public final String SimpleClass = "ca.uwaterloo.cs.se.bench.simple.SimpleClass";
 	public final String SimpleClass_fieldA = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.fieldA";
 	public final String SimpleClass_init = "ca.uwaterloo.cs.se.bench.simple.SimpleClass.<init>()";
@@ -87,21 +86,19 @@ public interface Ids {
 	public final String InhClassA_interfaceMethodB = "ca.uwaterloo.cs.se.bench.simple.InhClassA.interfaceMethodB()";
 	public final String InhClassA_abstractMethodA = "ca.uwaterloo.cs.se.bench.simple.InhClassA.abstractMethodA()";
 
-	
 	public final String InhAbstractClass = "ca.uwaterloo.cs.se.bench.simple.InhAbstractClass";
 	public final String InhAbstractClass_init = "ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.<init>()";
 	public final String InhAbstractClass_interfaceMethodA = "ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.interfaceMethodA()";
 	public final String InhAbstractClass_interfaceMethodC = "ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.interfaceMethodC()";
-	public final String InhAbstractClass_abstractMethodA = "ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.abstractMethodA()";	
-	public final String InhAbstractClass_abstractMethodB = "ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.abstractMethodB()";	
+	public final String InhAbstractClass_abstractMethodA = "ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.abstractMethodA()";
+	public final String InhAbstractClass_abstractMethodB = "ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.abstractMethodB()";
 
-	
 	public final String AnonClass = "ca.uwaterloo.cs.se.bench.simple.AnonClass";
 	public final String AnonClass_simpleAnonymous = "ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleAnonymous()";
 	public final String AnonClass_genericAnonymous = "ca.uwaterloo.cs.se.bench.simple.AnonClass.genericAnonymous()";
 	public final String AnonClass_simpleAnonymous_compare = "ca.uwaterloo.cs.se.bench.simple.AnonClass$1.compare(java.lang.Object, java.lang.Object)";
 	public final String AnonClass_genericAnonymous_compare = "ca.uwaterloo.cs.se.bench.simple.AnonClass$2.compare(java.lang.String, java.lang.String)";
-	
+
 	public final String Prim_void = "void";
 	public final String Prim_bool = "boolean";
 

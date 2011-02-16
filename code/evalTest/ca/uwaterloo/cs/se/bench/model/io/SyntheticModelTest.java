@@ -80,7 +80,8 @@ public class SyntheticModelTest {
 		Assert.assertEquals(0, ce.getFields().size());
 		Assert.assertEquals(0, ce.getMethods().size());
 
-		Assert.assertEquals(_model.getClass("ca.uwaterloo.cs.se.bench.simple.InhAbstractClass"), ce.getParents().iterator().next());
+		Assert.assertEquals(_model.getClass("ca.uwaterloo.cs.se.bench.simple.InhAbstractClass"), ce.getParents().iterator()
+				.next());
 	}
 
 	@Test
