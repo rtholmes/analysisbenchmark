@@ -40,7 +40,10 @@ public class ValidateInhClassA extends AbstractValidation {
 		Assert.assertTrue(_staticModel.hasMethod(Ids.InhClassA_interfaceMethodA));
 		Assert.assertTrue(_staticModel.hasMethod(Ids.InhClassA_interfaceMethodB));
 		Assert.assertTrue(_staticModel.hasMethod(Ids.InhClassA_abstractMethodA));
-
+		Assert.assertTrue(_staticModel.hasMethod(Ids.InhClassA_InhAbstractClass_interfaceMethodA));
+		Assert.assertTrue(_staticModel.hasMethod(Ids.InhClassA_InhInterface_interfaceMethodA));
+		Assert.assertTrue(_staticModel.hasMethod(Ids.InhClassA_InhAbstractClass_abstractMethodA));
+		
 		// dynamic
 		// aggregates not checked because tracer doesn't record containment
 		// InhInterface not tested
@@ -48,6 +51,9 @@ public class ValidateInhClassA extends AbstractValidation {
 		Assert.assertTrue(_dynamicModel.hasMethod(Ids.InhClassA_interfaceMethodA));
 		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.InhClassA_interfaceMethodB));
 		Assert.assertTrue(_dynamicModel.hasMethod(Ids.InhClassA_abstractMethodA));
-
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.InhClassA_InhAbstractClass_interfaceMethodA));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.InhClassA_InhInterface_interfaceMethodA));
+		Assert.assertTrue(_dynamicModel.hasMethod(Ids.InhClassA_InhAbstractClass_abstractMethodA));
+		
 	}
 }
