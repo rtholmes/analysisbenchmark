@@ -101,7 +101,16 @@ public interface Ids {
 	public final String AnonClass_genericAnonymous = "ca.uwaterloo.cs.se.bench.simple.AnonClass.genericAnonymous()";
 	public final String AnonClass_simpleAnonymous_compare = "ca.uwaterloo.cs.se.bench.simple.AnonClass$1.compare(java.lang.Object, java.lang.Object)";
 	public final String AnonClass_genericAnonymous_compare = "ca.uwaterloo.cs.se.bench.simple.AnonClass$2.compare(java.lang.String, java.lang.String)";
+	
+	public final String ReflectionClass = "ca.uwaterloo.cs.se.bench.simple.ReflectionClass";
+	public final String ReflectionClass_init = "ca.uwaterloo.cs.se.bench.simple.ReflectionClass.<init>()";
+	public final String ReflectionClass_callVectorAddAndSize = "ca.uwaterloo.cs.se.bench.simple.ReflectionClass.callVectorAddAndSize()";
+	public final String ReflectionClass_instantiateString = "ca.uwaterloo.cs.se.bench.simple.ReflectionClass.instantiateString()";
 
+
+	
+	
+	
 	public final String Prim_void = "void";
 	public final String Prim_bool = "boolean";
 
