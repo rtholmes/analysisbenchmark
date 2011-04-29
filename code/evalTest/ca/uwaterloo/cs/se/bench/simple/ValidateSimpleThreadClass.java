@@ -2,6 +2,8 @@ package ca.uwaterloo.cs.se.bench.simple;
 
 import static org.junit.matchers.JUnitMatchers.hasItem;
 
+import static org.hamcrest.CoreMatchers.not;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -121,14 +123,13 @@ public class ValidateSimpleThreadClass extends AbstractValidation {
 		Assert.assertEquals(1, d_a.getCalls().size());
 		Assert.assertThat(d_a.getCalls(), hasItem(_dynamicModel.getMethod(Ids.SimpleThreadClass_compute)));
 
-		// Threading test; a() should only be called by ThreadA.run()
 		for (MethodElement me : _dynamicModel.getMethods()) {
 			if (me.getId().equals(Ids.SimpleThreadClass_ThreadA_run)) {
-				Assert.assertEquals(1, me.getCalls().size());
+				// ensure run() calls a()
 				Assert.assertThat(me.getCalls(), hasItem(_dynamicModel.getMethod(Ids.SimpleThreadClass_a)));
 			} else {
-				// would like a negative assertion here, but failing the assertEquals above is the same thing
-				// Assert.assertThat(me.getCalls(), not(hasItem(_dynamicModel.getMethod(Ids.SimpleThreadClass_a))));
+				// ensure no other method calls a()
+				Assert.assertThat(me.getCalls(), not(hasItem(_dynamicModel.getMethod(Ids.SimpleThreadClass_a))));
 			}
 		}
 	}
@@ -149,18 +150,17 @@ public class ValidateSimpleThreadClass extends AbstractValidation {
 		MethodElement d_b = _dynamicModel.getMethod(Ids.SimpleThreadClass_b);
 		Assert.assertNotNull(d_b);
 
-		// Threading test; a() only calls compute(String)
+		// Threading test; b() only calls compute(String)
 		Assert.assertEquals(1, d_b.getCalls().size());
 		Assert.assertThat(d_b.getCalls(), hasItem(_dynamicModel.getMethod(Ids.SimpleThreadClass_compute)));
 
-		// Threading test; b() should only be called by ThreadB.run()
 		for (MethodElement me : _dynamicModel.getMethods()) {
 			if (me.getId().equals(Ids.SimpleThreadClass_ThreadB_run)) {
-				Assert.assertEquals(1, me.getCalls().size());
+				// ensure run() calls b()
 				Assert.assertThat(me.getCalls(), hasItem(_dynamicModel.getMethod(Ids.SimpleThreadClass_b)));
 			} else {
-				// would like a negative assertion here, but failing the assertEquals above is the same thing
-				// Assert.assertThat(me.getCalls(), not(hasItem(_dynamicModel.getMethod(Ids.SimpleThreadClass_b))));
+				// ensure no other method calls b()
+				Assert.assertThat(me.getCalls(), not(hasItem(_dynamicModel.getMethod(Ids.SimpleThreadClass_b))));
 			}
 		}
 	}
