@@ -1,5 +1,6 @@
 package ca.uwaterloo.cs.se.bench.model;
 
+import java.util.Collection;
 import java.util.Hashtable;
 import java.util.Map;
 
@@ -62,6 +63,10 @@ public class Model {
 
 	public boolean hasMethod(String id) {
 		return _methods.containsKey(id);
+	}
+	
+	public Collection<MethodElement> getMethods() {
+		return _methods.values();
 	}
 
 }

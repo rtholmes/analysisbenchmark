@@ -30,7 +30,7 @@ public class ValidateSimpleClass extends AbstractValidation {
 		Assert.assertFalse(s_ce.isExternal());
 		Assert.assertFalse(s_ce.isAbstract());
 		Assert.assertEquals(0, s_ce.getParents().size());
-
+		
 		// dynamic (nesting isn't captured by the tracer)
 		// ClassElement d_ce = _dynamicModel.getClass(Ids.SimpleClass);
 		// Assert.assertNotNull(d_ce);

@@ -66,7 +66,6 @@ public class ValidateReflectionClass extends AbstractValidation {
 		Assert.assertTrue(_staticModel.hasMethod(Ids.ReflectionClass_callVectorAddAndSize));
 		Assert.assertTrue(_staticModel.hasMethod(Ids.ReflectionClass_instantiateString));
 
-		
 		// dynamic
 		// aggregates not checked because tracer doesn't record containment
 		Assert.assertTrue(_dynamicModel.hasMethod(Ids.ReflectionClass_init));

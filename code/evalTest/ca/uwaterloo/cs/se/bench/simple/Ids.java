@@ -10,6 +10,8 @@ public interface Ids {
 	public final String Collection = "java.util.Collection";
 	public final String Collection_String = "java.util.Collection<String>";
 
+	public final String Thread = "java.lang.Thread";
+
 	public final String Vector = "java.util.Vector";
 	public final String Vector_String = "java.util.Vector<String>";
 	public final String Vector_init = "java.util.Vector.<init>()";
@@ -86,8 +88,8 @@ public interface Ids {
 	public final String InhClassA_interfaceMethodB = "ca.uwaterloo.cs.se.bench.simple.InhClassA.interfaceMethodB()";
 	public final String InhClassA_abstractMethodA = "ca.uwaterloo.cs.se.bench.simple.InhClassA.abstractMethodA()";
 	public final String InhClassA_InhAbstractClass_interfaceMethodA = "ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.interfaceMethodA()";
-	public final String InhClassA_InhInterface_interfaceMethodA = "ca.uwaterloo.cs.se.bench.simple.InhInterface.interfaceMethodA()";	
-	public final String InhClassA_InhAbstractClass_abstractMethodA = "ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.abstractMethodA()";	
+	public final String InhClassA_InhInterface_interfaceMethodA = "ca.uwaterloo.cs.se.bench.simple.InhInterface.interfaceMethodA()";
+	public final String InhClassA_InhAbstractClass_abstractMethodA = "ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.abstractMethodA()";
 
 	public final String InhAbstractClass = "ca.uwaterloo.cs.se.bench.simple.InhAbstractClass";
 	public final String InhAbstractClass_init = "ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.<init>()";
@@ -101,16 +103,32 @@ public interface Ids {
 	public final String AnonClass_genericAnonymous = "ca.uwaterloo.cs.se.bench.simple.AnonClass.genericAnonymous()";
 	public final String AnonClass_simpleAnonymous_compare = "ca.uwaterloo.cs.se.bench.simple.AnonClass$1.compare(java.lang.Object, java.lang.Object)";
 	public final String AnonClass_genericAnonymous_compare = "ca.uwaterloo.cs.se.bench.simple.AnonClass$2.compare(java.lang.String, java.lang.String)";
-	
+
 	public final String ReflectionClass = "ca.uwaterloo.cs.se.bench.simple.ReflectionClass";
 	public final String ReflectionClass_init = "ca.uwaterloo.cs.se.bench.simple.ReflectionClass.<init>()";
 	public final String ReflectionClass_callVectorAddAndSize = "ca.uwaterloo.cs.se.bench.simple.ReflectionClass.callVectorAddAndSize()";
 	public final String ReflectionClass_instantiateString = "ca.uwaterloo.cs.se.bench.simple.ReflectionClass.instantiateString()";
 
+	public final String SimpleThreadClass = "ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass";
+	public final String SimpleThreadClass_init = "ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.<init>()";
+	public final String SimpleThreadClass_a = "ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.a()";
+	public final String SimpleThreadClass_b = "ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.b()";
+	public final String SimpleThreadClass_compute = "ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.compute(java.lang.String)";
+	public final String SimpleThreadClass_run = "ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.run(int)";
 
+	public final String SimpleThreadClass_ThreadA = "ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA";
+	public final String SimpleThreadClass_ThreadB = "ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB";
+
+	public final String SimpleThreadClass_ThreadA_this = "ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.this$0";
+	public final String SimpleThreadClass_ThreadA_count = "ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.count";
+	public final String SimpleThreadClass_ThreadA_tick = "ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.tick";
+	public final String SimpleThreadClass_ThreadA_run = "ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.run()";
 	
-	
-	
+	public final String SimpleThreadClass_ThreadB_this = "ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.this$0";
+	public final String SimpleThreadClass_ThreadB_count = "ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.count";
+	public final String SimpleThreadClass_ThreadB_tick = "ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.tick";
+	public final String SimpleThreadClass_ThreadB_run = "ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.run()";
+
 	public final String Prim_void = "void";
 	public final String Prim_bool = "boolean";
 

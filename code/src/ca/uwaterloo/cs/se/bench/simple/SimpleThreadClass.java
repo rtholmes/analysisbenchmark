@@ -3,7 +3,7 @@ package ca.uwaterloo.cs.se.bench.simple;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Date;
+import java.util.Vector;
 
 public class SimpleThreadClass {
 
@@ -18,10 +18,15 @@ public class SimpleThreadClass {
 		}
 
 		public void run() {
+			Vector<String> v = new Vector<String>();
 			while (tick < count) {
-				a();
+				v.add(a());
 				tick++;
 				// System.out.println("A: " + tick);
+			}
+			for (String s : v) {
+				if (!s.equals("a"))
+					throw new RuntimeException("Threading Problem; a should only get 'b' chars: " + v);
 			}
 		}
 	}
@@ -37,29 +42,36 @@ public class SimpleThreadClass {
 		}
 
 		public void run() {
+			Vector<String> v = new Vector<String>();
 			while (tick < count) {
-				b();
+				v.add(b());
 				tick++;
 				// System.out.println("B: " + tick);
+			}
+			for (String s : v) {
+				if (!s.equals("b"))
+					throw new RuntimeException("Threading Problem; b should only get 'b' chars: " + v);
 			}
 		}
 	}
 
-	private void a() {
-		String timeString = new Date().getTime() + "";
-		compute(timeString);
-		// System.out.println("a");
+	private String a() {
+		return compute("a");
 	}
 
-	private void b() {
-		String timeString = new Date().getTime() + "";
-		compute(timeString);
-		// F System.out.println("b");
+	private String b() {
+		return compute("b");
 	}
 
-	private void compute(String timeString) {
+	/**
+	 * This method is just obnoxious to take up computation time.
+	 * 
+	 * @param inputString
+	 * @return
+	 */
+	private String compute(String inputString) {
 		try {
-			byte[] bytesOfMessage = timeString.getBytes("UTF-8");
+			byte[] bytesOfMessage = inputString.getBytes("UTF-8");
 			MessageDigest md = MessageDigest.getInstance("MD5");
 			byte[] output = md.digest(bytesOfMessage);
 			String s = new String(output);
@@ -67,7 +79,6 @@ public class SimpleThreadClass {
 				// make things even slower
 				Class.forName("java.lang.String");
 			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		} catch (UnsupportedEncodingException e) {
@@ -75,6 +86,7 @@ public class SimpleThreadClass {
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
 		}
+		return inputString;
 	}
 
 	public void run(int iterations) {
