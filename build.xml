@@ -79,17 +79,6 @@
 		<javac srcdir="${validation.test}" destdir="${build.validation.test}" includeantruntime="false" classpathref="classpath.validation" />
 	</target>
 
-	<!--
-	This old target was useful in the past; we'll keep it in case we need it in the future, 
-	but it is commented out because it may turn out to be extraneous.
-	<target name="jar" depends="compile" description="Packages JAR file and copies to depfind_uw for testing">
-		<jar jarfile="${jarFile}">
-			<zipfileset dir="${build.src}" prefix="" includes="**/*.class" />
-		</jar>
-		<copy file="${jarFile}" tofile="${depfindDir}/input.jar" overwrite="yes" />
-	</target>
-	-->
-
 	<target name="test" depends="compile" description="perform tests">
 		<junit maxmemory="${maxmemory}" printsummary="yes" haltonfailure="no" fork="yes" forkmode="once">
 			<classpath refid="classpath.sample" />
@@ -103,68 +92,32 @@
 		</junit>
 	</target>
 
-	
-	<!-- below this is old stuff that will hopefully disappear -->
-	
-	<path id="classpath.src.trace">
-		<path refid="classpath.src" />
-		<!-- rth: for dynamic -->
-		<dirset dir="${lsmr.base}/bin" />
-		<dirset dir="${dynamicTracer.home}/bin" />
-		<fileset refid="lsmr.lib" />
-		<fileset refid="dynamicTracer.lib" />
-		<!-- end rth -->
-	</path>
-
-			
-	<target name="dynamic" depends="compile.sample" description="perform tests">
-		<junit maxmemory="${maxmemory}" printsummary="yes" haltonfailure="no" fork="yes" forkmode="once">
-			<!--<jvmarg value="-Djava.compiler=NONE"/>-->
-
-			<classpath refid="classpath.src.trace" />
-
-			<formatter type="plain" />
-
-			<batchtest todir="${report.srcTest}">
-				<fileset dir="${src.test}">
-					<include name="**/*.java" />
-				</fileset>
-			</batchtest>
-		</junit>
-	</target>
-
-	<target name="validateStatic" depends="static" description="Validate static analyses">
+	<target name="validate" depends="compile" description="perform validation">
 		<junit maxmemory="${maxmemory}" printsummary="yes" haltonfailure="yes" fork="yes" forkmode="once">
-			<!--<jvmarg value="-Djava.compiler=NONE"/>-->
-			<classpath refid="classpath.eval" />
-
+			<classpath refid="classpath.validation" />
 			<formatter type="plain" />
-
-			<batchtest todir="${report.evalTest}">
-				<fileset dir="${eval.test}">
+			
+			<batchtest todir="${report.validation}">
+				<fileset dir="${validation.test}">
 					<include name="**/*.java" />
+	        		<exclude name="**/AbstractValidation.java" />
+					<exclude name="**/Ids.java" />
 				</fileset>
 			</batchtest>
 		</junit>
 	</target>
+	
+	<import file="build.inconsistency.xml" />
 
-
-	<target name="static" depends="compile" description="perform static analyses">
-		<!-- BUG: for unknown reasons 'ant clean; ant static' fails; some environmental thing isn't being set up quite right -->
-		<dependencyextractor destfile="${report.staticAnalysis}/static-${DSTAMP}_${TSTAMP}.xml" xml="yes" minimize="yes">
-			<path>
-				<!-- <pathelement location="."/> -->
-				<pathelement location="${build.src}" />
-			</path>
-		</dependencyextractor>
-
-		<!-- make a copy of the latest extraction for easier reference -->
-		<copy file="${report.staticAnalysis}/static-${DSTAMP}_${TSTAMP}.xml" tofile="${report.staticAnalysis}/static_latest.xml" />
-
-		<!-- configure an HTML version of the report -->
-		<!-- The stylesheet doesn't work with the UW XML format <xslt style="${dependencyfinder.home}/etc/DependencyGraphToHTML.xsl" in="${report.staticAnalysis}/static-${DSTAMP}_${TSTAMP}.xml" out="${report.staticAnalysis}/static-${DSTAMP}_${TSTAMP}.html" /> -->
-		<!-- The stylesheet doesn't work with the UW XML format <copy file="${dependencyfinder.home}/etc/dependency.style.css" tofile="${report.staticAnalysis}/dependency.style.css" overwrite="no" /> -->
-		<!-- The stylesheet doesn't work with the UW XML format <copy file="${report.staticAnalysis}/static-${DSTAMP}_${TSTAMP}.html" tofile="${report.staticAnalysis}/static_latest.html" /> -->
+	<!--
+	This old target was useful in the past; we'll keep it in case we need it in the future, 
+	but it is commented out because it may turn out to be extraneous.
+	<target name="jar" depends="compile" description="Packages JAR file and copies to depfind_uw for testing">
+		<jar jarfile="${jarFile}">
+			<zipfileset dir="${build.src}" prefix="" includes="**/*.class" />
+		</jar>
+		<copy file="${jarFile}" tofile="${depfindDir}/input.jar" overwrite="yes" />
 	</target>
-	<!-- End DependencyFinder -->
+	-->
+
 </project>

@@ -1,5 +1,7 @@
 package ca.uwaterloo.cs.se.bench.simple;
 
+import org.junit.Test;
+
 public interface Ids {
 
 	public final String Prim_int = "int";
@@ -123,7 +125,7 @@ public interface Ids {
 	public final String SimpleThreadClass_ThreadA_count = "ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.count";
 	public final String SimpleThreadClass_ThreadA_tick = "ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.tick";
 	public final String SimpleThreadClass_ThreadA_run = "ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.run()";
-	
+
 	public final String SimpleThreadClass_ThreadB_this = "ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.this$0";
 	public final String SimpleThreadClass_ThreadB_count = "ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.count";
 	public final String SimpleThreadClass_ThreadB_tick = "ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.tick";
@@ -133,5 +135,4 @@ public interface Ids {
 	public final String Prim_bool = "boolean";
 
 	// ca.uwaterloo.cs.se.bench.simple.AnonClass$2.compare(java.lang.String, java.lang.String)
-
 }

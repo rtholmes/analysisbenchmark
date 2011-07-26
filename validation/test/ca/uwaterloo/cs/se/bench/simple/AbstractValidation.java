@@ -4,6 +4,8 @@ import junit.framework.Assert;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
+import org.junit.Test;
 
 import ca.uwaterloo.cs.se.inconsistency.core.model2.Model;
 import ca.uwaterloo.cs.se.inconsistency.core.model2.io.XMLReaderDependencyFinder;
@@ -34,5 +36,11 @@ public class AbstractValidation {
 	@BeforeClass
 	public static void beforeClass() {
 		XMLReaderDependencyFinder.startLog4J(true);
+	}
+
+	@Test
+	public void testAbstractValidation() {
+		// Dummy test case to keep JUnit happy. This class isn't a real test class, all other test classes extend it.
+		Assert.assertTrue(true);
 	}
 }
