@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dependencies_uw>
+    <declarations>
+        <classes>
+            <ce id="::UnknownType::" isExt="false" isInt="false" isAbs="false"/>
+            <ce id="I[][]" isExt="true"/>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.AnnotationClass" isExt="false" isInt="false" isAbs="false"/>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.AnonClass" isExt="false" isInt="false" isAbs="false"/>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.AnonClass$1" isExt="false" isInt="false" isAbs="false"/>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.AnonClass$2" isExt="false" isInt="false" isAbs="false"/>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.FieldClass" isExt="false" isInt="false" isAbs="false"/>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.FirstChild" isExt="false" isInt="false" isAbs="false"/>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.FirstInterface" isExt="false" isInt="true" isAbs="true"/>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.FirstParent" isExt="false" isInt="false" isAbs="false"/>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.InhAbstractClass" isExt="false" isInt="false" isAbs="true"/>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.InhClassA" isExt="false" isInt="false" isAbs="false"/>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.InhClassB" isExt="false" isInt="false" isAbs="false"/>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.InhClassC" isExt="false" isInt="false" isAbs="false"/>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.InhInterface" isExt="false" isInt="true" isAbs="true"/>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.NestedClass" isExt="false" isInt="false" isAbs="false"/>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass" isExt="false" isInt="false" isAbs="false"/>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass" isExt="false" isInt="false" isAbs="false"/>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.ReflectionClass" isExt="false" isInt="false" isAbs="false"/>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.SecondInterface" isExt="false" isInt="true" isAbs="true"/>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.SimpleClass" isExt="false" isInt="false" isAbs="false"/>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass" isExt="false" isInt="false" isAbs="false"/>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA" isExt="false" isInt="false" isAbs="false"/>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB" isExt="false" isInt="false" isAbs="false"/>
+            <ce id="java.io.PrintStream" isExt="true"/>
+            <ce id="java.io.UnsupportedEncodingException" isExt="true"/>
+            <ce id="java.lang.Class" isExt="true"/>
+            <ce id="java.lang.ClassNotFoundException" isExt="true"/>
+            <ce id="java.lang.Deprecated" isExt="true"/>
+            <ce id="java.lang.IllegalAccessException" isExt="true"/>
+            <ce id="java.lang.IllegalArgumentException" isExt="true"/>
+            <ce id="java.lang.InstantiationException" isExt="true"/>
+            <ce id="java.lang.Integer" isExt="true"/>
+            <ce id="java.lang.InterruptedException" isExt="true"/>
+            <ce id="java.lang.NoSuchMethodException" isExt="true"/>
+            <ce id="java.lang.Object" isExt="true"/>
+            <ce id="java.lang.RuntimeException" isExt="true"/>
+            <ce id="java.lang.SecurityException" isExt="true"/>
+            <ce id="java.lang.String" isExt="true"/>
+            <ce id="java.lang.StringBuilder" isExt="true"/>
+            <ce id="java.lang.System" isExt="true"/>
+            <ce id="java.lang.Thread" isExt="true"/>
+            <ce id="java.lang.Throwable" isExt="true"/>
+            <ce id="java.lang.reflect.Constructor" isExt="true"/>
+            <ce id="java.lang.reflect.InvocationTargetException" isExt="true"/>
+            <ce id="java.lang.reflect.Method" isExt="true"/>
+            <ce id="java.security.MessageDigest" isExt="true"/>
+            <ce id="java.security.NoSuchAlgorithmException" isExt="true"/>
+            <ce id="java.util.Collection" isExt="true"/>
+            <ce id="java.util.Collections" isExt="true"/>
+            <ce id="java.util.Comparator" isExt="true"/>
+            <ce id="java.util.Date" isExt="true"/>
+            <ce id="java.util.HashSet" isExt="true"/>
+            <ce id="java.util.List" isExt="true"/>
+            <ce id="java.util.Vector" isExt="true"/>
+            <ce id="org.junit.Test" isExt="true"/>
+        </classes>
+        <contains>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.AnnotationClass">
+                <me id="ca.uwaterloo.cs.se.bench.simple.AnnotationClass.&lt;init&gt;()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.AnnotationClass.hadCompoundAnnotation()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.AnnotationClass.hasJDKAnnotation()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.AnnotationClass.hasJUnitAnnotation()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.AnnotationClass.hasMultipleAnnotations()">
+                    <return id="void"/>
+                </me>
+            </ce>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.AnonClass">
+                <me id="ca.uwaterloo.cs.se.bench.simple.AnonClass.&lt;init&gt;()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.AnonClass.genericAnonymous()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleAnonymous()">
+                    <return id="void"/>
+                </me>
+            </ce>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.AnonClass$1">
+                <fe id="ca.uwaterloo.cs.se.bench.simple.AnonClass$1.this$0" isExt="false" type="ca.uwaterloo.cs.se.bench.simple.AnonClass"/>
+                <me id="ca.uwaterloo.cs.se.bench.simple.AnonClass$1.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.AnonClass)">
+                    <return id="void"/>
+                    <params>
+                        <param index="0" type="ca.uwaterloo.cs.se.bench.simple.AnonClass" />
+                    </params>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.AnonClass$1.compare(java.lang.Object, java.lang.Object)">
+                    <return id="int"/>
+                    <params>
+                        <param index="0" type="java.lang.Object" />
+                        <param index="1" type="java.lang.Object" />
+                    </params>
+                </me>
+            </ce>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.AnonClass$2">
+                <fe id="ca.uwaterloo.cs.se.bench.simple.AnonClass$2.this$0" isExt="false" type="ca.uwaterloo.cs.se.bench.simple.AnonClass"/>
+                <me id="ca.uwaterloo.cs.se.bench.simple.AnonClass$2.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.AnonClass)">
+                    <return id="void"/>
+                    <params>
+                        <param index="0" type="ca.uwaterloo.cs.se.bench.simple.AnonClass" />
+                    </params>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.AnonClass$2.compare(java.lang.Object, java.lang.Object)">
+                    <return id="int"/>
+                    <params>
+                        <param index="0" type="java.lang.Object" />
+                        <param index="1" type="java.lang.Object" />
+                    </params>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.AnonClass$2.compare(java.lang.String, java.lang.String)">
+                    <return id="int"/>
+                    <params>
+                        <param index="0" type="java.lang.String" />
+                        <param index="1" type="java.lang.String" />
+                    </params>
+                </me>
+            </ce>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.FieldClass">
+                <fe id="ca.uwaterloo.cs.se.bench.simple.FieldClass.fieldString" isExt="false" type="java.lang.String"/>
+                <fe id="ca.uwaterloo.cs.se.bench.simple.FieldClass.fieldStringInit" isExt="false" type="java.lang.String"/>
+                <fe id="ca.uwaterloo.cs.se.bench.simple.FieldClass.fieldStringValue" isExt="false" type="java.lang.String"/>
+                <fe id="ca.uwaterloo.cs.se.bench.simple.FieldClass.staticBlockHashSetInit" isExt="false" type="java.util.HashSet"/>
+                <fe id="ca.uwaterloo.cs.se.bench.simple.FieldClass.staticFieldVector" isExt="false" type="java.util.Vector"/>
+                <fe id="ca.uwaterloo.cs.se.bench.simple.FieldClass.staticFieldVectorInit" isExt="false" type="java.util.Vector"/>
+                <me id="ca.uwaterloo.cs.se.bench.simple.FieldClass.&lt;clinit&gt;">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.FieldClass.&lt;init&gt;()">
+                    <return id="void"/>
+                </me>
+            </ce>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.FirstChild">
+                <me id="ca.uwaterloo.cs.se.bench.simple.FirstChild.&lt;init&gt;()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.FirstChild.a()">
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.FirstChild.b()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.FirstChild.main(java.lang.String[])">
+                    <return id="void"/>
+                    <params>
+                        <param index="0" type="java.lang.String[]" />
+                    </params>
+                </me>
+            </ce>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.FirstParent">
+                <me id="ca.uwaterloo.cs.se.bench.simple.FirstParent.&lt;init&gt;()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.FirstParent.a()">
+                    <return id="void"/>
+                </me>
+            </ce>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.InhAbstractClass">
+                <me id="ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.&lt;init&gt;()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.abstractMethodA()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.abstractMethodB()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.interfaceMethodA()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.interfaceMethodC()">
+                    <return id="void"/>
+                </me>
+            </ce>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.InhClassA">
+                <me id="ca.uwaterloo.cs.se.bench.simple.InhClassA.&lt;init&gt;()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.InhClassA.abstractMethodA()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.InhClassA.interfaceMethodA()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.InhClassA.interfaceMethodB()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.InhClassA.interfaceMethodC()">
+                </me>
+            </ce>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.InhClassB">
+                <me id="ca.uwaterloo.cs.se.bench.simple.InhClassB.&lt;init&gt;()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.InhClassB.abstractMethodA()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.InhClassB.interfaceMethodA()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.InhClassB.interfaceMethodB()">
+                    <return id="void"/>
+                </me>
+            </ce>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.InhClassC">
+                <me id="ca.uwaterloo.cs.se.bench.simple.InhClassC.&lt;init&gt;()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.InhClassC.interfaceMethodA()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.InhClassC.interfaceMethodB()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.InhClassC.interfaceMethodC()">
+                    <return id="void"/>
+                </me>
+            </ce>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.InhInterface">
+                <me id="ca.uwaterloo.cs.se.bench.simple.InhInterface.interfaceMethodA()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.InhInterface.interfaceMethodB()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.InhInterface.interfaceMethodC()">
+                    <return id="void"/>
+                </me>
+            </ce>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.NestedClass">
+                <fe id="ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedInitializedStringVector" isExt="false" type="java.util.Vector"/>
+                <fe id="ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedString" isExt="false" type="java.lang.String"/>
+                <fe id="ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedStringVector" isExt="false" type="java.util.Vector"/>
+                <fe id="ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedVector" isExt="false" type="java.util.Vector"/>
+                <me id="ca.uwaterloo.cs.se.bench.simple.NestedClass.&lt;init&gt;()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedMethodA()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedMethodB()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedMethodC()">
+                    <return id="void"/>
+                </me>
+            </ce>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass">
+                <fe id="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.this$0" isExt="false" type="ca.uwaterloo.cs.se.bench.simple.NestedClass"/>
+                <me id="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.NestedClass)">
+                    <return id="void"/>
+                    <params>
+                        <param index="0" type="ca.uwaterloo.cs.se.bench.simple.NestedClass" />
+                    </params>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.innerMethodA()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.innerMethodB()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.innerMethodC()">
+                    <return id="void"/>
+                </me>
+            </ce>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass">
+                <fe id="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.this$1" isExt="false" type="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass"/>
+                <me id="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass)">
+                    <return id="void"/>
+                    <params>
+                        <param index="0" type="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass" />
+                    </params>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodA()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodB()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodC()">
+                    <return id="void"/>
+                </me>
+            </ce>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.ReflectionClass">
+                <me id="ca.uwaterloo.cs.se.bench.simple.ReflectionClass.&lt;init&gt;()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.ReflectionClass.callVectorAddAndSize()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.ReflectionClass.instantiateString()">
+                    <return id="void"/>
+                </me>
+            </ce>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.SimpleClass">
+                <fe id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.fieldA" isExt="false" type="java.lang.String"/>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.&lt;init&gt;()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.a1()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.a2()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.b1()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.b2()">
+                    <return id="java.util.Vector"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.c1()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.c2(java.lang.String)">
+                    <return id="void"/>
+                    <params>
+                        <param index="0" type="java.lang.String" />
+                    </params>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.d1()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.d2(java.lang.String, int[], int[][])">
+                    <return id="void"/>
+                    <params>
+                        <param index="0" type="java.lang.String" />
+                        <param index="1" type="int[]" />
+                        <param index="2" type="int[][]" />
+                    </params>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.e1()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.e2(java.util.Vector)">
+                    <return id="void"/>
+                    <params>
+                        <param index="0" type="java.util.Vector" />
+                    </params>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f1()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection)">
+                    <return id="void"/>
+                    <params>
+                        <param index="0" type="java.util.Collection" />
+                    </params>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.g1()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.g2(java.util.Collection)">
+                    <return id="void"/>
+                    <params>
+                        <param index="0" type="java.util.Collection" />
+                    </params>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.h1()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.h2()">
+                    <return id="java.lang.String"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.i1()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.i2()">
+                    <return id="java.util.Vector"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.j1()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.j2()">
+                    <return id="java.util.Collection"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.k1()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.k2(java.util.Vector)">
+                    <return id="void"/>
+                    <params>
+                        <param index="0" type="java.util.Vector" />
+                    </params>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.l1()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.l2(java.util.Collection)">
+                    <return id="void"/>
+                    <params>
+                        <param index="0" type="java.util.Collection" />
+                    </params>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.m1()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.m2(java.lang.String, int)">
+                    <return id="boolean"/>
+                    <params>
+                        <param index="0" type="java.lang.String" />
+                        <param index="1" type="int" />
+                    </params>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleClass.n0()">
+                    <return id="void"/>
+                </me>
+            </ce>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass">
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.&lt;init&gt;()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.a()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.access$000(ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass)">
+                    <return id="void"/>
+                    <params>
+                        <param index="0" type="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass" />
+                    </params>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.access$100(ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass)">
+                    <return id="void"/>
+                    <params>
+                        <param index="0" type="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass" />
+                    </params>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.b()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.compute(java.lang.String)">
+                    <return id="void"/>
+                    <params>
+                        <param index="0" type="java.lang.String" />
+                    </params>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.run(int)">
+                    <return id="void"/>
+                    <params>
+                        <param index="0" type="int" />
+                    </params>
+                </me>
+            </ce>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA">
+                <fe id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.count" isExt="false" type="::UnknownType::"/>
+                <fe id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.this$0" isExt="false" type="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass"/>
+                <fe id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.tick" isExt="false" type="::UnknownType::"/>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass, int)">
+                    <return id="void"/>
+                    <params>
+                        <param index="0" type="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass" />
+                        <param index="1" type="int" />
+                    </params>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.join()">
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.run()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.start()">
+                </me>
+            </ce>
+            <ce id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB">
+                <fe id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.count" isExt="false" type="::UnknownType::"/>
+                <fe id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.this$0" isExt="false" type="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass"/>
+                <fe id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.tick" isExt="false" type="::UnknownType::"/>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass, int)">
+                    <return id="void"/>
+                    <params>
+                        <param index="0" type="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass" />
+                        <param index="1" type="int" />
+                    </params>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.join()">
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.run()">
+                    <return id="void"/>
+                </me>
+                <me id="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.start()">
+                </me>
+            </ce>
+            <ce id="java.io.PrintStream">
+                <me id="java.io.PrintStream.println(java.lang.String)">
+                </me>
+            </ce>
+            <ce id="java.io.UnsupportedEncodingException">
+                <me id="java.io.UnsupportedEncodingException.printStackTrace()">
+                </me>
+            </ce>
+            <ce id="java.lang.Class">
+                <me id="java.lang.Class.forName(java.lang.String)">
+                </me>
+                <me id="java.lang.Class.getConstructor(java.lang.Class[])">
+                </me>
+                <me id="java.lang.Class.getMethod(java.lang.String, java.lang.Class[])">
+                </me>
+                <me id="java.lang.Class.newInstance()">
+                </me>
+            </ce>
+            <ce id="java.lang.ClassNotFoundException">
+                <me id="java.lang.ClassNotFoundException.printStackTrace()">
+                </me>
+            </ce>
+            <ce id="java.lang.Integer">
+                <me id="java.lang.Integer.intValue()">
+                </me>
+            </ce>
+            <ce id="java.lang.InterruptedException">
+                <me id="java.lang.InterruptedException.printStackTrace()">
+                </me>
+            </ce>
+            <ce id="java.lang.Object">
+                <me id="java.lang.Object.&lt;init&gt;()">
+                </me>
+            </ce>
+            <ce id="java.lang.RuntimeException">
+                <me id="java.lang.RuntimeException.&lt;init&gt;(java.lang.String)">
+                </me>
+                <me id="java.lang.RuntimeException.&lt;init&gt;(java.lang.Throwable)">
+                </me>
+            </ce>
+            <ce id="java.lang.String">
+                <me id="java.lang.String.&lt;init&gt;()">
+                </me>
+                <me id="java.lang.String.&lt;init&gt;(byte[])">
+                </me>
+                <me id="java.lang.String.&lt;init&gt;(java.lang.String)">
+                </me>
+                <me id="java.lang.String.compareTo(java.lang.String)">
+                </me>
+                <me id="java.lang.String.getBytes(java.lang.String)">
+                </me>
+                <me id="java.lang.String.length()">
+                </me>
+            </ce>
+            <ce id="java.lang.StringBuilder">
+                <me id="java.lang.StringBuilder.&lt;init&gt;()">
+                </me>
+                <me id="java.lang.StringBuilder.append(java.lang.String)">
+                </me>
+                <me id="java.lang.StringBuilder.append(long)">
+                </me>
+                <me id="java.lang.StringBuilder.toString()">
+                </me>
+            </ce>
+            <ce id="java.lang.System">
+                <fe id="java.lang.System.out" isExt="true" type=""/>
+            </ce>
+            <ce id="java.lang.Thread">
+                <me id="java.lang.Thread.&lt;init&gt;()">
+                </me>
+            </ce>
+            <ce id="java.lang.reflect.Constructor">
+                <me id="java.lang.reflect.Constructor.newInstance(java.lang.Object[])">
+                </me>
+            </ce>
+            <ce id="java.lang.reflect.Method">
+                <me id="java.lang.reflect.Method.invoke(java.lang.Object, java.lang.Object[])">
+                </me>
+            </ce>
+            <ce id="java.security.MessageDigest">
+                <me id="java.security.MessageDigest.digest(byte[])">
+                </me>
+                <me id="java.security.MessageDigest.getInstance(java.lang.String)">
+                </me>
+            </ce>
+            <ce id="java.security.NoSuchAlgorithmException">
+                <me id="java.security.NoSuchAlgorithmException.printStackTrace()">
+                </me>
+            </ce>
+            <ce id="java.util.Collection">
+                <me id="java.util.Collection.size()">
+                </me>
+            </ce>
+            <ce id="java.util.Collections">
+                <me id="java.util.Collections.sort(java.util.List, java.util.Comparator)">
+                </me>
+            </ce>
+            <ce id="java.util.Date">
+                <me id="java.util.Date.&lt;init&gt;()">
+                </me>
+                <me id="java.util.Date.getTime()">
+                </me>
+            </ce>
+            <ce id="java.util.HashSet">
+                <me id="java.util.HashSet.&lt;init&gt;()">
+                </me>
+            </ce>
+            <ce id="java.util.Vector">
+                <me id="java.util.Vector.&lt;init&gt;()">
+                </me>
+                <me id="java.util.Vector.add(java.lang.Object)">
+                </me>
+                <me id="java.util.Vector.size()">
+                </me>
+            </ce>
+        </contains>
+    </declarations>
+    <relationships>
+        <calls>
+            <call s="ca.uwaterloo.cs.se.bench.simple.AnnotationClass.&lt;init&gt;()" t="java.lang.Object.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.AnonClass$1.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.AnonClass)" t="java.lang.Object.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.AnonClass$1.compare(java.lang.Object, java.lang.Object)" t="java.lang.String.compareTo(java.lang.String)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.AnonClass$2.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.AnonClass)" t="java.lang.Object.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.AnonClass$2.compare(java.lang.Object, java.lang.Object)" t="ca.uwaterloo.cs.se.bench.simple.AnonClass$2.compare(java.lang.String, java.lang.String)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.AnonClass$2.compare(java.lang.String, java.lang.String)" t="java.lang.String.compareTo(java.lang.String)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.AnonClass.&lt;init&gt;()" t="java.lang.Object.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.AnonClass.genericAnonymous()" t="java.util.Vector.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.AnonClass.genericAnonymous()" t="java.util.Collections.sort(java.util.List, java.util.Comparator)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.AnonClass.genericAnonymous()" t="java.util.Vector.add(java.lang.Object)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.AnonClass.genericAnonymous()" t="ca.uwaterloo.cs.se.bench.simple.AnonClass$2.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.AnonClass)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleAnonymous()" t="java.util.Vector.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleAnonymous()" t="java.util.Collections.sort(java.util.List, java.util.Comparator)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleAnonymous()" t="java.util.Vector.add(java.lang.Object)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.AnonClass.simpleAnonymous()" t="ca.uwaterloo.cs.se.bench.simple.AnonClass$1.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.AnonClass)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.FieldClass.&lt;clinit&gt;" t="java.util.Vector.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.FieldClass.&lt;clinit&gt;" t="java.util.HashSet.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.FieldClass.&lt;init&gt;()" t="java.lang.Object.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.FieldClass.&lt;init&gt;()" t="java.lang.String.&lt;init&gt;(java.lang.String)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.FirstChild.&lt;init&gt;()" t="ca.uwaterloo.cs.se.bench.simple.FirstParent.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.FirstChild.b()" t="ca.uwaterloo.cs.se.bench.simple.FirstChild.a()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.FirstChild.main(java.lang.String[])" t="java.io.PrintStream.println(java.lang.String)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.FirstChild.main(java.lang.String[])" t="ca.uwaterloo.cs.se.bench.simple.FirstChild.a()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.FirstChild.main(java.lang.String[])" t="ca.uwaterloo.cs.se.bench.simple.FirstChild.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.FirstParent.&lt;init&gt;()" t="java.lang.Object.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.FirstParent.a()" t="java.lang.String.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.&lt;init&gt;()" t="java.lang.Object.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.InhClassA.&lt;init&gt;()" t="ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.InhClassA.abstractMethodA()" t="java.lang.String.&lt;init&gt;(java.lang.String)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.InhClassA.interfaceMethodA()" t="java.util.Vector.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.InhClassA.interfaceMethodB()" t="ca.uwaterloo.cs.se.bench.simple.InhClassA.interfaceMethodC()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.InhClassB.&lt;init&gt;()" t="ca.uwaterloo.cs.se.bench.simple.InhAbstractClass.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.InhClassC.&lt;init&gt;()" t="java.lang.Object.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass)" t="java.lang.Object.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodA()" t="java.util.Vector.add(java.lang.Object)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodB()" t="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.innerMethodB()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodC()" t="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.innerMethodC()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.NestedClass)" t="java.lang.Object.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.innerMethodA()" t="java.util.Vector.add(java.lang.Object)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.innerMethodC()" t="ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedMethodC()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.NestedClass.&lt;init&gt;()" t="java.util.Vector.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.NestedClass.&lt;init&gt;()" t="java.lang.Object.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedMethodA()" t="java.util.Vector.add(java.lang.Object)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.ReflectionClass.&lt;init&gt;()" t="java.lang.Object.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.ReflectionClass.callVectorAddAndSize()" t="java.lang.Class.forName(java.lang.String)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.ReflectionClass.callVectorAddAndSize()" t="java.lang.Class.newInstance()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.ReflectionClass.callVectorAddAndSize()" t="java.lang.RuntimeException.&lt;init&gt;(java.lang.Throwable)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.ReflectionClass.callVectorAddAndSize()" t="java.util.Vector.size()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.ReflectionClass.callVectorAddAndSize()" t="java.util.Vector.add(java.lang.Object)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.ReflectionClass.instantiateString()" t="java.lang.reflect.Method.invoke(java.lang.Object, java.lang.Object[])"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.ReflectionClass.instantiateString()" t="java.lang.Class.forName(java.lang.String)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.ReflectionClass.instantiateString()" t="java.lang.Class.getMethod(java.lang.String, java.lang.Class[])"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.ReflectionClass.instantiateString()" t="java.lang.RuntimeException.&lt;init&gt;(java.lang.Throwable)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.ReflectionClass.instantiateString()" t="java.lang.Class.getConstructor(java.lang.Class[])"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.ReflectionClass.instantiateString()" t="java.lang.reflect.Constructor.newInstance(java.lang.Object[])"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.ReflectionClass.instantiateString()" t="java.lang.Integer.intValue()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.ReflectionClass.instantiateString()" t="java.lang.RuntimeException.&lt;init&gt;(java.lang.String)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.&lt;init&gt;()" t="java.lang.Object.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.a1()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.a2()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.b1()" t="java.util.Vector.size()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.b1()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.b2()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.b2()" t="java.util.Vector.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.c1()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.c2(java.lang.String)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.d1()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.d2(java.lang.String, int[], int[][])"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.e1()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.e2(java.util.Vector)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.e1()" t="java.util.Vector.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.e2(java.util.Vector)" t="java.util.Vector.size()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f1()" t="java.util.Vector.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f1()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.f2(java.util.Collection)" t="java.util.Collection.size()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.g1()" t="java.util.Vector.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.g1()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.g2(java.util.Collection)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.g2(java.util.Collection)" t="java.util.Collection.size()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.h1()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.h2()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.h1()" t="java.lang.String.length()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.i1()" t="java.util.Vector.size()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.i1()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.i2()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.i2()" t="java.util.Vector.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.j1()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.j2()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.j1()" t="java.util.Collection.size()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.j2()" t="java.util.Vector.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.k1()" t="java.util.Vector.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.k1()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.k2(java.util.Vector)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.k2(java.util.Vector)" t="java.util.Vector.size()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.l1()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.l2(java.util.Collection)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.l1()" t="java.util.Vector.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.l2(java.util.Collection)" t="java.util.Collection.size()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.m1()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.m2(java.lang.String, int)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass, int)" t="java.lang.Thread.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.run()" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.access$000(ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass, int)" t="java.lang.Thread.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.run()" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.access$100(ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.&lt;init&gt;()" t="java.lang.Object.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.a()" t="java.util.Date.getTime()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.a()" t="java.lang.StringBuilder.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.a()" t="java.lang.StringBuilder.append(java.lang.String)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.a()" t="java.util.Date.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.a()" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.compute(java.lang.String)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.a()" t="java.lang.StringBuilder.toString()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.a()" t="java.lang.StringBuilder.append(long)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.access$000(ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass)" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.a()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.access$100(ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass)" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.b()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.b()" t="java.util.Date.getTime()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.b()" t="java.lang.StringBuilder.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.b()" t="java.lang.StringBuilder.append(java.lang.String)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.b()" t="java.util.Date.&lt;init&gt;()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.b()" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.compute(java.lang.String)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.b()" t="java.lang.StringBuilder.toString()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.b()" t="java.lang.StringBuilder.append(long)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.compute(java.lang.String)" t="java.security.MessageDigest.digest(byte[])"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.compute(java.lang.String)" t="java.lang.Class.forName(java.lang.String)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.compute(java.lang.String)" t="java.security.MessageDigest.getInstance(java.lang.String)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.compute(java.lang.String)" t="java.lang.String.getBytes(java.lang.String)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.compute(java.lang.String)" t="java.lang.ClassNotFoundException.printStackTrace()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.compute(java.lang.String)" t="java.io.UnsupportedEncodingException.printStackTrace()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.compute(java.lang.String)" t="java.security.NoSuchAlgorithmException.printStackTrace()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.compute(java.lang.String)" t="java.lang.String.&lt;init&gt;(byte[])"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.run(int)" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.start()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.run(int)" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass, int)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.run(int)" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.join()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.run(int)" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.start()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.run(int)" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass, int)"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.run(int)" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.join()"/>
+            <call s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass.run(int)" t="java.lang.InterruptedException.printStackTrace()"/>
+        </calls>
+        <references>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.AnonClass$1.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.AnonClass)" t="ca.uwaterloo.cs.se.bench.simple.AnonClass$1.this$0"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.AnonClass$2.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.AnonClass)" t="ca.uwaterloo.cs.se.bench.simple.AnonClass$2.this$0"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.FieldClass.&lt;init&gt;()" t="ca.uwaterloo.cs.se.bench.simple.FieldClass.fieldStringInit"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.FieldClass.&lt;init&gt;()" t="ca.uwaterloo.cs.se.bench.simple.FieldClass.fieldStringValue"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.FieldClass.&lt;clinit&gt;" t="ca.uwaterloo.cs.se.bench.simple.FieldClass.staticBlockHashSetInit"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.FieldClass.&lt;clinit&gt;" t="ca.uwaterloo.cs.se.bench.simple.FieldClass.staticFieldVectorInit"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass)" t="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.this$1"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodC()" t="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.this$1"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodA()" t="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.this$1"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodB()" t="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.this$1"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.innerMethodC()" t="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.this$0"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.NestedClass)" t="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.this$0"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodA()" t="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.this$0"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.innerMethodA()" t="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.this$0"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass$InnerInnerClass.innerInnerMethodA()" t="ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedInitializedStringVector"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.NestedClass.&lt;init&gt;()" t="ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedInitializedStringVector"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedMethodA()" t="ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedInitializedStringVector"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.NestedClass$InnerClass.innerMethodA()" t="ca.uwaterloo.cs.se.bench.simple.NestedClass.nestedInitializedStringVector"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.SimpleClass.n0()" t="ca.uwaterloo.cs.se.bench.simple.SimpleClass.fieldA"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass, int)" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.count"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.run()" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.count"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass, int)" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.this$0"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.run()" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.this$0"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass, int)" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.tick"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.run()" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA.tick"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.run()" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.count"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass, int)" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.count"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.run()" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.this$0"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass, int)" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.this$0"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.run()" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.tick"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.&lt;init&gt;(ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass, int)" t="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB.tick"/>
+            <ref s="ca.uwaterloo.cs.se.bench.simple.FirstChild.main(java.lang.String[])" t="java.lang.System.out"/>
+        </references>
+        <inherits>
+            <inh p="java.util.Comparator" c="ca.uwaterloo.cs.se.bench.simple.AnonClass$1"/>
+            <inh p="java.util.Comparator" c="ca.uwaterloo.cs.se.bench.simple.AnonClass$2"/>
+            <inh p="ca.uwaterloo.cs.se.bench.simple.FirstInterface" c="ca.uwaterloo.cs.se.bench.simple.FirstChild"/>
+            <inh p="ca.uwaterloo.cs.se.bench.simple.FirstParent" c="ca.uwaterloo.cs.se.bench.simple.FirstChild"/>
+            <inh p="ca.uwaterloo.cs.se.bench.simple.SecondInterface" c="ca.uwaterloo.cs.se.bench.simple.FirstChild"/>
+            <inh p="ca.uwaterloo.cs.se.bench.simple.InhInterface" c="ca.uwaterloo.cs.se.bench.simple.InhAbstractClass"/>
+            <inh p="ca.uwaterloo.cs.se.bench.simple.InhAbstractClass" c="ca.uwaterloo.cs.se.bench.simple.InhClassA"/>
+            <inh p="ca.uwaterloo.cs.se.bench.simple.InhAbstractClass" c="ca.uwaterloo.cs.se.bench.simple.InhClassB"/>
+            <inh p="ca.uwaterloo.cs.se.bench.simple.InhInterface" c="ca.uwaterloo.cs.se.bench.simple.InhClassB"/>
+            <inh p="ca.uwaterloo.cs.se.bench.simple.InhInterface" c="ca.uwaterloo.cs.se.bench.simple.InhClassC"/>
+            <inh p="java.lang.Thread" c="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadA"/>
+            <inh p="java.lang.Thread" c="ca.uwaterloo.cs.se.bench.simple.SimpleThreadClass$ThreadB"/>
+        </inherits>
+    </relationships>
+</dependencies_uw>
