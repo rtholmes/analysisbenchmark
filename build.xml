@@ -1,35 +1,19 @@
-<project name="SimpleAnalysisBenchmark" default="dist" basedir=".">
+<project name="SimpleAnalysisBenchmark">
 	<description>
         Benchmark program for testing static analyses. Adapted from Martin Robillard's JayFXBenchmark.
     </description>
 
-	<!-- Main Locations -->
-	<!-- src: 				the source files comprising the sample code -->
-	<!-- src.test: 			tests that simulate the src code executing (for dynamic analyses) -->
-	<!-- eval: 				code for building a model of a static or dynamic analysis -->
-	<!-- eval.test: 		code for validating the model of the static or dynamic analysis against what we would expect to be generated from src -->
-
-	<!-- Main Tasks -->
-	<!-- clean: 			removes any temporary resources -->
-	<!-- compile: 			compiles the src, srcTest, eval, evalTest code -->
-	<!-- jar: 				creates a jar of the compiled src code and copies it to depfind_uw -->
-	<!-- static: 			runs the static analysis on the code generated from src -->
-	<!-- validateStatic:	compares the results of the static analysis to a known oracle -->
-
-	<!-- Main Task TODO -->
-	<!-- dynamic:			runs the dynamic analysis using the tests generated from src.test -->
-	<!-- validateDynamic:	compares the results of the dynamic analysis to a known oracle -->
-
 	<property name="maxmemory" value="1024m" />
-	
-	<property name="sample" location="sample" />
-	<property name="build" location="build" />
 
-	<!-- sample code / tests for running sample code (for dynamic analyses) -->
-	<property name="sample" location="${sample}/src" />
+	<property name="build" location="build" />
+	<property name="lib" location="lib" />
+
+	<!-- sample code / tests -->
+	<property name="sample" location="sample" />
+	<property name="sample.src" location="${sample}/src" />
 	<property name="sample.test" location="${sample}/test" />
 
-	<!-- eval code / tests for analysis validation -->
+	<!-- validation tests -->
 	<property name="validation" location="validation" />
 	<property name="validation.test" location="${validation}/test" />
 
@@ -38,42 +22,30 @@
 	<property name="build.sample.test" location="${build}/sampleTest" />
 	<property name="build.validation.test" location="${build}/validationTest" />
 
-	<property name="dist" location="dist" />
-	<property name="lib" location="lib" />
-
-	<property name="jarFile" location="${dist}/AnalysisBenchmark.jar" />
-
+	<!-- report directories -->
 	<property name="report" location="report" />
-	<property name="report.staticAnalysis" location="${report}/static" />
-	<property name="report.dynamicAnalysis" location="${report}/dynamic" />
-	<property name="report.srcTest" location="${report}/srcTest" />
-	<property name="report.evalTest" location="${report}/evalTest" />
+	<property name="report.sample" location="${report}/sample" />
+	<property name="report.validation" location="${report}/validation" />
 
+	<!-- sample system classpath -->
 	<path id="classpath.sample">
-		<!-- create classpath -->
-		<fileset dir="${lib}">
+		<fileset dir="${lib}/shared">
 			<include name="*.jar" />
 		</fileset>
 		<pathelement path="${build.sample}" />
 		<pathelement path="${build.sample.test}" />
 	</path>
 
+	<!-- validation classpath -->
 	<path id="classpath.validation">
 		<!-- create classpath -->
-		<fileset dir="${lib}">
+		<fileset dir="${lib}/shared">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${lib}/validation">
 			<include name="*.jar" />
 		</fileset>
 		<pathelement path="${build.validation.test}" />
-	</path>
-
-	<path id="classpath.src.trace">
-		<path refid="classpath.src" />
-		<!-- rth: for dynamic -->
-		<dirset dir="${lsmr.base}/bin" />
-		<dirset dir="${dynamicTracer.home}/bin" />
-		<fileset refid="lsmr.lib" />
-		<fileset refid="dynamicTracer.lib" />
-		<!-- end rth -->
 	</path>
 
 	<target name="init">
@@ -84,10 +56,8 @@
 		<mkdir dir="${build.sample}" />
 		<mkdir dir="${build.sample.test}" />
 		<mkdir dir="${build.validation.test}" />
-		<mkdir dir="${report.staticAnalysis}" />
-		<mkdir dir="${report.dynamicAnalysis}" />
-		<mkdir dir="${report.srcTest}" />
-		<mkdir dir="${report.evalTest}" />
+		<mkdir dir="${report.sample}" />
+		<mkdir dir="${report.validation}" />
 	</target>
 
 	<target name="clean" description="clean up">
@@ -100,48 +70,53 @@
 
 	<target name="compile" depends="compile.sample,compile.validation" description="compile the source" />
 
-	<target name="compile.sample" depends="init" description="compile the source">
-		<!-- Compile the java code from ${src} into ${build} -->
-		<javac srcdir="${sample}" destdir="${build.sample}" includeantruntime="false" classpathref="classpath.sample" />
+	<target name="compile.sample" depends="init" description="compile the sample system">
+		<javac srcdir="${sample.src}" destdir="${build.sample}" includeantruntime="false" classpathref="classpath.sample" />
 		<javac srcdir="${sample.test}" destdir="${build.sample.test}" includeantruntime="false" classpathref="classpath.sample" />
 	</target>
 
-	<target name="compile.validation" depends="init" description="compile the source">
-		<!-- Compile the java code from ${src} into ${build} -->
+	<target name="compile.validation" depends="init" description="compile the validation code">
 		<javac srcdir="${validation.test}" destdir="${build.validation.test}" includeantruntime="false" classpathref="classpath.validation" />
 	</target>
 
+	<!--
+	This old target was useful in the past; we'll keep it in case we need it in the future, 
+	but it is commented out because it may turn out to be extraneous.
 	<target name="jar" depends="compile" description="Packages JAR file and copies to depfind_uw for testing">
 		<jar jarfile="${jarFile}">
 			<zipfileset dir="${build.src}" prefix="" includes="**/*.class" />
 		</jar>
 		<copy file="${jarFile}" tofile="${depfindDir}/input.jar" overwrite="yes" />
 	</target>
+	-->
 
-	<target name="dist" depends="compile" description="generate the distribution">
-		<!-- Create the distribution directory -->
-		<mkdir dir="${dist}/lib" />
-
-		<!-- Put everything in ${build} into the AnalysisBenchmark-${DSTAMP}.jar file -->
-		<jar jarfile="${dist}/lib/AnalysisBenchamark-${DSTAMP}.jar" basedir="${build.src}" />
-	</target>
-
-	<target name="test.sample" depends="compile.sample" description="perform tests">
+	<target name="test" depends="compile" description="perform tests">
 		<junit maxmemory="${maxmemory}" printsummary="yes" haltonfailure="no" fork="yes" forkmode="once">
-			<!--<jvmarg value="-Djava.compiler=NONE"/>-->
-
-			<classpath refid="classpath.src" />
-
+			<classpath refid="classpath.sample" />
 			<formatter type="plain" />
 			
-			<batchtest todir="${report.srcTest}">
-				<fileset dir="${src.test}">
+			<batchtest todir="${report.sample}">
+				<fileset dir="${sample.test}">
 					<include name="**/*.java" />
 				</fileset>
 			</batchtest>
 		</junit>
 	</target>
 
+	
+	<!-- below this is old stuff that will hopefully disappear -->
+	
+	<path id="classpath.src.trace">
+		<path refid="classpath.src" />
+		<!-- rth: for dynamic -->
+		<dirset dir="${lsmr.base}/bin" />
+		<dirset dir="${dynamicTracer.home}/bin" />
+		<fileset refid="lsmr.lib" />
+		<fileset refid="dynamicTracer.lib" />
+		<!-- end rth -->
+	</path>
+
+			
 	<target name="dynamic" depends="compile.sample" description="perform tests">
 		<junit maxmemory="${maxmemory}" printsummary="yes" haltonfailure="no" fork="yes" forkmode="once">
 			<!--<jvmarg value="-Djava.compiler=NONE"/>-->
