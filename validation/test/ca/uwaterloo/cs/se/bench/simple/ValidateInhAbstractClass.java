@@ -3,7 +3,7 @@ package ca.uwaterloo.cs.se.bench.simple;
 import org.junit.Assert;
 import org.junit.Test;
 
-import ca.uwaterloo.cs.se.bench.model.ClassElement;
+import ca.uwaterloo.cs.se.inconsistency.core.model2.ClassElement;
 
 public class ValidateInhAbstractClass extends AbstractValidation {
 

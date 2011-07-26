@@ -5,10 +5,10 @@ import static org.junit.matchers.JUnitMatchers.hasItem;
 import org.junit.Assert;
 import org.junit.Test;
 
-import ca.uwaterloo.cs.se.bench.model.ClassElement;
-import ca.uwaterloo.cs.se.bench.model.FieldElement;
-import ca.uwaterloo.cs.se.bench.model.MethodElement;
-import ca.uwaterloo.cs.se.bench.model.MethodParamElement;
+import ca.uwaterloo.cs.se.inconsistency.core.model2.ClassElement;
+import ca.uwaterloo.cs.se.inconsistency.core.model2.FieldElement;
+import ca.uwaterloo.cs.se.inconsistency.core.model2.MethodElement;
+import ca.uwaterloo.cs.se.inconsistency.core.model2.MethodParamElement;
 
 import com.google.common.collect.Iterators;
 

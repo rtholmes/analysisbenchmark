@@ -8,8 +8,8 @@ import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import ca.uwaterloo.cs.se.bench.model.ClassElement;
-import ca.uwaterloo.cs.se.bench.model.MethodElement;
+import ca.uwaterloo.cs.se.inconsistency.core.model2.ClassElement;
+import ca.uwaterloo.cs.se.inconsistency.core.model2.MethodElement;
 
 public class ValidateSimpleThreadClass extends AbstractValidation {
 

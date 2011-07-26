@@ -5,9 +5,9 @@ import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 
-import ca.uwaterloo.cs.se.bench.model.Model;
-import ca.uwaterloo.cs.se.bench.model.io.XMLReaderDependencyFinder;
-import ca.uwaterloo.cs.se.bench.model.io.XMLReaderDynamicTracer;
+import ca.uwaterloo.cs.se.inconsistency.core.model2.Model;
+import ca.uwaterloo.cs.se.inconsistency.core.model2.io.XMLReaderDependencyFinder;
+import ca.uwaterloo.cs.se.inconsistency.core.model2.io.XMLReaderDynamicTracer;
 
 public class AbstractValidation {
 

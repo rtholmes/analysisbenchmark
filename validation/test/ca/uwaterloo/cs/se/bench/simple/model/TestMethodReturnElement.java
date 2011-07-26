@@ -3,9 +3,9 @@ package ca.uwaterloo.cs.se.bench.simple.model;
 import org.junit.Assert;
 import org.junit.Test;
 
-import ca.uwaterloo.cs.se.bench.model.ClassElement;
-import ca.uwaterloo.cs.se.bench.model.MethodParamElement;
-import ca.uwaterloo.cs.se.bench.model.MethodReturnElement;
+import ca.uwaterloo.cs.se.inconsistency.core.model2.ClassElement;
+import ca.uwaterloo.cs.se.inconsistency.core.model2.MethodParamElement;
+import ca.uwaterloo.cs.se.inconsistency.core.model2.MethodReturnElement;
 import static org.hamcrest.CoreMatchers.*;
 
 public class TestMethodReturnElement {

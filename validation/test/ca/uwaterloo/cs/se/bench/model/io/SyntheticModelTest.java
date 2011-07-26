@@ -6,14 +6,14 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import ca.uwaterloo.cs.se.bench.model.ClassElement;
-import ca.uwaterloo.cs.se.bench.model.FieldElement;
-import ca.uwaterloo.cs.se.bench.model.MethodElement;
-import ca.uwaterloo.cs.se.bench.model.MethodParamElement;
-import ca.uwaterloo.cs.se.bench.model.MethodReturnElement;
-import ca.uwaterloo.cs.se.bench.model.Model;
-import ca.uwaterloo.cs.se.bench.model.io.XMLReaderDependencyFinder;
 import ca.uwaterloo.cs.se.bench.simple.Ids;
+import ca.uwaterloo.cs.se.inconsistency.core.model2.ClassElement;
+import ca.uwaterloo.cs.se.inconsistency.core.model2.FieldElement;
+import ca.uwaterloo.cs.se.inconsistency.core.model2.MethodElement;
+import ca.uwaterloo.cs.se.inconsistency.core.model2.MethodParamElement;
+import ca.uwaterloo.cs.se.inconsistency.core.model2.MethodReturnElement;
+import ca.uwaterloo.cs.se.inconsistency.core.model2.Model;
+import ca.uwaterloo.cs.se.inconsistency.core.model2.io.XMLReaderDependencyFinder;
 
 /**
  * Synthetic test; essentially makes sure the eval code is working separate from the suite that will actually test the model.

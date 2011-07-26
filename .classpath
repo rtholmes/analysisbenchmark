@@ -3,11 +3,11 @@
 	<classpathentry kind="src" path="sample/test"/>
 	<classpathentry kind="src" path="sample/src"/>
 	<classpathentry kind="src" path="validation/test"/>
-	<classpathentry kind="src" path="validation/src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="lib/jdom-1.1.jar"/>
 	<classpathentry kind="lib" path="lib/log4j-1.2.15.jar"/>
 	<classpathentry kind="lib" path="lib/guava-r07.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ca.uwaterloo.cs.se.inconsistency.core"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
