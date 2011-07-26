@@ -1,6 +1,5 @@
 package ca.uwaterloo.cs.se.bench.simple;
 
-import static org.junit.matchers.JUnitMatchers.hasItem;
 import junit.framework.Assert;
 
 import org.junit.Test;
@@ -60,7 +59,7 @@ public class ValidateAnonClass extends AbstractValidation {
 		Assert.assertTrue(_dynamicModel.hasMethod(Ids.AnonClass_simpleAnonymous));
 		Assert.assertTrue(_dynamicModel.hasMethod(Ids.AnonClass_genericAnonymous));
 
-		// 
+		//
 		// Assert.assertTrue(_dynamicModel.hasMethod(Ids.AnonClass_simpleAnonymous_compare));
 		Assert.assertTrue(_dynamicModel.hasMethod(Ids.AnonClass_genericAnonymous_compare));
 

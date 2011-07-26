@@ -1,7 +1,5 @@
 package ca.uwaterloo.cs.se.bench.simple;
 
-import org.junit.Test;
-
 public interface Ids {
 
 	public final String Prim_int = "int";

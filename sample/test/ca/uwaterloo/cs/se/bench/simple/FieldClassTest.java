@@ -6,8 +6,6 @@ import java.util.Vector;
 import org.junit.Before;
 import org.junit.Test;
 
-import ca.uwaterloo.cs.se.bench.simple.AnonClass;
-
 public class FieldClassTest {
 
 	private FieldClass _fc;
@@ -49,32 +47,32 @@ public class FieldClassTest {
 
 	@Test
 	public void testReadStaticVector() {
-		Vector v = _fc.staticFieldVector;
+		Vector v = FieldClass.staticFieldVector;
 	}
 
 	@Test
 	public void testWriteFieldSAtaticVector() {
-		_fc.staticFieldVector = new Vector();
+		FieldClass.staticFieldVector = new Vector();
 	}
 
 	@Test
 	public void testReadStaticVectorInit() {
-		Vector v = _fc.staticFieldVectorInit;
+		Vector v = FieldClass.staticFieldVectorInit;
 	}
 
 	@Test
 	public void testWriteFieldSAtaticVectorInit() {
-		_fc.staticFieldVectorInit = new Vector();
+		FieldClass.staticFieldVectorInit = new Vector();
 	}
 
 	@Test
 	public void testReadStaticBlockHashSetInit() {
-		HashSet h = _fc.staticBlockHashSetInit;
+		HashSet h = FieldClass.staticBlockHashSetInit;
 	}
 
 	@Test
 	public void testWriteStaticBlockHashSetInit() {
-		_fc.staticBlockHashSetInit = new HashSet();
+		FieldClass.staticBlockHashSetInit = new HashSet();
 	}
 
 }

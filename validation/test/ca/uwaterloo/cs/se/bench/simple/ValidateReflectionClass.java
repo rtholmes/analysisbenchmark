@@ -1,18 +1,11 @@
 package ca.uwaterloo.cs.se.bench.simple;
 
-import static org.junit.matchers.JUnitMatchers.hasItem;
 import junit.framework.Assert;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
-import com.google.common.collect.Iterators;
-
-
 import ca.uwaterloo.cs.se.inconsistency.core.model2.ClassElement;
-import ca.uwaterloo.cs.se.inconsistency.core.model2.FieldElement;
 import ca.uwaterloo.cs.se.inconsistency.core.model2.MethodElement;
-import ca.uwaterloo.cs.se.inconsistency.core.model2.MethodParamElement;
 
 /**
  * Test SimpleClass
@@ -21,10 +14,9 @@ import ca.uwaterloo.cs.se.inconsistency.core.model2.MethodParamElement;
  * 
  */
 
-
 public class ValidateReflectionClass extends AbstractValidation {
 
-	//done
+	// done
 	@Test
 	public void checkClass() {
 		// static
@@ -39,8 +31,7 @@ public class ValidateReflectionClass extends AbstractValidation {
 		// ClassElement d_ce = _dynamicModel.getClass(Ids.SimpleClass);
 		// Assert.assertNotNull(d_ce);
 	}
-	
-	
+
 	@Test
 	public void checkFields() {
 		// static
@@ -52,8 +43,7 @@ public class ValidateReflectionClass extends AbstractValidation {
 		// Assert.assertNotNull(_dynamicModel.getField(Ids.SimpleClass_fieldA));
 		// Assert.assertEquals(Ids.SimpleClass_fieldA, _dynamicModel.getField(Ids.SimpleClass_fieldA).getId());
 	}
-	
-	
+
 	@Test
 	public void checkMethods() {
 		// static
@@ -72,7 +62,7 @@ public class ValidateReflectionClass extends AbstractValidation {
 		Assert.assertTrue(_dynamicModel.hasMethod(Ids.ReflectionClass_instantiateString));
 
 	}
-	
+
 	@Test
 	public void Reflection_methods() {
 		// static
@@ -89,18 +79,14 @@ public class ValidateReflectionClass extends AbstractValidation {
 		Assert.assertEquals(s_a2.getReturnElement().getType().getId(), Ids.Prim_void);
 		Assert.assertEquals(0, s_a2.getParameters().size());
 
-
 		// dynamic
 
 		MethodElement d_a1 = _dynamicModel.getMethod(Ids.ReflectionClass_callVectorAddAndSize);
 		Assert.assertNotNull(d_a1);
 
-
 		MethodElement d_a2 = _dynamicModel.getMethod(Ids.ReflectionClass_instantiateString);
 		Assert.assertNotNull(d_a2);
 
-
 	}
-	
-	
+
 }

@@ -14,6 +14,7 @@ public class AnnotationClass {
 
 	}
 
+	// NOTE: Do NOT remove these warnings; they are for testing
 	@SuppressWarnings({ "deprecation", "unused" })
 	public void hadCompoundAnnotation() {
 

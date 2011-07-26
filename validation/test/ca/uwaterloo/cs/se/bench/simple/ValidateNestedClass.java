@@ -2,15 +2,12 @@ package ca.uwaterloo.cs.se.bench.simple;
 
 import junit.framework.Assert;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
-import com.google.common.collect.Iterators;
-
 import ca.uwaterloo.cs.se.inconsistency.core.model2.ClassElement;
-import ca.uwaterloo.cs.se.inconsistency.core.model2.FieldElement;
 import ca.uwaterloo.cs.se.inconsistency.core.model2.MethodElement;
-import ca.uwaterloo.cs.se.inconsistency.core.model2.MethodParamElement;
+
+import com.google.common.collect.Iterators;
 
 /**
  * Test SimpleClass

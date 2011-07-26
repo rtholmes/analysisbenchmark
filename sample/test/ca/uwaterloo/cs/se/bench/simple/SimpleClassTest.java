@@ -1,11 +1,7 @@
 package ca.uwaterloo.cs.se.bench.simple;
 
-import java.util.Collection;
-
 import org.junit.Before;
 import org.junit.Test;
-
-import ca.uwaterloo.cs.se.bench.simple.SimpleClass;
 
 public class SimpleClassTest {
 

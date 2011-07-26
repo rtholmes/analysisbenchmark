@@ -3,7 +3,9 @@ package ca.uwaterloo.cs.se.bench.simple;
 import org.junit.Test;
 
 public class AnnotationClassTest {
+	
 	@Test
+	@SuppressWarnings("deprecation")
 	public void hasJDKAnnotation() {
 		AnnotationClass ac = new AnnotationClass();
 		ac.hasJDKAnnotation();
@@ -21,6 +23,8 @@ public class AnnotationClassTest {
 		ac.hadCompoundAnnotation();
 	}
 
+	@SuppressWarnings("deprecation")
+	@Test
 	public void hasMultipleAnnotations() {
 		AnnotationClass ac = new AnnotationClass();
 		ac.hasMultipleAnnotations();

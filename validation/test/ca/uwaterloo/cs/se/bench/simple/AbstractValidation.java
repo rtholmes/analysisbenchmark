@@ -4,7 +4,6 @@ import junit.framework.Assert;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import ca.uwaterloo.cs.se.inconsistency.core.model2.Model;
