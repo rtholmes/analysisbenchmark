@@ -5,6 +5,7 @@ import static org.junit.matchers.JUnitMatchers.hasItem;
 import static org.hamcrest.CoreMatchers.not;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import ca.uwaterloo.cs.se.bench.model.ClassElement;
@@ -104,6 +105,7 @@ public class ValidateSimpleThreadClass extends AbstractValidation {
 	}
 
 	@Test
+	@Ignore
 	public void test_a() {
 		// static
 
@@ -135,6 +137,7 @@ public class ValidateSimpleThreadClass extends AbstractValidation {
 	}
 
 	@Test
+	@Ignore
 	public void test_b() {
 		// static
 
