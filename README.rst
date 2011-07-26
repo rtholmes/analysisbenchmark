@@ -10,26 +10,35 @@ ANT Tasks
 -------------------------
 
 	**clean**
-		desc
+		cleans the project
 
 	**compile**
-		desc
+		complies the sample code, sample tests, and validation code
+
+	**iiStatic**
+		performs the static analysis
 
 	**weave**
-		desc
+		weaves the code so the dynamic analysis can be performed
 
-	**dynamic**
-		desc
+	**iiDynamic**
+		performs the dynamic analysis
 
 	**validate**
-		desc
+		validates the results of the dynamic and static analyses against known oracles for the sample system
 
 Instructions
 -------------------------
 
 	To validate a change:
-		1) TODO
-		2) TODO (``ant foo``)
+		1) ``ant clean``
+		2) ``ant compile``
+		3) ``ant iiStatic``
+		4) ``ant weave``
+		5) ``ant iiDynamic``				
+		6) ``ant validate``		
+
+	If you have your own static / dynamic files you can copy them into the correct locations and just run ``ant validate``.
+
+	TODO: Create developer documentation for validating changes to ``depfind_uw`` and ``dynamictracer``.
 	
-
-
