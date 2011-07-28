@@ -34,7 +34,7 @@ Instructions
 		1) ``ant clean``
 		2) ``ant compile``
 		3) ``ant iiStatic``
-		4) ``ant weave``
+		4) ``ant iiWeave``
 		5) ``ant iiDynamic``				
 		6) ``ant validate``		
 
