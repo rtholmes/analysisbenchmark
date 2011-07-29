@@ -16,7 +16,7 @@ public class AbstractValidation {
 	protected Model _dynamicModel;
 
 	private final String _staticDataFile = "report/static/static_latest.xml";
-	private final String _dynamicDataFile = "report/dynamic/latestDynamic.xml";
+	private final String _dynamicDataFile = "report/dynamic/dynamic_latest.xml";
 
 	@Before
 	public void initModels() {
