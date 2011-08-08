@@ -130,5 +130,6 @@
 
 	</target>
 
+	<target name="iiComplete" depends="clean, compile, iiStatic, iiWeave, iiDynamic" description="Run the complete II stack."/>
 
 </project>
