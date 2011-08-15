@@ -3,7 +3,7 @@ package ca.uwaterloo.cs.se.bench.simple;
 import org.junit.Test;
 
 public class AnnotationClassTest {
-	
+
 	@Test
 	@SuppressWarnings("deprecation")
 	public void hasJDKAnnotation() {
@@ -11,12 +11,14 @@ public class AnnotationClassTest {
 		ac.hasJDKAnnotation();
 	}
 
+	@SuppressWarnings("deprecation")
 	@Test
 	public void hasJUnitAnnotation() {
 		AnnotationClass ac = new AnnotationClass();
 		ac.hasJUnitAnnotation();
 	}
 
+	@SuppressWarnings("deprecation")
 	@Test
 	public void hadCompoundAnnotation() {
 		AnnotationClass ac = new AnnotationClass();

@@ -13,6 +13,7 @@ public class ExceptionClassA {
 		}
 	}
 
+	@SuppressWarnings("unused")
 	public void a2() {
 		if (true)
 			throw new RuntimeException();

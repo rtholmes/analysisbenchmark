@@ -6,6 +6,7 @@ import java.util.Vector;
 
 public class AnonClass {
 
+	@SuppressWarnings("unchecked")
 	public void simpleAnonymous() {
 		Vector v = new Vector();
 		v.add("one");
