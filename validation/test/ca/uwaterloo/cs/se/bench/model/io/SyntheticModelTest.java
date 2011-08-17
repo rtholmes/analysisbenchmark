@@ -13,7 +13,6 @@ import ca.uwaterloo.cs.se.inconsistency.core.model2.MethodElement;
 import ca.uwaterloo.cs.se.inconsistency.core.model2.MethodParamElement;
 import ca.uwaterloo.cs.se.inconsistency.core.model2.MethodReturnElement;
 import ca.uwaterloo.cs.se.inconsistency.core.model2.Model;
-import ca.uwaterloo.cs.se.inconsistency.core.model2.io.XMLReaderDependencyFinder;
 
 /**
  * Synthetic test; essentially makes sure the eval code is working separate from the suite that will actually test the model.
@@ -28,14 +27,15 @@ public class SyntheticModelTest {
 
 	@BeforeClass
 	public static void beforeClass() {
-		XMLReaderDependencyFinder.startLog4J(true);
+		// NOTE: start logging
 	}
 
 	@Before
 	public void initModel() {
+		// XXX: this needs to be updated to the new model / Model2XML format
 
-		XMLReaderDependencyFinder xmlrdf = new XMLReaderDependencyFinder(fName);
-		_model = xmlrdf.parseModel();
+		// XMLReaderDependencyFinder xmlrdf = new XMLReaderDependencyFinder(fName);
+		_model = null; // xmlrdf.parseModel();
 
 		Assert.assertNotNull(_model);
 	}
@@ -80,8 +80,7 @@ public class SyntheticModelTest {
 		Assert.assertEquals(0, ce.getFields().size());
 		Assert.assertEquals(0, ce.getMethods().size());
 
-		Assert.assertEquals(_model.getClass("ca.uwaterloo.cs.se.bench.simple.InhAbstractClass"), ce.getParents().iterator()
-				.next());
+		Assert.assertEquals(_model.getClass("ca.uwaterloo.cs.se.bench.simple.InhAbstractClass"), ce.getParents().iterator().next());
 	}
 
 	@Test

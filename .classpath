@@ -4,11 +4,10 @@
 	<classpathentry kind="src" output="bin/sample" path="sample/src"/>
 	<classpathentry kind="src" output="bin/validation" path="validation/test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/ca.uwaterloo.cs.se.inconsistency.core"/>
 	<classpathentry kind="lib" path="lib/shared/junit_4.8.1.jar"/>
-	<classpathentry kind="lib" path="lib/validation/ca.uwaterloo.cs.se.inconsistency.core_20110726.jar"/>
 	<classpathentry kind="lib" path="lib/validation/guava-r09.jar"/>
 	<classpathentry kind="lib" path="lib/validation/log4j-1.2.15.jar"/>
 	<classpathentry kind="lib" path="lib/shared/org.hamcrest.core_1.1.0.v20090501071000.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ca.uwaterloo.cs.se.inconsistency.core"/>
 	<classpathentry kind="output" path="bin/default"/>
 </classpath>

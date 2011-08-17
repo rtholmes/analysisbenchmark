@@ -13,6 +13,14 @@
 
 	<property name="maxmemory" value="1536m" />
 
+	<!-- file prefix for the output files -->
+	<!-- this clause makes the `-Dii=foo_` optional -->
+	<condition property="ii" value="ii">
+		<not>
+			<isset property="ii"/>
+		</not>
+	</condition>
+	
 	<!-- Location for Dependency Finder related files (taskdefs, etc.) -->
 	<property name="dependencyfinder.home" value="${inconsistency.home}/DependencyFinderResources" />
 
@@ -58,7 +66,7 @@
 		
 		<!-- NOTE: 'ant compile' must happen before this! -->
 		<!-- NOTE: for unknown reasons this usually fails on the first attempt if 'ant clean' is run first -->
-		<dependencyextractor destfile="${report}/${DSTAMP}-${TSTAMP}_static.xml" xml="yes" minimize="yes">
+		<dependencyextractor destfile="${report}/${ii}_${DSTAMP}-${TSTAMP}_static.xml" xml="yes" minimize="yes">
 			<path>
 				<pathelement location="${inconsistency.static.src}" />
 				<pathelement location="${inconsistency.static.test}" />
@@ -66,7 +74,8 @@
 		</dependencyextractor>
 
 		<!-- make a copy of the latest extraction for easier reference -->
-		<copy file="${report}/${DSTAMP}-${TSTAMP}_static.xml" tofile="${report}/static_latest.xml" />
+		<copy file="${report}/${ii}_${DSTAMP}-${TSTAMP}_static.xml" tofile="${report}/latest_static.xml" />
+		<copy file="${report}/${ii}_${DSTAMP}-${TSTAMP}_static.xml" tofile="${report}/${ii}_static.xml" />
 		
 	</target>
 	<!-- / Main Static Extraction Task -->
@@ -137,8 +146,10 @@
 		</junit>
 
 		<!-- combine the dynamic traces into a single file -->
-		<dynamictracer destfile="${report}/${DSTAMP}-${TSTAMP}_dynamic.xml" tmpdir="${report.dynamicAnalysis}/tmp"/>
-		<copy file="${report}/${DSTAMP}-${TSTAMP}_dynamic.xml" tofile="${report}/dynamic_latest.xml" />
+		<!-- combine the dynamic traces into a single file -->
+		<dynamictracer destfile="${report}/${ii}_${DSTAMP}-${TSTAMP}_dynamic.xml" tmpdir="${report.dynamicAnalysis}/tmp"/>
+		<copy file="${report}/${ii}_${DSTAMP}-${TSTAMP}_dynamic.xml" tofile="${report}/latest_dynamic.xml" />
+		<copy file="${report}/${ii}_${DSTAMP}-${TSTAMP}_dynamic.xml" tofile="${report}/${ii}_dynamic.xml" />
 			
 	</target>
 

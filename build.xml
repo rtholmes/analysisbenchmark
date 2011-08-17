@@ -27,6 +27,8 @@
 	<property name="report.sample" location="${report}/sample" />
 	<property name="report.validation" location="${report}/validation" />
 
+	<property name="inconsistency.home" location="../inconsistencyinspectorresources" />
+	
 	<!-- sample system classpath -->
 	<path id="classpath.sample">
 		<fileset dir="${lib}/shared">
@@ -45,6 +47,7 @@
 		<fileset dir="${lib}/validation">
 			<include name="*.jar" />
 		</fileset>
+		<fileset dir="${inconsistency.home}/" includes="ca.uwaterloo.cs.se.inconsistency.core_*.jar" />
 		<pathelement path="${build.validation.test}" />
 	</path>
 
@@ -95,7 +98,7 @@
 	<target name="validate" depends="compile" description="perform validation">
 		<junit maxmemory="${maxmemory}" printsummary="yes" haltonfailure="yes" fork="yes" forkmode="once">
 			<classpath refid="classpath.validation" />
-			<formatter type="plain" />
+			<formatter type="plain" usefile="false" />
 			
 			<batchtest todir="${report.validation}">
 				<fileset dir="${validation.test}">

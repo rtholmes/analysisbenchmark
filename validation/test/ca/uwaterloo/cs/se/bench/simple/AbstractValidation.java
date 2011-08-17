@@ -7,34 +7,33 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import ca.uwaterloo.cs.se.inconsistency.core.model2.Model;
-import ca.uwaterloo.cs.se.inconsistency.core.model2.io.XMLReaderDependencyFinder;
-import ca.uwaterloo.cs.se.inconsistency.core.model2.io.XMLReaderDynamicTracer;
+import ca.uwaterloo.cs.se.inconsistency.core.model2.io.Model2XMLReader;
 
 public class AbstractValidation {
 
 	protected Model _staticModel;
 	protected Model _dynamicModel;
 
-	private final String _staticDataFile = "report/static/static_latest.xml";
-	private final String _dynamicDataFile = "report/dynamic/dynamic_latest.xml";
+	private final String _staticDataFile = "report/latest_static.xml";
+	private final String _dynamicDataFile = "report/latest_dynamic.xml";
 
 	@Before
 	public void initModels() {
 
-		XMLReaderDependencyFinder xmlrdf = new XMLReaderDependencyFinder(_staticDataFile);
-		Assert.assertNotNull(xmlrdf);
-		_staticModel = xmlrdf.parseModel();
+		Model2XMLReader xmlrd;
+
+		xmlrd = new Model2XMLReader(_staticDataFile);
+		_staticModel = xmlrd.read();
 		Assert.assertNotNull(_staticModel);
 
-		XMLReaderDynamicTracer xmlrdt = new XMLReaderDynamicTracer(_dynamicDataFile);
-		Assert.assertNotNull(xmlrdt);
-		_dynamicModel = xmlrdt.parseModel();
+		xmlrd = new Model2XMLReader(_dynamicDataFile);
+		_dynamicModel = xmlrd.read();
 		Assert.assertNotNull(_dynamicModel);
 	}
 
 	@BeforeClass
 	public static void beforeClass() {
-		XMLReaderDependencyFinder.startLog4J(true);
+		// NOTE: start logging
 	}
 
 	@Test
